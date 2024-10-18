@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Introduction在3D计算机视觉中，估计物体的六自由度（6DoF）姿态是一个基本的挑战。这项任务在许多实际应用中扮演着关键角色，包括增强现实，机器人抓取和自动驾驶。尽管其重要性，但在物体纹理均匀和严重遮挡的情况下，实现准确的6DoF姿态估计仍然具有挑战性。 深度学习的出现有助于克服这些挑战。最近的一些基于RGB的工作在处理遮挡方面显示出了有前景的结果。尽管有这些进步，但仅从RGB图像估计物">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hipose_笔记">
+<meta property="og:url" content="http://example.com/2024/10/16/Hipose_%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Introduction在3D计算机视觉中，估计物体的六自由度（6DoF）姿态是一个基本的挑战。这项任务在许多实际应用中扮演着关键角色，包括增强现实，机器人抓取和自动驾驶。尽管其重要性，但在物体纹理均匀和严重遮挡的情况下，实现准确的6DoF姿态估计仍然具有挑战性。 深度学习的出现有助于克服这些挑战。最近的一些基于RGB的工作在处理遮挡方面显示出了有前景的结果。尽管有这些进步，但仅从RGB图像估计物">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
+<meta property="og:image" content="http://example.com/Downloads/IMG_1819.HEIC">
+<meta property="og:image" content="http://example.com/">
+<meta property="article:published_time" content="2024-10-16T07:28:30.000Z">
+<meta property="article:modified_time" content="2024-10-18T05:03:48.677Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
+  
+  
+  
+  <title>Hipose_笔记 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hipose_笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-10-16 15:28" pubdate>
+          October 16, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.8k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          49 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Hipose_笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>在3D计算机视觉中，估计物体的六自由度（6DoF）姿态是一个基本的挑战。这项任务在许多实际应用中扮演着关键角色，包括增强现实，机器人抓取和自动驾驶。尽管其重要性，但在物体纹理均匀和严重遮挡的情况下，实现准确的6DoF姿态估计仍然具有挑战性。</p>
+<p>深度学习的出现有助于克服这些挑战。最近的一些基于RGB的工作在处理遮挡方面显示出了有前景的结果。尽管有这些进步，但仅从RGB图像估计物体姿态仍然具有挑战性，因为单眼图像中存在固有的深度模糊。</p>
+<p>类似于RGB-only方法中的2D-3D对应预测，有些方法预测稀疏的3D-3D对应。然而，大部分使用深度输入的方法要么不利用RGB信息，要么只依赖RGB图像将物体从背景中分离出来，从而丢弃了有价值的RGB特征。为了保留丰富的RGB信息，有些研究提出了新的特征融合网络，以更好地利用RGB和深度信息，但在公共基准测试（如BOP）中落后。</p>
+<p>相比之下，大多数当前的最先进的方法通常使用RGB-only方法获取一个初始姿态，然后使用深度信息应用一个计算昂贵的，通常是迭代的姿态精炼步骤。直接利用RGB-D图像估计初始姿态有望产生更精确和可靠的物体姿态估计。</p>
+<p>在这篇论文中，我们的目标是充分利用RGB-D图像中的详细信息，无需任何耗时的精炼步骤，就能估计出准确的物体姿态。使用RGB-D输入，我们可以从额外的信息中获益，如点到表面的距离。我们从最近的工作ZebraPose中得到灵感，这是一种密集的2D-3D对应预测方法，我们引入了HiPose，一个有效预测输入深度图和物体模型之间的密集3D-3D对应的网络。与ZebraPose不同，我们处理编码的方式更好地利用了其粗到细的特性，通过迭代地删除离群值。</p>
+<p>我们提出了一种新的、更稳定的层次化对应剪枝方法，而不是像通常那样在RANSAC框架内使用预测的对应来解决姿态。具体来说，层次二进制码输出中的粗级别预测更少出错，提供了一个稳健的初始姿态。这个粗糙的姿态有助于识别和删除基于点到表面距离的离群匹配。随后，我们应用更精细级别的预测进行每次迭代，精炼我们的姿态预测并在更精细的级别上消除离群值以提高精度。</p>
+<h2 id="总的来说，我们的贡献可以总结为以下几点："><a href="#总的来说，我们的贡献可以总结为以下几点：" class="headerlink" title="总的来说，我们的贡献可以总结为以下几点："></a>总的来说，<mark>我们的贡献可以总结为以下几点：</mark></h2><p>• 我们提出了一种估计物体姿态的方法，该方法充分利用了RGB-D数据，专注于通过层次化二进制表面编码的3D-3D对应匹配。<br>• 我们引入了一种无需RANSAC的层次化对应剪枝方法，通过粗到细的子表面基础上的离群值过滤来进行姿态估计。<br>• 我们在LM-O，YCB-V和T-LESS数据集上进行了大量的实验，证明了我们的方法的有效性。我们在没有任何额外精炼的情况下实现了最先进的结果，使我们的方法比其他方法更快，适合实时应用。</p>
+<h2 id="RANSAC"><a href="#RANSAC" class="headerlink" title="RANSAC"></a>RANSAC</h2><p>RANSAC（Random Sample Consensus，随机抽样一致）是一种迭代方法，用于从一组观测数据中估计数学模型的参数，尤其是在数据包含大量离群点时。它是一种健壮的参数估计方法，可以抵抗离群点的影响。</p>
+<p>RANSAC的基本思想是反复从数据集中随机选择最小数量的点，然后用这些点拟合模型，然后测试所有其他点是否符合该模型，计算模型的质量。然后选择质量最好的模型。</p>
+<p>在计算机视觉中，RANSAC常用于解决从对应点估计几何变换（如单应性、基础矩阵等）的问题，因为这些问题通常会受到错误匹配点（离群点）的影响。</p>
+<h1 id="Ralated-Work"><a href="#Ralated-Work" class="headerlink" title="Ralated Work"></a>Ralated Work</h1><p>相关工作<br>我们将对相关工作的深入讨论限制在基于深度学习的实例级姿态估计方法上，其中在训练期间可用目标物体的3D CAD模型。</p>
+<h2 id="2-1-RGB-only姿态估计"><a href="#2-1-RGB-only姿态估计" class="headerlink" title="2.1. RGB-only姿态估计"></a>2.1. RGB-only姿态估计</h2><p>大多数表现最佳的RGB物体姿态估计方法[7, 20, 41, 50, 59, 67]试图在RGB图像的2D坐标和物体表面的3D坐标之间建立密集的2D-3D对应关系。然后通过解决透视n点（PnP）问题[28]来计算6D姿态。已经证明，密集对应关系的方法在现今超越了基于关键点的方法[36, 40, 42, 46, 72]和整体方法[8, 23, 49, 63]，这也在BOP挑战结果[54]中得到了证明。我们从ZebraPose[50]中得到灵感，这是一种基于密集对应关系的方法，它采用粗到细的表面编码来表示对应关系。这种方法在精度上取得了显著的改进，激发了我们自己的想法。总的来说，由于缺少几何信息，RGB-only的方法在性能上仍然有限。</p>
+<h2 id="2-2-Depth-only和RGB-D姿态估计"><a href="#2-2-Depth-only和RGB-D姿态估计" class="headerlink" title="2.2. Depth-only和RGB-D姿态估计"></a>2.2. Depth-only和RGB-D姿态估计</h2><p>点云处理网络[2, 21, 30, 43]的发展推动了那些专门使用3D测量的姿态估计方法[1, 6, 60, 61, 65, 66]。这些方法已经展示出了优秀的泛化性能。然而，丢弃RGB外观严重限制了这些方法的性能，因为姿态模糊和颜色特征的排除。</p>
+<p>RGB-D方法试图融合RGB和深度模式的信息。[26, 29, 33]将深度信息作为RGB图像的额外通道，然后将其输入到基于CNN的网络中。更有效地利用RGB和深度图像是从这两种模式中分别提取特征，然后融合它们进行姿态估计[16, 17, 44, 57, 58, 64, 73, 75]。这样的方法受益于视觉信息和几何信息，显示出更高的准确性[54]。FFB6D[17]设计了双向融合模块来增强外观和几何特征的表示。最近，[75]提出了一种基于FFB6D的变压器式融合网络。</p>
+<h2 id="2-3-使用深度信息的姿态精炼"><a href="#2-3-使用深度信息的姿态精炼" class="headerlink" title="2.3. 使用深度信息的姿态精炼"></a>2.3. 使用深度信息的姿态精炼</h2><p>额外的姿态精炼阶段，通常以迭代的方式，可以显著提高结果。迭代最近点算法（ICP）通常被用作精炼策略，利用深度信息来对齐估计的物体点云和图像[52, 53, 63]。PFA[22]提出了一种非迭代的姿态精炼策略，通过预测渲染和真实图像之间的密集对应字段。CIR[35]使用一种新的可微分求解器层在渲染和比较策略下迭代地精炼姿态和密集对应。然而，渲染是耗时的。</p>
+<h1 id="HiPose"><a href="#HiPose" class="headerlink" title="HiPose"></a>HiPose</h1><p>受到二进制代码在RGB-only设置中的成功应用的启发，我们扩展了该方法，以在RGB-D设置中以粗到细的方式编码物体表面。我们的方法由一个层次化的二进制表面编码组成，该编码输入到一个粗到细的姿态求解器中。通过几次的表面划分和离群点剔除，求解器实现了快速的姿态估计，而无需RANSAC或渲染</p>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>在RGB-D图像中，对于每个目标物体，估计预定义的物体坐标系和相机坐标系之间的变换。这个变换包含一个旋转矩阵和一个平移向量。</p>
+<p>给定一个具有3D扫描或CAD模型网格的物体，网格由N个3D顶点组成。这些顶点被二进制编码，每个顶点对应一个唯一的二进制码。通过上采样预处理物体网格，使得顶点数量等于二的幂。</p>
+<p>ZebraPose算法通过迭代地将网格分割成顶点数量相等的部分，并为每个部分分配一个二进制位，从而构造这种二进制编码。在每次迭代中，都会有更多的子表面，每个子表面包含的顶点数量大致相等。</p>
+<p>这个过程创建了一个分层的二进制编码，这意味着所有二进制编码的前x位相同的顶点都属于同一个子表面，直到第x个分区。换句话说，一个二进制码描述了一个从粗到细的物体表面流形，其中最粗的流形是完整的物体网格，最细的流形是网格的一个单独顶点。</p>
+<p><img src="/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Point-to-Surface-Corrrespondences"><a href="#Point-to-Surface-Corrrespondences" class="headerlink" title="Point-to-Surface Corrrespondences"></a>Point-to-Surface Corrrespondences</h2><p>前人的工作已经使用了二进制编码的表面从RGB图像进行姿态估计，但这种方法并未设计来利用深度图信息，也没有明确利用编码表面预测的层次性质，也没有利用预测表面代码的内在置信。</p>
+<p>相比之下，HiPose方法则做了一些改进。首先，它接受一个RGB-D图像作为输入，这意味着它同时使用了颜色和深度信息，而不仅仅是RGB信息。这样一来，它能够更全面地理解场景，从而提高姿态估计的准确性。</p>
+<p>其次，HiPose方法利用了编码的层次性质。具体来说，它将二进制编码分为两组：前m位和后n位。然后，通过迭代地利用这些位，实现了从粗到细的处理。这意味着，它首先使用前m位来进行粗略的估计，然后再使用后n位来进行细致的估计。这样做的好处是，可以先快速地得到一个大致的结果，然后再慢慢地进行精细化，从而提高了姿态估计的精度。</p>
+<p>最后，HiPose方法还利用了预测表面代码的内在置信。这意味着，它不仅仅是简单地预测表面代码，而是还考虑了这些预测的可信度，从而进一步提高了结果的准确性。</p>
+<h2 id="Hierarchical-Binary-Code-Decoding"><a href="#Hierarchical-Binary-Code-Decoding" class="headerlink" title="Hierarchical Binary Code Decoding"></a>Hierarchical Binary Code Decoding</h2><p>在这一部分，HiPose方法提出了一种新的处理方式，这种方式能更好地利用由神经网络预测的二进制编码信息。</p>
+<p>在传统的方法中，神经网络预测的连续编码会被直接量化为二进制编码，然后这个二进制编码会被直接用来对应到一个顶点编码。但是，这种方法丢失了预测编码中的置信度信息，使得整个过程高度依赖RANSAC-PnP求解器的性能。</p>
+<p>为了改善这个问题，HiPose方法提出了一种新的处理方式。首先，它不直接量化预测的编码，而是计算一个位正确性概率或置信度向量。这个向量可以给出每一位的预测正确性的概率，从而提供更多的信息。</p>
+<p>然后，HiPose方法使用这个位正确性概率向量来进行初始表面选择和子表面划分。</p>
+<p><strong>在初始表面选择中</strong>，选择一个合适的起始点，这个点应该是位正确性概率最高的点。这个起始点将作为姿态估计迭代的开始。</p>
+<p>__在子表面划分中__，随着迭代的进行，表面会被进一步划分，变得更小。对于这些更小的表面，我们在进行姿态估计之前，会使用一种层次化的对应关系剪枝过程，有效地消除异常值。</p>
+<p>这种处理方式使得HiPose方法能够在几次迭代中就得到优异的结果，从而提高了算法的效率。</p>
+<h2 id="Hierarchical-Correspondence-Pruning"><a href="#Hierarchical-Correspondence-Pruning" class="headerlink" title="Hierarchical Correspondence Pruning"></a>Hierarchical Correspondence Pruning</h2><p>分层对应剪枝（Hierarchical Correspondence Pruning）</p>
+<p>这部分描述了一个迭代的过程，它的<strong>目的是逐步提炼和改进物体的姿态估计</strong>。这个过程开始于一个预测的编码，然后通过这个编码找到对应的表面和顶点。这个表面的中心点就是所有顶点的平均位置。</p>
+<p>然后，这个过程会重复多次。在每一次迭代中，我们会找到每个点对应的子表面的中心点，并估计一个姿态。这个姿态是通过一种名为<strong>Kabsch</strong>的方法计算出来的，这种方法可以根据点和表面的位置找到最佳的姿态。</p>
+<p>有了这个估计的姿态，我们就可以计算每个点和它对应的表面之间的距离。然后，我们会选择距离较近的点，这些点被认为是内点，距离较远的点被认为是外点。</p>
+<p>在下一次迭代中，我们会再次计算每个点和它的表面之间的距离，但这次我们会用新的姿态来变换表面。然后，我们会再次选择内点和外点。</p>
+<p>这个过程会重复多次，每次都会提炼和改进姿态的估计。最后，我们会使用所有被认为是内点的点来进行最后一次姿态估计。这个过程的结果就是我们最终的姿态估计。</p>
+<p>这个过程的优点是，它可以逐步提炼和改进姿态的估计，并且可以有效地消除异常值。</p>
+<p>![截屏2024-04-21 14.28.38](&#x2F;Users&#x2F;majesty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;截屏2024-04-21 14.28.38.png)</p>
+<h1 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h1><p>在这一部分，我们从实现、数据集和评估指标开始。接下来，我们展示了使用不同的3D-3D对应关系求解器对我们的方法进行的消融研究。最后，我们呈现了我们方法的实验结果，并与文献中的最新姿态估计方法以及BOP挑战中的方法进行比较。</p>
+<ol>
+<li><p><strong>实现、数据集和评估指标</strong>：在这部分，作者可能会详细介绍他们的实验设置，包括他们使用的硬件和软件，以及他们的方法的具体实现细节。他们还可能会描述他们用于训练和测试的数据集，以及他们用于评估方法性能的指标。</p>
+</li>
+<li><p><strong>消融研究</strong>：消融研究是一种常见的实验设计，用于理解模型中的各个部分对最终性能的贡献。在这部分，作者可能会比较不同的3D-3D对应关系求解器对他们方法性能的影响。</p>
+<p>（消融实验（Ablation Study）是一种研究方法，常用于深度学习和其他机器学习算法的研究中，用于理解模型的各个组成部分对其整体性能的贡献。</p>
+<p>在消融实验中，研究人员会逐步移除模型的一部分，例如一层网络、某个特性、某个超参数等，然后观察这种移除行为对模型性能的影响。如果移除某一部分后，模型的性能显著下降，那么我们可以得出这一部分对模型的性能有重要贡献的结论。反之，如果移除后性能没有显著改变，那么这一部分可能对模型的整体性能贡献不大。</p>
+<p>消融实验可以帮助研究人员理解模型的工作原理，识别出最重要的特性，以及优化模型结构和性能。同时，这种实验也可以提供关于如何改进模型的实用建议。）</p>
+</li>
+<li><p><strong>实验结果和比较</strong>：在这部分，作者可能会展示他们的方法的实验结果，并与其他最新的姿态估计方法进行比较。这可能包括文献中的方法，以及在BOP挑战中的方法。这可以帮助读者理解作者的方法在实际应用中的性能如何，以及它与其他方法相比的优点和缺点。</p>
+</li>
+</ol>
+<h2 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h2><p>在实现细节部分，作者描述了他们的HiPose网络如何构建和训练。这个网络被设计为可以轻松地整合到各种现有的RGB-D网络中。作为基线，他们使用了FFB6D的全流双向融合网络，并对其进行了一些修改。</p>
+<p>HiPose网络有两个分支，一个处理图像，另一个处理点云。网络的输入包括一个放大的感兴趣区域（RoI）图像和一个通过均匀采样RoI深度图得到的点云。</p>
+<p>在网络的输出层，作者进行了一些修改，将原来的三个输出头部替换为一个，这个头部包含了可见性遮罩和每个随机选择的点的二进制编码。他们使用了L1损失函数来计算可见性遮罩和二进制编码的损失。在所有实验中，遮罩和二进制编码损失之间的权重因子被设置为3。</p>
+<p>网络的骨干部分使用了ConvNext架构，这是一种建立在ResNet之上的架构。这种架构的性能与Vision Transformer相当，同时保持了ResNet的效率和简单性。</p>
+<p>在训练过程中，网络进行了380,000次迭代，每次迭代的批量大小为32。作者使用了固定学习率的Adam优化器进行训练，并在训练过程中使用了RGB图像增强和深度图增强来提高网络的性能。</p>
+<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p>实验的数据集，包括LM-O，YCB-V和T-LESS。这些数据集涵盖了各种场景，包括严重遮挡、纹理缺失和对称物体等情况。由于为物体姿态标注真实数据可能非常耗时，作者使用了BOP挑战赛提供的公开可用的基于物理的合成渲染（PBR）图像，来证明他们的网络可以仅通过使用合成数据进行有效训练。</p>
+<ol>
+<li>LM-O数据集：这个数据集包含了大量的家用物品，这些物品在各种复杂环境中被拍摄，包括严重的遮挡和光照变化。</li>
+<li>YCB-Video（YCB-V）数据集：这是一个常用的基准数据集，包含21个常见的家用和办公用品，如杯子、瓶子、书本等。这些物体在各种环境和光照条件下被拍摄，包括不同的背景和物体遮挡。</li>
+<li>T-LESS数据集：这个数据集包含了30个工业零件和工具，这些物体在各种环境和光照条件下被拍摄，包括不同的背景和物体遮挡。这个数据集特别适合研究对称物体的姿态估计问题。</li>
+</ol>
+<h2 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h2><p>对于LM-O数据集，他们使用了最常见的6DoF姿态度量标准ADD(-S)。ADD计算了在使用估计的姿态和真实姿态将物体顶点投影到相机坐标时，落在距离阈值以下（这个阈值取决于物体大小）的物体顶点的百分比。对于对称物体，ADD(-S)的计算方式有所不同，它匹配最近的模型点（考虑到对称性），而不是完全相同的模型点。</p>
+<p>对于YCB-V数据集，他们报告了ADD(-S)的曲线下面积（AUC），最大阈值为10cm，这是根据文献[63]中的描述。此外，对于这两个数据集，他们还报告了由BOP挑战赛定义的BOP得分度量。</p>
+<p>这些度量标准都是用来评估物体姿态估计算法的性能的，包括算法对物体位置和方向的估计精度，以及算法对复杂场景（如物体遮挡和光照变化）的处理能力。</p>
+<h2 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a>消融实验</h2><p>![截屏2024-04-21 10.15.07](&#x2F;Users&#x2F;majesty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;截屏2024-04-21 10.15.07.png)</p>
+<ul>
+<li>A0：直接使用Kabsch算法解决物体姿态，不使用对应剪枝。</li>
+<li>A1：使用RANSAC框架识别异常值。</li>
+<li>A2：使用层次化对应剪枝，选取第10位作为初始位，定义信任位阈值为0.52和0.48。</li>
+<li>B0，B1，B2：改变信任位阈值，观察阈值变化对结果的影响。</li>
+<li>C0：将对应剪枝中的中位数准则替换为均值准则。</li>
+<li>D0：使用ResNet作为特征背景。</li>
+<li>E0：使用ZebraPose提供的网络，通过深度图将2D像素反投影到3D点，然后使用RANSAC + Kabsch进行3D-3D对应的姿态估计。</li>
+<li>E1：实现了一个基线模型”Concat”，它学习2D-3D对应关系，但是使用3D-3D对应关系解决姿态。</li>
+</ul>
+<p>![截屏2024-04-21 10.15.41](&#x2F;Users&#x2F;majesty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;截屏2024-04-21 10.15.41.png)</p>
+<p>Table 2: 精度的提高证实了低质量对应关系的逐步移除。</p>
+<p>Figure 4: 消融研究的结果，研究的对象是选择默认初始位m_defult。这个实验使用了LM-O数据集中的8个对象。这个图的曲线应该是平坦的，显示了他们提出的设计（即层次化的对应关系剪枝策略）是稳健的，并且相比于非层次化的变体（即选择16作为初始位）有明显的优势。</p>
+<p>具体来说，这个图可能展示了当m_defult变化时，模型性能（例如召回率或精度）的变化。如果曲线是平坦的，那么这意味着他们的方法对m_defult的选择不敏感，即使m_defult变化，性能也保持稳定。这进一步表明他们的方法具有很好的鲁棒性。同时，与选择16作为初始位的非层次化方法相比，他们的方法有明显的优势，可能在性能上超过了非层次化方法。</p>
+<p>（ADD指标，即Average Distance of model points for all Distances，是一种常用于物体姿态估计问题的评估指标。ADD指标计算的是3D模型点的平均距离，用于衡量预测的物体姿态和真实姿态之间的差异。</p>
+<p>具体来说，对于一个3D物体模型，我们首先将其所有的模型点通过真实的姿态和预测的姿态分别进行变换，得到两组3D点。然后，我们计算这两组3D点之间的距离，得到每个模型点的距离。ADD指标就是这些距离的平均值。</p>
+<p>ADD指标越小，说明预测的姿态越接近真实的姿态，模型的性能越好。需要注意的是，ADD指标只考虑了模型点的位置，而没有考虑模型点的方向。因此，它可能对一些对方向敏感的应用场景不够准确。对于这种情况，我们可以使用其他的评估指标，例如ADD-S指标，它同时考虑了模型点的位置和方向。）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs"><br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://baidu.com/">hello</a></p>
+<p> <img src="/../../../../../../../Downloads/IMG_1819.HEIC" srcset="/img/loading.gif" lazyload alt="IMG_1819.HEIC"> </p>
+<p><img src="/" srcset="/img/loading.gif" lazyload alt="hh"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Gruduation-Project/" class="category-chain-item">Gruduation Project</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Hipose_笔记</div>
+      <div>http://example.com/2024/10/16/Hipose_笔记/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 16, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/10/18/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/10/12/test/" title="hello">
+                        <span class="hidden-mobile">hello</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
