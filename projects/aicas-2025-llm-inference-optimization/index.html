@@ -1,0 +1,712 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zeng Junhao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="项目概览IEEE AICAS 2025 Grand Challenge 的“大模型软硬系统优化”赛道关注大语言模型在资源受限硬件上的高效推理。这个项目的核心问题并不是简单地把模型跑起来，而是在有限内存、有限算力和严格延迟约束下，让模型尽可能稳定、快速、低成本地完成推理。 我整理和实践的重点集中在端侧 LLM 推理优化：低比特权重量化、查找表计算、矩阵乘法分块、CPU 指令优化、prefill&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化">
+<meta property="og:url" content="https://juneh01.github.io/projects/aicas-2025-llm-inference-optimization/index.html">
+<meta property="og:site_name" content="Zeng Junhao">
+<meta property="og:description" content="项目概览IEEE AICAS 2025 Grand Challenge 的“大模型软硬系统优化”赛道关注大语言模型在资源受限硬件上的高效推理。这个项目的核心问题并不是简单地把模型跑起来，而是在有限内存、有限算力和严格延迟约束下，让模型尽可能稳定、快速、低成本地完成推理。 我整理和实践的重点集中在端侧 LLM 推理优化：低比特权重量化、查找表计算、矩阵乘法分块、CPU 指令优化、prefill&amp;#x">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-20T12:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-06T01:41:02.401Z">
+<meta property="article:author" content="Zeng Junhao">
+<meta property="article:tag" content="AICAS">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="Quantization">
+<meta property="article:tag" content="Edge AI">
+<meta property="article:tag" content="Hardware Software Co-design">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化 - Zeng Junhao</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/academic-profile.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"juneh01.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/projects/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-20 20:00" pubdate>
+          March 20, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>IEEE AICAS 2025 Grand Challenge 的“大模型软硬系统优化”赛道关注大语言模型在资源受限硬件上的高效推理。这个项目的核心问题并不是简单地把模型跑起来，而是在有限内存、有限算力和严格延迟约束下，让模型尽可能稳定、快速、低成本地完成推理。</p>
+<p>我整理和实践的重点集中在端侧 LLM 推理优化：低比特权重量化、查找表计算、矩阵乘法分块、CPU 指令优化、prefill&#x2F;decode 阶段瓶颈分析，以及 MNN、T-MAC、llama.cpp 等推理框架的部署思路。</p>
+<h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>大模型部署到边缘设备时，主要瓶颈来自三个方面：</p>
+<ul>
+<li><strong>计算开销</strong>：FP16&#x2F;FP32 推理依赖大量矩阵乘法，CPU 上传统 GEMM 很难取得足够吞吐。</li>
+<li><strong>内存占用</strong>：即使是 0.5B 级别模型，未压缩参数和 KV cache 也会给内存带来压力。</li>
+<li><strong>功耗与延迟</strong>：端侧场景不能只追求峰值性能，还要考虑稳定延迟和能耗。</li>
+</ul>
+<p>因此，项目目标可以概括为：在不显著牺牲精度的前提下，通过量化和计算路径重排降低模型体积、减少内存访问，并提升 CPU&#x2F;端侧硬件上的推理吞吐。</p>
+<h2 id="技术路线"><a href="#技术路线" class="headerlink" title="技术路线"></a>技术路线</h2><h3 id="低比特量化"><a href="#低比特量化" class="headerlink" title="低比特量化"></a>低比特量化</h3><p>项目中重点关注 4-bit 权重量化路径。低比特量化可以显著降低模型参数体积，减少内存带宽压力。围绕量化配置，我记录了 bits、group size、activation setting 等参数对推理行为的影响。</p>
+<p>量化带来的收益主要有两类：</p>
+<ul>
+<li>模型参数体积降低，端侧加载更容易。</li>
+<li>线性层计算可以转化为更硬件友好的低比特计算流程。</li>
+</ul>
+<p>量化的风险也很明显：过低比特会带来困惑度上升、输出质量下降，甚至在某些任务中出现明显退化。因此项目文档里没有只记录速度，也同时关注精度和 PPL 变化。</p>
+<h3 id="T-MAC-查找表计算"><a href="#T-MAC-查找表计算" class="headerlink" title="T-MAC 查找表计算"></a>T-MAC 查找表计算</h3><p>T-MAC 的思路是把低比特权重拆解成多个 1-bit 矩阵，再按若干 bit 分组，对可能出现的 bit pattern 进行查找表预计算。在线推理时，部分乘加操作可以替换成查表与累加。</p>
+<p>这个过程包含两个阶段：</p>
+<ul>
+<li><strong>Offline stage</strong>：对权重进行分解、分组、重排，生成计算所需的 LUT。</li>
+<li><strong>Online stage</strong>：输入激活后，通过 LUT 快速组合结果，减少传统 GEMM 中重复的乘加成本。</li>
+</ul>
+<p>这类方法的关键不是“是否做了量化”这么简单，而是量化后计算如何映射到内存布局、缓存和指令集。项目中因此同时关注 tiling、连续内存布局、缓存命中和不同 CPU 指令路径。</p>
+<h3 id="MNN-端侧推理优化"><a href="#MNN-端侧推理优化" class="headerlink" title="MNN 端侧推理优化"></a>MNN 端侧推理优化</h3><p>在 workshop 笔记中，我整理了 MNN 做端侧 LLM 推理优化时的几条主线：</p>
+<ul>
+<li>权重量化与 QAT。</li>
+<li>DiskEmbedding 降低内存压力。</li>
+<li>半精度与内存复用。</li>
+<li>prefill 与 decode 阶段的不同瓶颈。</li>
+<li>线性层中的 W4A8 量化、loop tiling 和指令选择。</li>
+<li>attention 层中的 F16 矩阵乘法、分块和 fused MHA kernel。</li>
+</ul>
+<p>这些内容帮助我把 LLM 推理拆成几个可分析的硬件瓶颈，而不是把“模型很慢”当成一个笼统问题。</p>
+<h2 id="实验与记录"><a href="#实验与记录" class="headerlink" title="实验与记录"></a>实验与记录</h2><p>项目材料中记录了 Qwen 系列小模型的推理优化路线，以及原始 FP16 与 4-bit 优化版本在吞吐、内存占用和首 token 延迟上的对比。实验报告中还包含 llama.cpp <code>batched-bench</code>、困惑度评估、长上下文测试等验证方向。</p>
+<p>这些实验让我形成了一个比较清晰的判断：端侧大模型优化不是单点技巧，而是一组协同设计问题。模型精度、量化粒度、内存布局、batch 策略、线程绑定和硬件指令都互相影响。</p>
+<h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个项目把我从“使用大模型”推到了“理解大模型怎么在硬件上运行”的层面。最有价值的部分是学会用工程指标拆解问题：prefill 为什么慢，decode 为什么受内存访问影响，低比特为什么不等于自动加速，以及为什么同一个模型在不同 backend 上会表现出截然不同的推理特征。</p>
+<p>后续如果继续深化，我会重点补充真实设备 profiling、不同量化方法的系统对比，以及更清楚的端到端部署复现实验。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Undergraduate-Projects/" class="category-chain-item">Undergraduate Projects</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/AICAS/" class="print-no-link">#AICAS</a>
+      
+        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tags/Quantization/" class="print-no-link">#Quantization</a>
+      
+        <a href="/tags/Edge-AI/" class="print-no-link">#Edge AI</a>
+      
+        <a href="/tags/Hardware-Software-Co-design/" class="print-no-link">#Hardware Software Co-design</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化</div>
+      <div>https://juneh01.github.io/projects/aicas-2025-llm-inference-optimization/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Zeng Junhao</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>March 20, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/projects/fyp-lightweight-6dof-pose-estimation/" title="Final Year Project - Lightweight 6DoF Pose Estimation">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Final Year Project - Lightweight 6DoF Pose Estimation</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/projects/information-security-labs/" title="Information Security - 安全实验整理">
+                        <span class="hidden-mobile">Information Security - 安全实验整理</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

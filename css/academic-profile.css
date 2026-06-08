@@ -1,0 +1,169 @@
+.about-avatar {
+  width: 8.5rem;
+  height: 8.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-name {
+  font-size: 2rem;
+}
+
+.about-intro {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.about-icons > a > i {
+  color: #1f5f9f;
+}
+
+.about-content {
+  margin-top: 2rem !important;
+}
+
+.academic-profile {
+  color: #1f2933;
+  line-height: 1.75;
+}
+
+.academic-profile a {
+  color: #145da0;
+  border-bottom: 1px solid rgba(20, 93, 160, 0.25);
+}
+
+.academic-profile a:hover {
+  color: #0f4c81;
+  border-bottom-color: rgba(15, 76, 129, 0.65);
+  text-decoration: none;
+}
+
+.profile-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  padding: 0 0 1.2rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1px solid #d9e2ec;
+}
+
+.profile-nav a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-bottom: 0;
+}
+
+.profile-section {
+  padding: 1.35rem 0;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.profile-section:last-child {
+  border-bottom: 0;
+}
+
+.profile-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #102a43;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.profile-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  color: #1f2933;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.interest-grid,
+.skill-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem 1.5rem;
+}
+
+.interest-grid > div,
+.skill-columns > div {
+  padding-left: 1rem;
+  border-left: 3px solid #b8d4ea;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.timeline-date {
+  color: #52616b;
+  font-weight: 700;
+}
+
+.timeline-body {
+  color: #26323f;
+}
+
+.project-list article {
+  padding: 1rem 0;
+  border-top: 1px solid #edf2f7;
+}
+
+.project-list article:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.project-meta {
+  margin: 0.1rem 0 0.45rem;
+  color: #697b8c;
+  font-size: 0.95rem;
+}
+
+.news-list,
+.compact-list {
+  padding-left: 1.15rem;
+}
+
+.news-list li,
+.compact-list li {
+  margin-bottom: 0.45rem;
+}
+
+.news-list span {
+  display: inline-block;
+  min-width: 4.7rem;
+  color: #52616b;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .about-name {
+    font-size: 1.7rem;
+  }
+
+  .profile-nav {
+    gap: 0.45rem 0.75rem;
+  }
+
+  .interest-grid,
+  .skill-columns,
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    gap: 0.25rem;
+  }
+
+  .news-list span {
+    display: block;
+    min-width: 0;
+  }
+}

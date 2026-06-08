@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Zeng Junhao">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="项目概览本科毕业设计题目是 Design of a Lightweight 6DoF Pose Estimation Algorithm。项目围绕 RGB-D 物体六自由度姿态估计展开，目标是在 HiPose 框架基础上探索更轻量、更高效的网络结构，使模型在保持姿态估计精度的同时减少不必要的计算。 这个项目的核心方案被整理为 HiPose-DG：在原始 HiPose 架构中加入动态空间门控和动态通">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Final Year Project - Lightweight 6DoF Pose Estimation">
+<meta property="og:url" content="https://juneh01.github.io/projects/fyp-lightweight-6dof-pose-estimation/index.html">
+<meta property="og:site_name" content="Zeng Junhao">
+<meta property="og:description" content="项目概览本科毕业设计题目是 Design of a Lightweight 6DoF Pose Estimation Algorithm。项目围绕 RGB-D 物体六自由度姿态估计展开，目标是在 HiPose 框架基础上探索更轻量、更高效的网络结构，使模型在保持姿态估计精度的同时减少不必要的计算。 这个项目的核心方案被整理为 HiPose-DG：在原始 HiPose 架构中加入动态空间门控和动态通">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-02T12:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-06T01:41:02.401Z">
+<meta property="article:author" content="Zeng Junhao">
+<meta property="article:tag" content="Computer Vision">
+<meta property="article:tag" content="6DoF Pose Estimation">
+<meta property="article:tag" content="RGB-D">
+<meta property="article:tag" content="HiPose">
+<meta property="article:tag" content="Model Compression">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Final Year Project - Lightweight 6DoF Pose Estimation - Zeng Junhao</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/academic-profile.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"juneh01.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/projects/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Final Year Project - Lightweight 6DoF Pose Estimation"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-02 20:00" pubdate>
+          June 2, 2025 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Final Year Project - Lightweight 6DoF Pose Estimation</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>本科毕业设计题目是 <strong>Design of a Lightweight 6DoF Pose Estimation Algorithm</strong>。项目围绕 RGB-D 物体六自由度姿态估计展开，目标是在 HiPose 框架基础上探索更轻量、更高效的网络结构，使模型在保持姿态估计精度的同时减少不必要的计算。</p>
+<p>这个项目的核心方案被整理为 HiPose-DG：在原始 HiPose 架构中加入动态空间门控和动态通道门控，让网络根据输入特征自适应选择更重要的空间区域和特征通道。</p>
+<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>6DoF 姿态估计要预测物体坐标系到相机坐标系之间的刚体变换，也就是旋转和平移。它是机器人抓取、增强现实、自动驾驶和工业检测中的基础问题。</p>
+<p>这个任务的困难主要来自：</p>
+<ul>
+<li>单目 RGB 图像存在深度歧义。</li>
+<li>目标物体可能低纹理、遮挡严重或形状相似。</li>
+<li>RGB-D 方法虽然引入了几何信息，但网络计算和后处理可能变得昂贵。</li>
+<li>传统姿态估计常依赖 RANSAC、ICP 或渲染式 refinement，速度和稳定性都可能受影响。</li>
+</ul>
+<p>HiPose 的优势在于使用层次化二进制表面编码，把 RGB-D 输入中的点与物体表面从粗到细建立对应，并通过逐步去除离群点替代昂贵的 RANSAC 过程。</p>
+<h2 id="技术路线"><a href="#技术路线" class="headerlink" title="技术路线"></a>技术路线</h2><h3 id="HiPose-基础框架"><a href="#HiPose-基础框架" class="headerlink" title="HiPose 基础框架"></a>HiPose 基础框架</h3><p>HiPose 的核心思想可以概括为：</p>
+<ul>
+<li>对 3D 物体模型表面进行层次化二进制编码。</li>
+<li>使用 RGB-D 网络预测输入点云和物体模型表面之间的 3D-3D 对应。</li>
+<li>先用粗粒度编码估计初始姿态。</li>
+<li>再逐步使用更细粒度编码，通过点到表面距离剔除离群点。</li>
+<li>最终得到不依赖额外 refinement 的 6DoF 姿态。</li>
+</ul>
+<p>这个框架本身已经比很多依赖迭代渲染或 RANSAC 的方法更直接，但网络前向和特征融合仍有进一步轻量化空间。</p>
+<h3 id="Dynamic-Spatial-Gating"><a href="#Dynamic-Spatial-Gating" class="headerlink" title="Dynamic Spatial Gating"></a>Dynamic Spatial Gating</h3><p>动态空间门控的目标是让模型把计算重点放在更有判别力的空间区域。例如，在目标物体边缘、局部几何变化明显、遮挡交界处，特征往往更关键；而背景或冗余区域可以减少计算权重。</p>
+<p>项目中将空间门控接入 PSPNet decoder，让 decoder 在恢复高分辨率特征时能够对不同空间位置分配不同重要性。</p>
+<h3 id="Dynamic-Channel-Gating"><a href="#Dynamic-Channel-Gating" class="headerlink" title="Dynamic Channel Gating"></a>Dynamic Channel Gating</h3><p>动态通道门控关注的是特征通道维度。不同输入图像或点云下，并不是每个通道都同等重要。通道门控希望选择更具判别性的特征通道，降低冗余计算。</p>
+<p>项目中将通道门控与 ConvNeXt backbone 结合，探索在 backbone 表达能力和计算效率之间的平衡。</p>
+<h3 id="Loss-与训练配置"><a href="#Loss-与训练配置" class="headerlink" title="Loss 与训练配置"></a>Loss 与训练配置</h3><p>为了避免门控机制简单地关闭过多特征导致精度下降，项目中设计了与门控相关的损失项。训练目标不只是姿态估计准确，也要鼓励模型形成合理的计算稀疏性。</p>
+<p>技术手册中记录了 Docker 环境、BOP 数据集准备、LMO 测试流程、训练命令、测试命令、checkpoint 记录和不同物体类别上的结果。</p>
+<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>主要实验集中在 LMO 数据集的多个物体类别上，例如 ape、can、cat、driller、duck、eggbox、glue 和 holepuncher。记录中对比了 original 与 revised PSPNet&#x2F;ConvNeXt 版本的 checkpoint 和评估表现。</p>
+<p>实验过程也暴露出一个重要问题：轻量化并不是单调收益。某些类别可能因为形状、遮挡或纹理特征不同，对门控更加敏感。因此轻量化策略需要和任务数据特性结合分析。</p>
+<h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个项目把论文理解、代码修改、训练环境、数据集结构、GPU 实验和结果分析串在了一起。相比单纯阅读 HiPose，我真正体会到一个视觉模型从想法到可运行实验之间有大量工程细节：Docker 环境、CUDA 版本、数据目录、GT 生成、checkpoint 管理、评估脚本和结果复核缺一不可。</p>
+<p>后续可以继续补充的方向包括：更系统的 FLOPs&#x2F;latency profiling、更稳定的门控损失权重搜索、不同 backbone 的对比，以及在更多 BOP 数据集上的泛化测试。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Undergraduate-Projects/" class="category-chain-item">Undergraduate Projects</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Computer-Vision/" class="print-no-link">#Computer Vision</a>
+      
+        <a href="/tags/6DoF-Pose-Estimation/" class="print-no-link">#6DoF Pose Estimation</a>
+      
+        <a href="/tags/RGB-D/" class="print-no-link">#RGB-D</a>
+      
+        <a href="/tags/HiPose/" class="print-no-link">#HiPose</a>
+      
+        <a href="/tags/Model-Compression/" class="print-no-link">#Model Compression</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Final Year Project - Lightweight 6DoF Pose Estimation</div>
+      <div>https://juneh01.github.io/projects/fyp-lightweight-6dof-pose-estimation/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Zeng Junhao</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>June 2, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/projects/aicas-2025-llm-inference-optimization/" title="IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化">
+                        <span class="hidden-mobile">IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

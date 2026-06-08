@@ -4,6 +4,327 @@
   
   
   <entry>
+    <title>Final Year Project - Lightweight 6DoF Pose Estimation</title>
+    <link href="/projects/fyp-lightweight-6dof-pose-estimation/"/>
+    <url>/projects/fyp-lightweight-6dof-pose-estimation/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>本科毕业设计题目是 <strong>Design of a Lightweight 6DoF Pose Estimation Algorithm</strong>。项目围绕 RGB-D 物体六自由度姿态估计展开，目标是在 HiPose 框架基础上探索更轻量、更高效的网络结构，使模型在保持姿态估计精度的同时减少不必要的计算。</p><p>这个项目的核心方案被整理为 HiPose-DG：在原始 HiPose 架构中加入动态空间门控和动态通道门控，让网络根据输入特征自适应选择更重要的空间区域和特征通道。</p><h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>6DoF 姿态估计要预测物体坐标系到相机坐标系之间的刚体变换，也就是旋转和平移。它是机器人抓取、增强现实、自动驾驶和工业检测中的基础问题。</p><p>这个任务的困难主要来自：</p><ul><li>单目 RGB 图像存在深度歧义。</li><li>目标物体可能低纹理、遮挡严重或形状相似。</li><li>RGB-D 方法虽然引入了几何信息，但网络计算和后处理可能变得昂贵。</li><li>传统姿态估计常依赖 RANSAC、ICP 或渲染式 refinement，速度和稳定性都可能受影响。</li></ul><p>HiPose 的优势在于使用层次化二进制表面编码，把 RGB-D 输入中的点与物体表面从粗到细建立对应，并通过逐步去除离群点替代昂贵的 RANSAC 过程。</p><h2 id="技术路线"><a href="#技术路线" class="headerlink" title="技术路线"></a>技术路线</h2><h3 id="HiPose-基础框架"><a href="#HiPose-基础框架" class="headerlink" title="HiPose 基础框架"></a>HiPose 基础框架</h3><p>HiPose 的核心思想可以概括为：</p><ul><li>对 3D 物体模型表面进行层次化二进制编码。</li><li>使用 RGB-D 网络预测输入点云和物体模型表面之间的 3D-3D 对应。</li><li>先用粗粒度编码估计初始姿态。</li><li>再逐步使用更细粒度编码，通过点到表面距离剔除离群点。</li><li>最终得到不依赖额外 refinement 的 6DoF 姿态。</li></ul><p>这个框架本身已经比很多依赖迭代渲染或 RANSAC 的方法更直接，但网络前向和特征融合仍有进一步轻量化空间。</p><h3 id="Dynamic-Spatial-Gating"><a href="#Dynamic-Spatial-Gating" class="headerlink" title="Dynamic Spatial Gating"></a>Dynamic Spatial Gating</h3><p>动态空间门控的目标是让模型把计算重点放在更有判别力的空间区域。例如，在目标物体边缘、局部几何变化明显、遮挡交界处，特征往往更关键；而背景或冗余区域可以减少计算权重。</p><p>项目中将空间门控接入 PSPNet decoder，让 decoder 在恢复高分辨率特征时能够对不同空间位置分配不同重要性。</p><h3 id="Dynamic-Channel-Gating"><a href="#Dynamic-Channel-Gating" class="headerlink" title="Dynamic Channel Gating"></a>Dynamic Channel Gating</h3><p>动态通道门控关注的是特征通道维度。不同输入图像或点云下，并不是每个通道都同等重要。通道门控希望选择更具判别性的特征通道，降低冗余计算。</p><p>项目中将通道门控与 ConvNeXt backbone 结合，探索在 backbone 表达能力和计算效率之间的平衡。</p><h3 id="Loss-与训练配置"><a href="#Loss-与训练配置" class="headerlink" title="Loss 与训练配置"></a>Loss 与训练配置</h3><p>为了避免门控机制简单地关闭过多特征导致精度下降，项目中设计了与门控相关的损失项。训练目标不只是姿态估计准确，也要鼓励模型形成合理的计算稀疏性。</p><p>技术手册中记录了 Docker 环境、BOP 数据集准备、LMO 测试流程、训练命令、测试命令、checkpoint 记录和不同物体类别上的结果。</p><h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>主要实验集中在 LMO 数据集的多个物体类别上，例如 ape、can、cat、driller、duck、eggbox、glue 和 holepuncher。记录中对比了 original 与 revised PSPNet&#x2F;ConvNeXt 版本的 checkpoint 和评估表现。</p><p>实验过程也暴露出一个重要问题：轻量化并不是单调收益。某些类别可能因为形状、遮挡或纹理特征不同，对门控更加敏感。因此轻量化策略需要和任务数据特性结合分析。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个项目把论文理解、代码修改、训练环境、数据集结构、GPU 实验和结果分析串在了一起。相比单纯阅读 HiPose，我真正体会到一个视觉模型从想法到可运行实验之间有大量工程细节：Docker 环境、CUDA 版本、数据目录、GT 生成、checkpoint 管理、评估脚本和结果复核缺一不可。</p><p>后续可以继续补充的方向包括：更系统的 FLOPs&#x2F;latency profiling、更稳定的门控损失权重搜索、不同 backbone 的对比，以及在更多 BOP 数据集上的泛化测试。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Computer Vision</tag>
+      
+      <tag>6DoF Pose Estimation</tag>
+      
+      <tag>RGB-D</tag>
+      
+      <tag>HiPose</tag>
+      
+      <tag>Model Compression</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化</title>
+    <link href="/projects/aicas-2025-llm-inference-optimization/"/>
+    <url>/projects/aicas-2025-llm-inference-optimization/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>IEEE AICAS 2025 Grand Challenge 的“大模型软硬系统优化”赛道关注大语言模型在资源受限硬件上的高效推理。这个项目的核心问题并不是简单地把模型跑起来，而是在有限内存、有限算力和严格延迟约束下，让模型尽可能稳定、快速、低成本地完成推理。</p><p>我整理和实践的重点集中在端侧 LLM 推理优化：低比特权重量化、查找表计算、矩阵乘法分块、CPU 指令优化、prefill&#x2F;decode 阶段瓶颈分析，以及 MNN、T-MAC、llama.cpp 等推理框架的部署思路。</p><h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>大模型部署到边缘设备时，主要瓶颈来自三个方面：</p><ul><li><strong>计算开销</strong>：FP16&#x2F;FP32 推理依赖大量矩阵乘法，CPU 上传统 GEMM 很难取得足够吞吐。</li><li><strong>内存占用</strong>：即使是 0.5B 级别模型，未压缩参数和 KV cache 也会给内存带来压力。</li><li><strong>功耗与延迟</strong>：端侧场景不能只追求峰值性能，还要考虑稳定延迟和能耗。</li></ul><p>因此，项目目标可以概括为：在不显著牺牲精度的前提下，通过量化和计算路径重排降低模型体积、减少内存访问，并提升 CPU&#x2F;端侧硬件上的推理吞吐。</p><h2 id="技术路线"><a href="#技术路线" class="headerlink" title="技术路线"></a>技术路线</h2><h3 id="低比特量化"><a href="#低比特量化" class="headerlink" title="低比特量化"></a>低比特量化</h3><p>项目中重点关注 4-bit 权重量化路径。低比特量化可以显著降低模型参数体积，减少内存带宽压力。围绕量化配置，我记录了 bits、group size、activation setting 等参数对推理行为的影响。</p><p>量化带来的收益主要有两类：</p><ul><li>模型参数体积降低，端侧加载更容易。</li><li>线性层计算可以转化为更硬件友好的低比特计算流程。</li></ul><p>量化的风险也很明显：过低比特会带来困惑度上升、输出质量下降，甚至在某些任务中出现明显退化。因此项目文档里没有只记录速度，也同时关注精度和 PPL 变化。</p><h3 id="T-MAC-查找表计算"><a href="#T-MAC-查找表计算" class="headerlink" title="T-MAC 查找表计算"></a>T-MAC 查找表计算</h3><p>T-MAC 的思路是把低比特权重拆解成多个 1-bit 矩阵，再按若干 bit 分组，对可能出现的 bit pattern 进行查找表预计算。在线推理时，部分乘加操作可以替换成查表与累加。</p><p>这个过程包含两个阶段：</p><ul><li><strong>Offline stage</strong>：对权重进行分解、分组、重排，生成计算所需的 LUT。</li><li><strong>Online stage</strong>：输入激活后，通过 LUT 快速组合结果，减少传统 GEMM 中重复的乘加成本。</li></ul><p>这类方法的关键不是“是否做了量化”这么简单，而是量化后计算如何映射到内存布局、缓存和指令集。项目中因此同时关注 tiling、连续内存布局、缓存命中和不同 CPU 指令路径。</p><h3 id="MNN-端侧推理优化"><a href="#MNN-端侧推理优化" class="headerlink" title="MNN 端侧推理优化"></a>MNN 端侧推理优化</h3><p>在 workshop 笔记中，我整理了 MNN 做端侧 LLM 推理优化时的几条主线：</p><ul><li>权重量化与 QAT。</li><li>DiskEmbedding 降低内存压力。</li><li>半精度与内存复用。</li><li>prefill 与 decode 阶段的不同瓶颈。</li><li>线性层中的 W4A8 量化、loop tiling 和指令选择。</li><li>attention 层中的 F16 矩阵乘法、分块和 fused MHA kernel。</li></ul><p>这些内容帮助我把 LLM 推理拆成几个可分析的硬件瓶颈，而不是把“模型很慢”当成一个笼统问题。</p><h2 id="实验与记录"><a href="#实验与记录" class="headerlink" title="实验与记录"></a>实验与记录</h2><p>项目材料中记录了 Qwen 系列小模型的推理优化路线，以及原始 FP16 与 4-bit 优化版本在吞吐、内存占用和首 token 延迟上的对比。实验报告中还包含 llama.cpp <code>batched-bench</code>、困惑度评估、长上下文测试等验证方向。</p><p>这些实验让我形成了一个比较清晰的判断：端侧大模型优化不是单点技巧，而是一组协同设计问题。模型精度、量化粒度、内存布局、batch 策略、线程绑定和硬件指令都互相影响。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个项目把我从“使用大模型”推到了“理解大模型怎么在硬件上运行”的层面。最有价值的部分是学会用工程指标拆解问题：prefill 为什么慢，decode 为什么受内存访问影响，低比特为什么不等于自动加速，以及为什么同一个模型在不同 backend 上会表现出截然不同的推理特征。</p><p>后续如果继续深化，我会重点补充真实设备 profiling、不同量化方法的系统对比，以及更清楚的端到端部署复现实验。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AICAS</tag>
+      
+      <tag>LLM</tag>
+      
+      <tag>Quantization</tag>
+      
+      <tag>Edge AI</tag>
+      
+      <tag>Hardware Software Co-design</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Information Security - 安全实验整理</title>
+    <link href="/projects/information-security-labs/"/>
+    <url>/projects/information-security-labs/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>Information Security 课程材料包含多次实验报告、模板和实验记录。这个板块主要用于整理本科阶段信息安全课程中的工具使用、实验过程和安全分析方法。</p><h2 id="学习重点"><a href="#学习重点" class="headerlink" title="学习重点"></a>学习重点</h2><p>信息安全课程通常覆盖密码学、系统安全、网络安全和安全工程基础。实验关注的不只是“攻击是否成功”，还包括漏洞形成原因、攻击路径、风险影响和防护思路。</p><h2 id="实验记录方式"><a href="#实验记录方式" class="headerlink" title="实验记录方式"></a>实验记录方式</h2><p>安全实验报告通常需要包含：</p><ul><li>实验目标。</li><li>环境配置。</li><li>工具和命令。</li><li>攻击或验证步骤。</li><li>关键截图或日志。</li><li>原因分析。</li><li>防护建议。</li></ul><p>这种结构让我意识到安全工作必须可复现、可解释，而不是只展示最终结果。</p><h2 id="方法沉淀"><a href="#方法沉淀" class="headerlink" title="方法沉淀"></a>方法沉淀</h2><p>课程实验训练了几个习惯：</p><ul><li>对环境和版本保持敏感。</li><li>记录每一步输入输出。</li><li>区分现象、原因和影响。</li><li>在结论中同时考虑攻击者视角和防御者视角。</li></ul><p>这些习惯在后续调试复杂工程项目时也很有用。</p><h2 id="后续整理方向"><a href="#后续整理方向" class="headerlink" title="后续整理方向"></a>后续整理方向</h2><p>由于安全实验可能包含具体漏洞、环境细节或截图，公开页面暂时只保留课程项目摘要。后续如果要公开详细实验，需要先清理敏感信息，避免暴露账号、内部环境或可被滥用的细节。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Information Security</tag>
+      
+      <tag>Security Lab</tag>
+      
+      <tag>Cryptography</tag>
+      
+      <tag>System Security</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>RTCSA - 实时计算系统实验</title>
+    <link href="/projects/rtcsa-realtime-system-labs/"/>
+    <url>/projects/rtcsa-realtime-system-labs/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>RTCSA 课程项目围绕实时计算系统和嵌入式实时任务展开。目录中包含复习笔记和多次 lab report，覆盖实时任务、调度、RTOS 实验和系统分析。</p><p>实时系统的核心不是平均速度最快，而是在 deadline 内稳定完成任务。这一点和普通通用计算系统有明显区别。</p><h2 id="实时系统关注点"><a href="#实时系统关注点" class="headerlink" title="实时系统关注点"></a>实时系统关注点</h2><p>RTCSA 实验中需要关注：</p><ul><li>任务周期。</li><li>deadline。</li><li>worst-case execution time。</li><li>优先级。</li><li>抢占与非抢占调度。</li><li>任务同步和资源竞争。</li><li>嵌入式环境下的可预测性。</li></ul><p>这些概念对机器人、自动驾驶、工业控制和嵌入式 AI 都很重要。一个系统如果偶尔很快但偶尔错过 deadline，在实时场景中就是不可靠的。</p><h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><p>课程目录包含 Lab1、Lab2、Lab3、Lab4 以及任务代码和实验报告。实验大致覆盖：</p><ul><li>RTOS 基础任务创建与运行。</li><li>多任务调度行为观察。</li><li>任务优先级和调度策略实验。</li><li>实时任务中的资源竞争或同步问题。</li><li>实验结果记录与分析。</li></ul><h2 id="我的理解"><a href="#我的理解" class="headerlink" title="我的理解"></a>我的理解</h2><p>RTCSA 让我把“性能”从单一吞吐扩展为时间可预测性。在实时系统里，最坏情况比平均情况更重要，任务之间的调度关系比单个函数的速度更重要。</p><p>这和 AICAS、TDPS 也有关联：端侧推理和嵌入式小车都不是只追求一次运行最快，而是要在给定时间预算内稳定完成感知、通信和控制。</p><h2 id="后续整理方向"><a href="#后续整理方向" class="headerlink" title="后续整理方向"></a>后续整理方向</h2><p>后续可以把每个 lab 拆成更细的文章，例如：</p><ul><li>实时任务调度实验。</li><li>RTOS 多任务同步。</li><li>deadline miss 分析。</li><li>嵌入式实时系统中的 profiling。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>RTCSA</tag>
+      
+      <tag>Real-time Systems</tag>
+      
+      <tag>RTOS</tag>
+      
+      <tag>Embedded Systems</tag>
+      
+      <tag>Scheduling</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>VLSI Design - 实验与硬件设计流程</title>
+    <link href="/projects/vlsi-design-labs/"/>
+    <url>/projects/vlsi-design-labs/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>VLSI Design 课程材料包含多次实验报告、作业解答和设计视频资料。这个板块主要记录超大规模集成电路设计流程中的实验训练，包括从设计描述、仿真验证到报告分析的完整过程。</p><h2 id="学习重点"><a href="#学习重点" class="headerlink" title="学习重点"></a>学习重点</h2><p>VLSI 设计和普通软件开发有明显差异。软件代码描述的是顺序逻辑和控制流程，而硬件描述语言描述的是电路结构、时序关系和并行行为。</p><p>课程实验关注的问题包括：</p><ul><li>数字逻辑设计。</li><li>电路结构描述。</li><li>仿真波形验证。</li><li>时序分析。</li><li>面积、功耗和延迟之间的权衡。</li><li>EDA 工具流程。</li></ul><h2 id="实验沉淀"><a href="#实验沉淀" class="headerlink" title="实验沉淀"></a>实验沉淀</h2><p>目录中包含 Lab1、Lab2、Lab3、Lab4 等实验记录，以及相应 assets 和 homework solutions。每次实验都要求把设计目标、实现方式、仿真结果和问题分析写清楚。</p><p>这种训练对硬件项目很重要，因为硬件设计一旦进入综合或流片阶段，修复成本远高于软件。因此设计前的规格理解、仿真覆盖和结果解释都非常关键。</p><h2 id="与其他项目的联系"><a href="#与其他项目的联系" class="headerlink" title="与其他项目的联系"></a>与其他项目的联系</h2><p>VLSI 课程和 SR 中的 ReAFM、DeFiNES、AICAS 方向有很强关联：</p><ul><li>ReAFM 需要理解算子如何映射为硬件模块。</li><li>DeFiNES 关注 DNN accelerator 的调度和架构。</li><li>AICAS 关注模型推理如何适配端侧硬件。</li></ul><p>VLSI 提供的是硬件设计的基础语言和思维方式。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个课程项目让我更熟悉硬件设计流程，也让我理解了为什么 AI 系统优化不能只停留在模型层。真正的性能来自算法、编译、调度、存储结构和硬件实现之间的协同。</p><p>后续可以继续补充每个 lab 的具体目标、使用工具、仿真图和遇到的问题。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Lab</tag>
+      
+      <tag>VLSI</tag>
+      
+      <tag>Digital Design</tag>
+      
+      <tag>Hardware</tag>
+      
+      <tag>EDA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SR - 模型剪枝与压缩调研</title>
+    <link href="/projects/sr-pruning-and-compression/"/>
+    <url>/projects/sr-pruning-and-compression/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>SR 中的 Pruning &#x2F; CrAM 板块关注模型压缩和压缩感知优化。材料中包含 CrAM 相关论文、不同版本代码目录和剪枝方向 review。它与 AICAS、ReAFM、DeFiNES 属于同一条大线：如何让神经网络在有限资源下更高效运行。</p><h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>深度神经网络通常包含大量冗余参数。剪枝的目标是删除不重要的权重、通道、注意力头或结构单元，在尽量保持精度的同时减少计算量和存储成本。</p><p>常见剪枝方向包括：</p><ul><li>非结构化权重剪枝。</li><li>结构化通道剪枝。</li><li>block pruning。</li><li>动态稀疏。</li><li>训练时压缩感知优化。</li></ul><p>剪枝的难点不是“删掉参数”本身，而是如何判断哪些参数可以删、删完之后如何恢复精度，以及稀疏结构能否真正被硬件加速。</p><h2 id="CrAM-方向"><a href="#CrAM-方向" class="headerlink" title="CrAM 方向"></a>CrAM 方向</h2><p>CrAM 的核心关注点是 compression-aware minimization。它试图在训练或优化过程中考虑模型被压缩后的表现，而不是训练完后再被动剪枝。</p><p>这类方法的直觉是：如果一个模型在优化阶段就被引导到更适合压缩的参数区域，那么后续剪枝或量化造成的性能损失可能更小。</p><h2 id="调研重点"><a href="#调研重点" class="headerlink" title="调研重点"></a>调研重点</h2><p>我在这个方向上主要关注几个问题：</p><ul><li>剪枝指标如何定义，例如权重大小、梯度、Hessian 近似或 activation sensitivity。</li><li>剪枝后是否需要 fine-tuning。</li><li>稀疏比例和精度下降之间如何权衡。</li><li>结构化剪枝和硬件实际加速之间的关系。</li><li>压缩感知训练如何影响模型最终落点。</li></ul><h2 id="与其他项目的联系"><a href="#与其他项目的联系" class="headerlink" title="与其他项目的联系"></a>与其他项目的联系</h2><p>这个方向和其他本科项目之间有明显关联：</p><ul><li>和 AICAS 的低比特量化共同服务于端侧部署。</li><li>和 DeFiNES 一样关注硬件友好的模型执行。</li><li>和 ReAFM 一样站在神经网络系统实现角度理解模型。</li><li>和 FYP 的动态门控也有相似思想：不是所有特征都值得同等计算。</li></ul><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>剪枝调研让我更清楚地认识到，模型效率不只是一个训练后压缩步骤，而是一种贯穿模型设计、训练、部署和硬件映射的思路。</p><p>后续如果继续做，可以加入具体模型上的剪枝实验，例如比较剪枝前后参数量、FLOPs、latency 和 accuracy 的变化，并验证稀疏模式是否能真正带来实际推理加速。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Model Compression</tag>
+      
+      <tag>Scientific Research</tag>
+      
+      <tag>Pruning</tag>
+      
+      <tag>CrAM</tag>
+      
+      <tag>Efficient AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SR - DeFiNES DNN Accelerator 调度空间探索</title>
+    <link href="/projects/sr-defines-dnn-accelerator-exploration/"/>
+    <url>/projects/sr-defines-dnn-accelerator-exploration/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>DeFiNES 是一个面向 DNN accelerator 的 design space exploration 框架，全称为 <strong>Enabling Fast Exploration of the Depth-first Scheduling Space for DNN Accelerators through Analytical Modeling</strong>。我在 SR 阶段整理了论文、源码和复现实验说明，重点理解 depth-first scheduling 对能耗和延迟的影响。</p><p>这个方向把神经网络计算映射到硬件架构和调度策略上，关注的不再是某个网络能否训练，而是一个 workload 如何在 accelerator 上更高效执行。</p><h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>DNN accelerator 的性能不仅取决于硬件结构，也取决于调度方式。对于卷积神经网络等 workload，不同层之间、不同 tile 之间的数据复用方式会直接影响片上存储、DRAM 访问、能耗和延迟。</p><p>传统 layer-by-layer scheduling 会逐层执行网络，而 depth-first scheduling 尝试跨层融合更多计算，在局部区域内连续处理多个层，以提升数据复用。</p><p>但 depth-first scheduling 的设计空间很大，包括：</p><ul><li>tile size。</li><li>fuse depth。</li><li>X&#x2F;Y 方向划分。</li><li>workload 类型。</li><li>accelerator 架构参数。</li></ul><p>DeFiNES 的价值就在于用分析模型快速探索这些组合，而不是完全依赖耗时仿真。</p><h2 id="工具链理解"><a href="#工具链理解" class="headerlink" title="工具链理解"></a>工具链理解</h2><p>DeFiNES 的复现材料中包含：</p><ul><li>workload 输入。</li><li>hardware architecture 输入。</li><li>depth-first scheduling 参数。</li><li>自动运行实验脚本。</li><li>结果 pickle 文件。</li><li>plot 脚本和可视化图。</li></ul><p>官方 artifact 中以 FSRCNN 在 Meta-prototype-like depth-first architecture 上的调度探索为例，遍历多种 depth-first scheduling options，并输出能耗和延迟对比图。</p><h2 id="关键学习点"><a href="#关键学习点" class="headerlink" title="关键学习点"></a>关键学习点</h2><h3 id="Scheduling-是一等设计变量"><a href="#Scheduling-是一等设计变量" class="headerlink" title="Scheduling 是一等设计变量"></a>Scheduling 是一等设计变量</h3><p>做神经网络加速时，模型结构、硬件结构和调度策略必须一起考虑。同一个 workload 在不同调度方式下，DRAM 访问和片上复用会有很大差别。</p><h3 id="能耗与延迟并不总是一致"><a href="#能耗与延迟并不总是一致" class="headerlink" title="能耗与延迟并不总是一致"></a>能耗与延迟并不总是一致</h3><p>某些调度可能降低能耗，但不一定带来最低延迟。设计空间探索的意义在于找到 Pareto front，而不是只看单一指标。</p><h3 id="分析模型能加快早期探索"><a href="#分析模型能加快早期探索" class="headerlink" title="分析模型能加快早期探索"></a>分析模型能加快早期探索</h3><p>完整硬件仿真通常很慢，而分析模型可以在早期快速筛选设计点，为后续更精细仿真或实现缩小范围。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>DeFiNES 让我第一次从“模型部署”进一步看到“模型调度和硬件映射”。这和后续 AICAS 端侧大模型优化有明显联系：无论是 CNN accelerator 还是 LLM inference，最终都绕不开数据移动、缓存、tile、并行度和硬件瓶颈。</p><p>如果继续完善这篇项目记录，我会补充自己跑出的结果图、不同 tile 参数的对比，以及和 ZigZag 等 DSE 工具的关系。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Scheduling</tag>
+      
+      <tag>Scientific Research</tag>
+      
+      <tag>DNN Accelerator</tag>
+      
+      <tag>DeFiNES</tag>
+      
+      <tag>Design Space Exploration</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SR - ReAFM 可重构激活函数模块调研</title>
+    <link href="/projects/sr-reafm-activation-function-module/"/>
+    <url>/projects/sr-reafm-activation-function-module/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>ReAFM 方向关注神经网络中非线性激活函数的硬件实现。项目材料中包含 ReAFM 论文、不同版本实现目录、MinusExp、ReLU、OPart 等模块，以及高精度、可重构、对称性感知的 element-wise activation function 硬件架构相关论文。</p><p>它属于硬件友好神经网络方向：不是研究新的深度模型结构，而是研究神经网络中的常用算子如何在硬件上更高效、更灵活地实现。</p><h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>神经网络硬件加速器中，卷积、矩阵乘法等线性计算通常最受关注，但激活函数同样会影响整体效率。尤其是 sigmoid、tanh、GELU、SiLU 这类非线性函数，如果直接用高精度数学函数实现，会带来面积、功耗或延迟成本。</p><p>常见实现策略包括：</p><ul><li>查找表。</li><li>分段线性近似。</li><li>多项式近似。</li><li>CORDIC 或指数函数近似。</li><li>针对特定激活函数的专用电路。</li></ul><p>ReAFM 方向关注的是是否能用一个可重构模块支持多类激活函数，从而减少为每个函数单独设计硬件的成本。</p><h2 id="技术关注点"><a href="#技术关注点" class="headerlink" title="技术关注点"></a>技术关注点</h2><h3 id="可重构性"><a href="#可重构性" class="headerlink" title="可重构性"></a>可重构性</h3><p>可重构激活函数模块希望在同一套硬件中支持 ReLU、sigmoid、tanh、GELU 或指数相关函数。这样在不同网络层或不同模型部署时，可以通过配置切换函数形式。</p><p>这类设计需要解决的问题是：通用性提高后，面积和延迟是否仍可接受。</p><h3 id="精度与硬件成本"><a href="#精度与硬件成本" class="headerlink" title="精度与硬件成本"></a>精度与硬件成本</h3><p>激活函数近似必须在精度和成本之间取舍。误差过大会影响网络推理质量，精度过高又会增加硬件复杂度。</p><p>因此，调研中关注：</p><ul><li>近似误差如何度量。</li><li>不同位宽下误差和硬件成本的关系。</li><li>对称性是否可以减少计算量。</li><li>函数分段方式如何影响 LUT 大小和插值复杂度。</li></ul><h3 id="Element-wise-算子硬件化"><a href="#Element-wise-算子硬件化" class="headerlink" title="Element-wise 算子硬件化"></a>Element-wise 算子硬件化</h3><p>激活函数本质上是 element-wise operation。它不需要复杂数据复用，但会大量出现在网络中。因此单个算子延迟看似不大，累积后仍可能影响 pipeline。</p><p>这个方向让我把神经网络中的“函数”看成硬件模块，而不只是 Python 里的 API。</p><h2 id="我的工作与沉淀"><a href="#我的工作与沉淀" class="headerlink" title="我的工作与沉淀"></a>我的工作与沉淀</h2><p>在这个方向上，我主要做了论文调研、代码&#x2F;版本整理和不同 ReAFM 实现形式的理解。目录中保留了 ReAFM_v1、ReAFM_v2、ReAFM_ReLU、ReAFM_MinusExp、ReAFM_OPart 等阶段性材料。</p><p>虽然这部分不像 FYP 那样形成完整系统实验，但它帮我建立了神经网络硬件加速的算子级视角：模型压缩、量化和硬件算子设计本质上都在回答“如何用更少资源表示足够好的函数”。</p><h2 id="后续方向"><a href="#后续方向" class="headerlink" title="后续方向"></a>后续方向</h2><p>如果继续深入，可以补充：</p><ul><li>不同激活函数近似方法的误差曲线。</li><li>Verilog&#x2F;VHDL 或 HLS 实现对比。</li><li>面积、功耗、时延和精度的统一评估表。</li><li>与量化神经网络部署的结合。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Scientific Research</tag>
+      
+      <tag>Neural Network Hardware</tag>
+      
+      <tag>Activation Function</tag>
+      
+      <tag>ReAFM</tag>
+      
+      <tag>Hardware Design</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>lalalala</title>
+    <link href="/2024/10/18/lalalala/"/>
+    <url>/2024/10/18/lalalala/</url>
+    
+    <content type="html"><![CDATA[<p>hello world</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/2024/10/18/lalala/"/>
+    <url>/2024/10/18/lalala/</url>
+    
+    <content type="html"><![CDATA[<p>kskskskjk</p><p>ksks</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SR - HiPose 与 6DoF 姿态估计调研</title>
+    <link href="/projects/sr-hipose-and-pose-estimation/"/>
+    <url>/projects/sr-hipose-and-pose-estimation/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>SR 目录中的 HiPose &#x2F; HiPose Former 板块是我本科科研训练中最重要的视觉方向积累之一。它围绕 RGB-D 物体 6DoF 姿态估计展开，包含 HiPose 论文学习、RANSAC 学习、OnePose 调研、BOP 数据集和后续毕业设计相关实验。</p><p>这个方向后来直接延伸到了我的毕业设计，所以它既是科研训练的一部分，也是后续 FYP 的技术基础。</p><h2 id="HiPose-核心思想"><a href="#HiPose-核心思想" class="headerlink" title="HiPose 核心思想"></a>HiPose 核心思想</h2><p>HiPose 面向 RGB-D 输入，目标是估计目标物体相对于相机的旋转和平移。它的关键贡献在于用层次化二进制表面编码建立 3D-3D 对应，并通过粗到细的匹配过程逐步剔除离群点。</p><p>相比传统流程，HiPose 的特点是：</p><ul><li>不依赖 RGB-only 方法中的 2D-3D PnP。</li><li>不需要昂贵的 RANSAC 姿态求解。</li><li>不需要额外渲染式 refinement。</li><li>能同时利用 RGB 外观和深度几何信息。</li></ul><h2 id="层次化二进制表面编码"><a href="#层次化二进制表面编码" class="headerlink" title="层次化二进制表面编码"></a>层次化二进制表面编码</h2><p>对于一个有 CAD 或扫描模型的物体，HiPose 会对物体表面进行分层划分，并为顶点分配二进制编码。编码的前几位对应粗粒度子表面，更多位对应更细粒度表面。</p><p>这样，网络预测出的二进制码可以被解释为从粗到细的表面匹配：</p><ul><li>前几位用于稳健初始姿态估计。</li><li>后续位逐步细化对应区域。</li><li>每一轮可以利用点到表面距离剔除错误匹配。</li></ul><p>这是一种很优雅的结构：它把离群点处理融入层次化匹配过程，而不是把所有对应点一次性丢给 RANSAC。</p><h2 id="RANSAC-学习"><a href="#RANSAC-学习" class="headerlink" title="RANSAC 学习"></a>RANSAC 学习</h2><p>为了理解 HiPose 为什么强调“不需要 RANSAC”，我也单独整理过 RANSAC 学习笔记。</p><p>RANSAC 的基本思想是从带有离群点的数据中随机采样最小点集，拟合模型，再统计内点数量。它在几何估计中很常见，但也存在迭代次数、随机性和耗时问题。</p><p>在姿态估计中，如果对应点质量很不稳定，RANSAC 会变成一个必要但昂贵的后处理。HiPose 的层次化剔除策略则尝试直接提高对应质量和求解稳定性。</p><h2 id="与后续工作的关系"><a href="#与后续工作的关系" class="headerlink" title="与后续工作的关系"></a>与后续工作的关系</h2><p>这部分 SR 工作为毕业设计打下了基础：</p><ul><li>明确了 RGB-D 姿态估计的输入输出和数据集结构。</li><li>理解了 HiPose 的表面编码、对应预测和姿态求解流程。</li><li>熟悉了 BOP benchmark、LMO&#x2F;TLESS&#x2F;YCBV 等常见数据集。</li><li>为后续动态门控和轻量化设计提供了算法背景。</li></ul><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个方向让我意识到，计算机视觉模型的“精度”不只来自 backbone 或 loss，也来自任务建模方式。HiPose 通过重新设计对应关系和求解流程，把几何结构用进了网络输出和后处理中，这比单纯堆网络层数更有启发。</p><p>之后如果继续整理，我会把 HiPose 算法笔记、RANSAC 笔记和 FYP 技术手册拆成更完整的系列文章。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Computer Vision</tag>
+      
+      <tag>6DoF Pose Estimation</tag>
+      
+      <tag>RGB-D</tag>
+      
+      <tag>HiPose</tag>
+      
+      <tag>Scientific Research</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hipose_笔记</title>
     <link href="/2024/10/16/Hipose_%E7%AC%94%E8%AE%B0/"/>
     <url>/2024/10/16/Hipose_%E7%AC%94%E8%AE%B0/</url>
@@ -75,6 +396,268 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Team Design Project - STM32 与 OpenMV 小车项目</title>
+    <link href="/projects/tdps-embedded-robot-project/"/>
+    <url>/projects/tdps-embedded-robot-project/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>Team Design Project 主要围绕嵌入式小车系统展开，项目材料包含 STM32 主控、OpenMV 视觉识别、UART 通信、电机与编码器、ST-LINK、RGB 检测代码和移动机器人相关参考资料。</p><p>这个项目是典型的软硬件结合实践：上层要做视觉检测和目标识别，下层要控制电机运动，中间还要通过串口通信把感知结果传给主控。</p><h2 id="硬件组成"><a href="#硬件组成" class="headerlink" title="硬件组成"></a>硬件组成</h2><p>项目涉及的硬件模块包括：</p><ul><li>STM32 主控板。</li><li>OpenMV 摄像头模块。</li><li>编码器电机。</li><li>TB6612 等电机驱动。</li><li>ST-LINK 下载调试工具。</li><li>小车底盘与机械结构。</li></ul><p>这些模块之间的集成比单独写代码复杂得多。硬件接线、电源、电机方向、编码器反馈、串口波特率和调试工具都可能成为系统运行的瓶颈。</p><h2 id="OpenMV-视觉识别"><a href="#OpenMV-视觉识别" class="headerlink" title="OpenMV 视觉识别"></a>OpenMV 视觉识别</h2><p>OpenMV 端主要负责颜色识别和目标检测。材料中包含 <code>RGBdetecting.py</code>、<code>single_color_rgb565_blob_tracking_1.py</code>、<code>TDPS.py</code>、<code>uart.py</code> 等脚本。</p><p>视觉部分的典型流程：</p><ol><li>从摄像头读取图像。</li><li>将图像转换到适合颜色阈值检测的格式。</li><li>根据 RGB565 或颜色阈值检测目标 blob。</li><li>计算目标位置、面积或偏移量。</li><li>通过 UART 将检测结果发送给 STM32。</li></ol><p>这部分让我熟悉了嵌入式视觉中的一个现实问题：算法不能只看识别准确率，还要考虑帧率、光照变化和通信延迟。</p><h2 id="STM32-主控与通信"><a href="#STM32-主控与通信" class="headerlink" title="STM32 主控与通信"></a>STM32 主控与通信</h2><p>STM32 端负责接收 OpenMV 数据，并根据目标位置控制电机。材料中包含 <code>main.c</code>、<code>openmv.c</code>、<code>openmv.h</code>、<code>main.h</code> 等代码文件。</p><p>系统中的关键点包括：</p><ul><li>UART 数据帧格式设计。</li><li>接收缓冲区与解析逻辑。</li><li>电机 PWM 控制。</li><li>编码器反馈。</li><li>PID 或简单闭环控制。</li></ul><p>如果视觉检测结果不稳定，控制端也会出现抖动。因此感知和控制需要一起调试。</p><h2 id="工程调试经验"><a href="#工程调试经验" class="headerlink" title="工程调试经验"></a>工程调试经验</h2><p>这个项目的难点并不在某个单一算法，而在系统集成：</p><ul><li>OpenMV 识别到的坐标是否稳定。</li><li>串口数据是否丢包或格式错位。</li><li>电机方向和速度是否符合预期。</li><li>编码器反馈是否正确。</li><li>主控循环频率是否能跟上视觉结果。</li></ul><p>这些问题让我更深刻地理解了“能运行”和“能稳定运行”之间的区别。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>TDPS 项目训练了我从硬件、底层驱动、通信协议到视觉脚本的完整调试能力。它不像纯软件项目那样可以只靠日志定位问题，很多时候需要同时看代码、串口、示波器&#x2F;调试器和实际运动效果。</p><p>后续可以继续补充系统结构图、UART 协议格式和最终小车演示照片。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Embedded Systems</tag>
+      
+      <tag>STM32</tag>
+      
+      <tag>OpenMV</tag>
+      
+      <tag>UART</tag>
+      
+      <tag>Robotics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Digital Signal Processing - DTMF 生成与识别</title>
+    <link href="/projects/dsp-dtmf-signal-processing/"/>
+    <url>/projects/dsp-dtmf-signal-processing/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>Digital Signal Processing 课程项目围绕 DTMF 双音多频信号的生成和识别展开。项目材料中包含 MATLAB 脚本、音频文件、GUI 按钮脚本、FFT 检测和 Goertzel 检测方法。</p><p>DTMF 是电话拨号系统中的经典信号，每个按键由一个低频组频率和一个高频组频率叠加生成。识别任务就是从音频中检测这两个主频，并映射回按键。</p><h2 id="信号生成"><a href="#信号生成" class="headerlink" title="信号生成"></a>信号生成</h2><p>DTMF tone generator 的基本思想是：</p><ul><li>为每个按键定义一对频率。</li><li>根据采样率和持续时间生成两个正弦波。</li><li>将两个正弦波叠加。</li><li>播放或保存音频。</li></ul><p>项目文件中可以看到 <code>DTMF_tone_generator.m</code>、<code>button_0.m</code> 到 <code>button_D.m</code>、<code>button_Star.m</code>、<code>button_SoundAll.m</code> 等脚本，说明项目还包含按键式交互或 GUI 组织方式。</p><h2 id="信号识别"><a href="#信号识别" class="headerlink" title="信号识别"></a>信号识别</h2><p>识别部分主要有两种方法：</p><h3 id="FFT-检测"><a href="#FFT-检测" class="headerlink" title="FFT 检测"></a>FFT 检测</h3><p>FFT 方法将时域信号转换到频域，寻找能量峰值。对于 DTMF，这意味着检测低频组和高频组中哪两个频率能量最大。</p><p>优点是直观、通用，能看到完整频谱；缺点是如果只关心少数几个固定频率，计算量可能不是最优。</p><h3 id="Goertzel-检测"><a href="#Goertzel-检测" class="headerlink" title="Goertzel 检测"></a>Goertzel 检测</h3><p>Goertzel 算法适合检测少数几个目标频率。DTMF 识别只需要关注固定的频率集合，因此 Goertzel 比完整 FFT 更高效。</p><p>项目中包含 <code>detect_goertzel.m</code>、<code>detect_fft.m</code>、<code>button_Decode.m</code> 等文件，说明同时实现了不同检测路线。</p><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>项目材料大致包括：</p><ul><li>按键脚本：生成不同 DTMF 按键音。</li><li>主程序：组织信号生成、播放和识别流程。</li><li>检测函数：FFT 和 Goertzel 识别。</li><li>音频文件：例如 <code>tone_all.wav</code>、<code>dtmf_1.wav</code>。</li><li>演示材料：PPT、实验指导和结果图。</li></ul><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个项目把 DSP 课程中的采样、频谱、滤波和检测概念落到了一个可运行的小系统里。相比只推公式，DTMF 项目更直观地展示了频域分析如何解决实际识别问题。</p><p>后续如果继续完善，可以加入频谱图、Goertzel 推导、噪声鲁棒性测试和不同采样率下的识别效果对比。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MATLAB</tag>
+      
+      <tag>DSP</tag>
+      
+      <tag>DTMF</tag>
+      
+      <tag>FFT</tag>
+      
+      <tag>Goertzel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MCM/ICM 2024 - Deep-Sea Rescue Modeling</title>
+    <link href="/projects/mcm-2024-deep-sea-rescue-modeling/"/>
+    <url>/projects/mcm-2024-deep-sea-rescue-modeling/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>MCM&#x2F;ICM 2024 的项目题目为 <strong>Unlocking the Abyss: A Dynamical Model for Deep-Sea Adventure Safety and Rescue Strategies</strong>。项目围绕深海观光潜水器失联后的轨迹预测、搜救装备配置和搜索策略优化展开。</p><p>这个项目把海洋环境建模、潜水器动力学、多目标优化和概率搜索策略组合在一起。最终形成了三个相互衔接的模型：轨迹预测模型、装备配置优化模型和栅格化动态搜索模型。</p><h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>深海观光活动中，潜水器一旦与母船失联，搜救难度会迅速升高。影响搜救的因素包括：</p><ul><li>水下通信能力弱，实时定位困难。</li><li>洋流、海水密度和海底地形会影响潜水器漂移。</li><li>搜救装备有限，需要在成本、可用性和准备时间之间权衡。</li><li>搜索区域会随时间扩大，需要动态更新概率分布。</li></ul><p>因此，项目目标不是单一预测一个位置，而是建立一套从轨迹预测到装备部署再到搜索决策的完整流程。</p><h2 id="Model-I-轨迹预测"><a href="#Model-I-轨迹预测" class="headerlink" title="Model I - 轨迹预测"></a>Model I - 轨迹预测</h2><p>第一个模型关注失联潜水器可能运动轨迹。我们将海洋环境中的主要影响因素拆成洋流、海水密度和海底地形。</p><p>处理方法包括：</p><ul><li>使用 ARIMA 时间序列模型分析洋流速度变化。</li><li>使用岭回归拟合三维连续洋流和海水密度分布。</li><li>基于牛顿力学建立潜水器运动方程。</li><li>将环境因素输入动力学模型，预测潜水器在不同时间点的位置。</li></ul><p>这个模型的关键在于把环境数据和动力学关系结合起来，而不是只用经验漂移半径估算搜索范围。</p><h2 id="Model-II-搜救装备多目标优化"><a href="#Model-II-搜救装备多目标优化" class="headerlink" title="Model II - 搜救装备多目标优化"></a>Model II - 搜救装备多目标优化</h2><p>第二个模型关注搜救前的装备准备。不同装备在成本、维护成本、可用性、用途和准备时间上存在差异。</p><p>我们将装备配置问题建模为多目标优化问题，目标包括：</p><ul><li>总成本尽可能低。</li><li>设备可用性尽可能高。</li><li>准备时间尽可能短。</li></ul><p>求解方法采用遗传算法，得到 Pareto 解集，再从中选择适合母船和救援船的配置方案。这个部分的价值在于把“准备什么设备”从经验选择变成可量化决策。</p><h2 id="Model-III-动态搜索策略"><a href="#Model-III-动态搜索策略" class="headerlink" title="Model III - 动态搜索策略"></a>Model III - 动态搜索策略</h2><p>第三个模型关注搜救过程中的搜索策略。我们将搜索区域栅格化，并根据轨迹预测结果建立初始概率分布。</p><p>核心步骤：</p><ul><li>将海域划分成网格。</li><li>使用 Poisson 分布估计潜水器出现在不同区域的概率。</li><li>搜索后根据是否发现目标，用 Bayesian update 调整概率分布。</li><li>将搜索过程拆成多个时间间隔，累计每个搜索策略的发现概率。</li></ul><p>这个模型体现了“边搜索边更新”的思想。它不是一次性给出固定搜索路线，而是让搜索策略随着已有信息不断调整。</p><h2 id="扩展与敏感性分析"><a href="#扩展与敏感性分析" class="headerlink" title="扩展与敏感性分析"></a>扩展与敏感性分析</h2><p>项目中还进行了两个方向的验证：</p><ul><li>将模型迁移到加勒比海等其他旅游海域，检查轨迹预测是否符合当地洋流趋势。</li><li>改变时间间隔参数，测试模型对时间离散粒度的敏感性。</li></ul><p>结果表明，模型在一定参数扰动下保持了较稳定的搜索概率变化，这增强了方案的可信度。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个项目让我更熟悉了数学建模竞赛中的完整工作流：问题拆解、假设建立、数据处理、模型构造、求解、可视化、敏感性分析和面向决策者的 memo 写作。</p><p>更重要的是，它训练了我把一个复杂现实问题拆成互相连接的子模型：先预测，再配置，再搜索。这个结构化思考方式后来也影响了我做科研和工程项目时的分析习惯。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Optimization</tag>
+      
+      <tag>MCM</tag>
+      
+      <tag>Mathematical Modeling</tag>
+      
+      <tag>Bayesian Inference</tag>
+      
+      <tag>Dynamics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Signals, Devices and Power Electronics - 工程基础实验整理</title>
+    <link href="/projects/signals-devices-power-electronics-labs/"/>
+    <url>/projects/signals-devices-power-electronics-labs/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>本科课程目录中还有大量工程基础实验材料，包括 Signals and Systems、Electronic Devices、Power Electronics、Circuits、Control、Electronic and Magnetic Fields 等方向。这些材料不一定每个都形成独立作品集项目，但共同构成了工程基础训练。</p><h2 id="Signals-and-Systems"><a href="#Signals-and-Systems" class="headerlink" title="Signals and Systems"></a>Signals and Systems</h2><p>信号与系统实验主要训练连续&#x2F;离散信号、系统响应、卷积、频域分析和滤波等基础概念。</p><p>这部分和 DSP 项目直接相关：DTMF 的生成和识别本质上就是信号叠加、采样和频率检测。</p><h2 id="Electronic-Devices"><a href="#Electronic-Devices" class="headerlink" title="Electronic Devices"></a>Electronic Devices</h2><p>电子器件实验关注半导体器件、电路测试和器件特性分析。相比系统级项目，它更偏底层器件理解。</p><p>这部分帮助我理解实际电路并不是理想元件拼接而成，器件特性、偏置条件和测量误差都会影响结果。</p><h2 id="Power-Electronics"><a href="#Power-Electronics" class="headerlink" title="Power Electronics"></a>Power Electronics</h2><p>电力电子实验关注功率变换、电路控制和能量传输。它训练的是更偏功率与控制的工程能力。</p><p>这类实验强调安全、效率和稳定性，也让我理解了硬件系统中“功率”和“信号”是两种不同层面的设计问题。</p><h2 id="Control-and-Circuit-Labs"><a href="#Control-and-Circuit-Labs" class="headerlink" title="Control and Circuit Labs"></a>Control and Circuit Labs</h2><p>控制和电路相关实验提供了系统建模、反馈控制、稳定性分析和基础电路设计训练。它们虽然不一定直接出现在作品集中，但对 TDPS 小车、嵌入式控制和硬件系统理解都有支撑作用。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这些基础实验共同构成了本科工程训练的底座。它们不像 AICAS 或 FYP 那样有一个鲜明的项目标题，但它们让我在后续做跨软硬件项目时能更自然地理解传感器、信号、电路、控制和系统之间的关系。</p><p>公开网站中我将它们作为一个综合归档页面保留，避免把每一次普通实验都拆成低信息密度的文章。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Lab</tag>
+      
+      <tag>Signals and Systems</tag>
+      
+      <tag>Electronic Devices</tag>
+      
+      <tag>Power Electronics</tag>
+      
+      <tag>Engineering Fundamentals</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Electronic System Design - 电子系统设计项目</title>
+    <link href="/projects/electronic-system-design/"/>
+    <url>/projects/electronic-system-design/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>Electronic System Design 课程目录包含实验、项目和报告材料，主要训练电子系统从需求、设计、仿真、实现到测试的完整流程。</p><p>这个项目板块比单纯电路课程更系统，因为它强调把多个模块组合成可工作的电子系统，而不是只分析某个孤立电路。</p><h2 id="设计流程"><a href="#设计流程" class="headerlink" title="设计流程"></a>设计流程</h2><p>电子系统设计通常包含：</p><ol><li>明确系统目标和输入输出。</li><li>拆分功能模块。</li><li>选择元件和电路结构。</li><li>搭建仿真或原型。</li><li>进行测试和调参。</li><li>分析误差、噪声和限制。</li><li>完成工程报告。</li></ol><p>这个流程和软件系统设计很像，但硬件部分更关注物理约束：电压、电流、噪声、带宽、元件容差和测量误差。</p><h2 id="实验与项目内容"><a href="#实验与项目内容" class="headerlink" title="实验与项目内容"></a>实验与项目内容</h2><p>目录中包含 Lab1、Lab2、Lab3 和 Project 等材料，说明课程既有基础实验，也有综合项目。每次实验都需要记录电路结构、测试数据和结果分析。</p><p>综合项目的价值在于训练系统集成能力：单个模块工作正常并不代表整个系统稳定，模块之间的接口、电源和信号范围都会影响最终表现。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>Electronic System Design 帮我把电路知识从公式推导推进到工程实现。它训练了我在设计中同时考虑理论指标和实际测试结果，也让我更熟悉工程报告中如何组织问题、方法和结论。</p><p>后续如果继续补充，可以加入具体项目电路图、测试结果表和误差分析。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Electronic System Design</tag>
+      
+      <tag>Circuit</tag>
+      
+      <tag>Lab</tag>
+      
+      <tag>Engineering</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Machine Learning and AI - 混合优化与分类实验</title>
+    <link href="/projects/ml-ai-hybrid-optimization/"/>
+    <url>/projects/ml-ai-hybrid-optimization/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>Machine Learning and AI 课程项目包含两条主要实践线索：一条是基于机器学习与遗传算法的混合优化，另一条是分类模型实验。项目材料中包含 MATLAB 代码、notebook、报告、训练数据和可视化结果。</p><p>这个项目的重点不是只训练一个模型，而是把机器学习模型和优化算法结合，用模型预测、搜索和评价函数共同求解工程设计问题。</p><h2 id="Thermistor-MixedIntegerGA"><a href="#Thermistor-MixedIntegerGA" class="headerlink" title="Thermistor MixedIntegerGA"></a>Thermistor MixedIntegerGA</h2><p>Thermistor 相关代码使用 MATLAB 实现，目标是通过混合整数遗传算法搜索热敏电阻电路中的元件组合，使输出曲线尽量匹配目标温度补偿曲线。</p><p>相关文件包括：</p><ul><li><code>RunThermistorExample.m</code></li><li><code>hybridalgorithm.m</code></li><li><code>objectiveFunction.m</code></li><li><code>trainmodel.m</code></li><li><code>voltageCurve.m</code></li><li><code>tempCompCurve.m</code></li><li><code>StandardComponentValues.mat</code></li></ul><p>整体流程可以拆成：</p><ol><li>定义电路结构和标准元件值。</li><li>生成或读取训练数据。</li><li>训练预测模型或评价函数。</li><li>用遗传算法搜索离散元件组合。</li><li>绘制最优解曲线并分析误差。</li></ol><p>这个问题很适合作为 ML + optimization 的练习，因为元件选择不是连续优化，存在离散变量、工程约束和目标曲线拟合。</p><h2 id="Hybrid-GA-Classifier"><a href="#Hybrid-GA-Classifier" class="headerlink" title="Hybrid GA + Classifier"></a>Hybrid GA + Classifier</h2><p>另一个方向是将遗传算法与分类器结合，用于特征选择或模型优化。项目材料中包含 SVM、Naive Bayes、Random Forest 等模型的实验 notebook。</p><p>实验关注的问题包括：</p><ul><li>不同分类器在同一数据集上的表现差异。</li><li>是否使用遗传算法进行特征选择。</li><li>标准化对分类结果的影响。</li><li>K-fold 或 train&#x2F;test split 下的稳定性。</li></ul><p>这些实验让我熟悉了机器学习项目中常见的模型比较方式，也认识到特征选择、数据预处理和评价指标往往和模型本身同样重要。</p><h2 id="Microarray-Classification"><a href="#Microarray-Classification" class="headerlink" title="Microarray Classification"></a>Microarray Classification</h2><p>Microarray 相关材料用于高维小样本分类场景。微阵列数据通常特征维度高、样本量小，非常容易过拟合，因此适合用来练习特征选择和模型泛化分析。</p><p>在这类任务中，遗传算法可以作为特征子集搜索策略，分类器则负责评价当前特征组合的预测效果。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个项目让我把机器学习从“调用分类器”推进到“构造搜索空间和评价函数”。尤其是 Thermistor 优化部分，让我看到 ML 方法可以嵌入工程设计流程，而不是只用于图像或文本任务。</p><p>后续如果继续完善，我会把 MATLAB 结果图和关键参数表整理出来，并补充不同分类器的准确率、稳定性和特征选择对比。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MATLAB</tag>
+      
+      <tag>Machine Learning</tag>
+      
+      <tag>Genetic Algorithm</tag>
+      
+      <tag>Classification</tag>
+      
+      <tag>Optimization</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Digital Image Processing - 图像处理与目标跟踪项目</title>
+    <link href="/projects/digital-image-processing-projects/"/>
+    <url>/projects/digital-image-processing-projects/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>Digital Image Processing 选修课材料中包含图像处理课程设计、目标跟踪项目和 MOSSE tracker 相关资料。它是我较早接触计算机视觉算法实践的一组项目。</p><p>相比后来的 6DoF 姿态估计，这个项目更基础，重点是理解图像滤波、频域处理、目标检测和跟踪等经典方法。</p><h2 id="图像处理课程设计"><a href="#图像处理课程设计" class="headerlink" title="图像处理课程设计"></a>图像处理课程设计</h2><p>课程设计目录中有多个 project，涵盖不同图像处理任务。典型内容可能包括：</p><ul><li>图像增强。</li><li>边缘检测。</li><li>频域滤波。</li><li>图像分割。</li><li>特征提取。</li><li>简单目标识别。</li></ul><p>这些任务帮助我建立了图像作为二维信号的基本直觉：空间域和频域可以互相转换，滤波器和卷积操作本质上是在改变图像中的结构信息。</p><h2 id="目标跟踪与-MOSSE"><a href="#目标跟踪与-MOSSE" class="headerlink" title="目标跟踪与 MOSSE"></a>目标跟踪与 MOSSE</h2><p>MOSSE tracker 是经典相关滤波跟踪方法。它通过在频域中学习一个相关滤波器，使目标在响应图中产生峰值，从而实现快速跟踪。</p><p>这个方向让我理解了视觉跟踪中的几个关键概念：</p><ul><li>模板更新。</li><li>响应图峰值。</li><li>目标漂移。</li><li>光照和尺度变化。</li><li>速度与鲁棒性之间的权衡。</li></ul><p>虽然现代目标跟踪更多使用深度学习方法，但 MOSSE 这类经典算法非常适合理解跟踪问题的基本结构。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>这个课程项目是我从电信&#x2F;电子课程进入视觉算法的早期入口。它让我熟悉 MATLAB 图像处理流程，也为后来阅读 ConvNeXt、OnePose、HiPose 等视觉模型打下了基础。</p><p>后续可以把其中最完整的几个 project 单独展开，补充输入输出图和 MATLAB 代码说明。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Digital Image Processing</tag>
+      
+      <tag>MATLAB</tag>
+      
+      <tag>Target Tracking</tag>
+      
+      <tag>MOSSE</tag>
+      
+      <tag>Computer Vision</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>KAUST - Metasurface Simulation</title>
+    <link href="/projects/kaust-metasurface-simulation/"/>
+    <url>/projects/kaust-metasurface-simulation/</url>
+    
+    <content type="html"><![CDATA[<h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>KAUST 项目主要围绕超表面和超材料的电磁仿真展开。我学习了 metasurface 的基本理论、Generalized Sheet Transition Conditions、S 参数含义，以及如何使用 HFSS 搭建周期性单元模型并提取反射和传输特性。</p><p>这个项目更偏电磁方向，但它对我很有价值，因为它让我第一次系统地把理论边界条件、数值仿真工具和结果曲线分析连接起来。</p><h2 id="背景概念"><a href="#背景概念" class="headerlink" title="背景概念"></a>背景概念</h2><p>Metasurface 可以理解为二维形式的 metamaterial。它由亚波长尺度的 meta-atom 按特定方式排列而成，可以对电磁波的相位、振幅、偏振和传播方向进行调控。</p><p>相比体材料，超表面更薄、更容易集成，也更适合构造紧凑的电磁器件。典型应用包括：</p><ul><li>天线与波束控制。</li><li>波前整形。</li><li>极化转换。</li><li>隐身与异常反射。</li><li>OAM 波束生成。</li></ul><h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><p>项目中重点学习了 GSTC，即 Generalized Sheet Transition Conditions。GSTC 用来描述电磁场穿过超表面时的边界条件，可以帮助理解超表面对入射波的响应。</p><p>同时也学习了 susceptibility tensor 的概念。它描述外部电磁场与诱导极化&#x2F;磁化之间的关系。通过设计这些张量的等效响应，可以让超表面实现特定功能。</p><h2 id="HFSS-仿真流程"><a href="#HFSS-仿真流程" class="headerlink" title="HFSS 仿真流程"></a>HFSS 仿真流程</h2><p>仿真中使用 HFSS 构建周期性超表面单元。一个典型单元包含：</p><ul><li>方形环状金属结构。</li><li>F4B 介质层。</li><li>底部金属板。</li><li>周期性边界条件。</li><li>Floquet port 激励。</li></ul><p>使用 Floquet port 的原因是它适合周期结构，并能处理不同入射方向或极化条件下的电磁波响应。仿真完成后，从 HFSS 中导出 S 参数。</p><h2 id="S-参数分析"><a href="#S-参数分析" class="headerlink" title="S 参数分析"></a>S 参数分析</h2><p>S 参数是微波和电磁仿真中非常重要的指标：</p><ul><li><strong>S11</strong>：输入反射系数，也常用于观察回波损耗。</li><li><strong>S12&#x2F;S21</strong>：传输系数，用于观察能量传输行为。</li><li><strong>S22</strong>：输出反射系数。</li></ul><p>项目中重点分析 S11 和 S12 曲线。通过频域曲线可以判断超表面在不同频率下的反射、透射和损耗特性。</p><p>在记录的实验中，设计展示出较低回波损耗，并在部分频段保持相对稳定的传输特性。</p><h2 id="MATLAB-后处理"><a href="#MATLAB-后处理" class="headerlink" title="MATLAB 后处理"></a>MATLAB 后处理</h2><p>HFSS 得到的是仿真数据，后续需要用 MATLAB 绘制曲线并辅助分析。对于材料参数提取方向，还可以基于 S 参数进一步反推复介电常数、复磁导率和折射率。</p><p>这个流程让我理解了仿真并不是“建模后点运行”那么简单。边界条件、端口设置、单位、频率范围、后处理公式都会影响最终结论。</p><h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>KAUST 项目让我补上了电磁仿真工具链的一段经验。虽然我后续更多转向机器学习、视觉和系统优化，但这个项目训练了我读物理模型、设置仿真条件和解释曲线结果的能力。</p><p>如果之后继续扩展，我会把 HFSS 模型图、S 参数曲线和 MATLAB 参数提取流程整理成更完整的实验复现文档。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Undergraduate Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MATLAB</tag>
+      
+      <tag>KAUST</tag>
+      
+      <tag>Metasurface</tag>
+      
+      <tag>HFSS</tag>
+      
+      <tag>Electromagnetics</tag>
+      
+    </tags>
     
   </entry>
   

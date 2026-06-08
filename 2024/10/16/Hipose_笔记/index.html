@@ -16,28 +16,28 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Zeng Junhao">
   <meta name="keywords" content="">
   
     <meta name="description" content="Introduction在3D计算机视觉中，估计物体的六自由度（6DoF）姿态是一个基本的挑战。这项任务在许多实际应用中扮演着关键角色，包括增强现实，机器人抓取和自动驾驶。尽管其重要性，但在物体纹理均匀和严重遮挡的情况下，实现准确的6DoF姿态估计仍然具有挑战性。 深度学习的出现有助于克服这些挑战。最近的一些基于RGB的工作在处理遮挡方面显示出了有前景的结果。尽管有这些进步，但仅从RGB图像估计物">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hipose_笔记">
-<meta property="og:url" content="http://example.com/2024/10/16/Hipose_%E7%AC%94%E8%AE%B0/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://juneh01.github.io/2024/10/16/Hipose_%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Zeng Junhao">
 <meta property="og:description" content="Introduction在3D计算机视觉中，估计物体的六自由度（6DoF）姿态是一个基本的挑战。这项任务在许多实际应用中扮演着关键角色，包括增强现实，机器人抓取和自动驾驶。尽管其重要性，但在物体纹理均匀和严重遮挡的情况下，实现准确的6DoF姿态估计仍然具有挑战性。 深度学习的出现有助于克服这些挑战。最近的一些基于RGB的工作在处理遮挡方面显示出了有前景的结果。尽管有这些进步，但仅从RGB图像估计物">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
-<meta property="og:image" content="http://example.com/Downloads/IMG_1819.HEIC">
-<meta property="og:image" content="http://example.com/">
+<meta property="og:image" content="https://juneh01.github.io/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
+<meta property="og:image" content="https://juneh01.github.io/Downloads/IMG_1819.HEIC">
+<meta property="og:image" content="https://juneh01.github.io/">
 <meta property="article:published_time" content="2024-10-16T07:28:30.000Z">
 <meta property="article:modified_time" content="2024-10-16T07:29:42.567Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Zeng Junhao">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
+<meta name="twitter:image" content="https://juneh01.github.io/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
   
   
   
-  <title>Hipose_笔记 - Hexo</title>
+  <title>Hipose_笔记 - Zeng Junhao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -71,11 +71,15 @@
 
 
 
+  
+<link rel="stylesheet" href="/css/academic-profile.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"juneh01.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -134,6 +138,18 @@
               <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/projects/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Projects</span>
               </a>
             </li>
           
@@ -407,13 +423,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Hipose_笔记</div>
-      <div>http://example.com/2024/10/16/Hipose_笔记/</div>
+      <div>https://juneh01.github.io/2024/10/16/Hipose_笔记/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>Author</div>
-          <div>John Doe</div>
+          <div>Zeng Junhao</div>
         </div>
       
       
@@ -450,6 +466,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/projects/sr-hipose-and-pose-estimation/" title="SR - HiPose 与 6DoF 姿态估计调研">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SR - HiPose 与 6DoF 姿态估计调研</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
