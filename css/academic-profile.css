@@ -124,6 +124,51 @@
   gap: 1rem;
 }
 
+.timeline-item.logo-entry,
+.publication-item.logo-entry {
+  grid-template-columns: 5rem 8.8rem minmax(0, 1fr);
+  align-items: start;
+}
+
+.entry-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.05rem;
+  min-height: 3.2rem;
+  padding: 0.35rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.entry-logo img {
+  display: block;
+  max-width: 2.55rem;
+  max-height: 2.55rem;
+  object-fit: contain;
+}
+
+.entry-logo.logo-apple img {
+  max-width: 1.75rem;
+  max-height: 2.05rem;
+}
+
+.entry-logo.logo-stack {
+  gap: 0.22rem;
+  flex-direction: column;
+}
+
+.entry-logo.logo-stack img {
+  max-width: 3.45rem;
+  max-height: 1.38rem;
+}
+
+.entry-logo.logo-stack img[src*="uestc"] {
+  max-width: 1.42rem;
+  max-height: 1.42rem;
+}
+
 .timeline-date {
   color: #666;
   font-weight: 500;
@@ -145,6 +190,11 @@
 
 .project-list article:last-child {
   padding-bottom: 0;
+}
+
+.publication-list article {
+  margin: 0;
+  padding: 0;
 }
 
 .project-meta {
@@ -196,9 +246,17 @@
   }
 
   .timeline-item,
+  .timeline-item.logo-entry,
+  .publication-item.logo-entry,
   .skill-columns > div {
     grid-template-columns: 1fr;
     gap: 0.15rem;
+  }
+
+  .entry-logo {
+    width: 3rem;
+    min-height: 3rem;
+    margin-bottom: 0.25rem;
   }
 
   .news-list span {
