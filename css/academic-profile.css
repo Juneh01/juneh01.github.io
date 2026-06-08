@@ -1,3 +1,10 @@
+.academic-profile,
+.about-name,
+.about-intro,
+.about-content .markdown-body {
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+}
+
 .about-avatar {
   width: 6.25rem;
   height: 6.25rem;
@@ -33,7 +40,6 @@
 
 .about-content .markdown-body {
   color: #222;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 15.5px;
   line-height: 1.65;
 }
