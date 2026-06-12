@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" role="img" aria-label="University of Glasgow logo">
+  <rect x="0" y="0" width="72" height="72" rx="0" fill="#003865"/>
+  <path fill="#ffffff" d="M36 11l5.2 10.6 11.7 1.7-8.5 8.3 2 11.7L36 37.8 25.6 43.3l2-11.7-8.5-8.3 11.7-1.7L36 11z"/>
+  <path fill="#ffffff" d="M22 51h28v5H22zm4-6h20v4H26z"/>
+  <text x="88" y="30" fill="#003865" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">University of</text>
+  <text x="88" y="55" fill="#003865" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Glasgow</text>
+</svg>
