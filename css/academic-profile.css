@@ -51,12 +51,12 @@
 
 .academic-profile a {
   color: var(--apple-accent);
-  border-bottom: 1px solid rgba(41, 151, 255, 0.32);
+  border-bottom: 1px solid rgba(0, 102, 204, 0.28);
 }
 
 .academic-profile a:hover {
   color: var(--link-hover-color);
-  border-bottom-color: rgba(107, 183, 255, 0.68);
+  border-bottom-color: rgba(0, 113, 227, 0.6);
   text-decoration: none;
 }
 
@@ -176,7 +176,7 @@
 
 .entry-logo.logo-apple img {
   max-width: 1.28rem;
-  filter: brightness(0) invert(1) !important;
+  filter: none !important;
 }
 
 .entry-logo.logo-stack {

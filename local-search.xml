@@ -22,11 +22,11 @@
       
       <tag>Computer Vision</tag>
       
-      <tag>HiPose</tag>
-      
       <tag>6DoF Pose Estimation</tag>
       
       <tag>RGB-D</tag>
+      
+      <tag>HiPose</tag>
       
       <tag>Model Compression</tag>
       
@@ -183,9 +183,9 @@
     
     <tags>
       
-      <tag>Scientific Research</tag>
-      
       <tag>Model Compression</tag>
+      
+      <tag>Scientific Research</tag>
       
       <tag>Pruning</tag>
       
@@ -310,13 +310,13 @@
       
       <tag>Computer Vision</tag>
       
-      <tag>Scientific Research</tag>
-      
-      <tag>HiPose</tag>
-      
       <tag>6DoF Pose Estimation</tag>
       
       <tag>RGB-D</tag>
+      
+      <tag>HiPose</tag>
+      
+      <tag>Scientific Research</tag>
       
     </tags>
     
@@ -517,13 +517,13 @@
     
     <tags>
       
+      <tag>Lab</tag>
+      
       <tag>Signals and Systems</tag>
       
       <tag>Electronic Devices</tag>
       
       <tag>Power Electronics</tag>
-      
-      <tag>Lab</tag>
       
       <tag>Engineering Fundamentals</tag>
       
@@ -550,11 +550,11 @@
     
     <tags>
       
-      <tag>Lab</tag>
-      
       <tag>Electronic System Design</tag>
       
       <tag>Circuit</tag>
+      
+      <tag>Lab</tag>
       
       <tag>Engineering</tag>
       
