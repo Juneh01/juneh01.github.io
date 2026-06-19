@@ -203,19 +203,15 @@
 
 .entry-logo.logo-publication {
   align-items: flex-start;
-  gap: 0.38rem;
+  justify-content: flex-end;
 }
 
 .entry-logo.logo-publication img.journal-cover {
-  height: 3.15rem;
-  max-height: 3.15rem;
-  max-width: 2.55rem;
-}
-
-.entry-logo.logo-publication img.compact-logo {
+  width: auto;
   height: 1.28rem;
-  max-height: 1.28rem;
   max-width: 1.28rem;
+  max-height: 1.28rem;
+  object-position: right top;
 }
 
 .timeline-date {
@@ -346,12 +342,6 @@
   }
 
   .entry-logo.logo-publication img.journal-cover {
-    height: 2.45rem;
-    max-height: 2.45rem;
-    max-width: 1.85rem;
-  }
-
-  .entry-logo.logo-publication img.compact-logo {
     height: 1.05rem;
     max-height: 1.05rem;
     max-width: 1.05rem;
