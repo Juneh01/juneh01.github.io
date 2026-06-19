@@ -193,10 +193,11 @@
 }
 
 .entry-logo.logo-stack img.institution-crest {
-  width: 1.28rem;
-  height: 1.28rem;
-  max-width: 1.28rem;
-  max-height: 1.28rem;
+  flex: 0 0 1.28rem;
+  width: 1.28rem !important;
+  height: 1.28rem !important;
+  max-width: 1.28rem !important;
+  max-height: 1.28rem !important;
   object-position: center top;
 }
 
@@ -337,10 +338,11 @@
   }
 
   .entry-logo.logo-stack img.institution-crest {
-    width: 1.05rem;
-    height: 1.05rem;
-    max-width: 1.05rem;
-    max-height: 1.05rem;
+    flex-basis: 1.05rem;
+    width: 1.05rem !important;
+    height: 1.05rem !important;
+    max-width: 1.05rem !important;
+    max-height: 1.05rem !important;
   }
 
   .entry-logo.logo-publication img.journal-cover {
