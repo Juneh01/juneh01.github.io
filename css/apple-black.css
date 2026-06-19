@@ -4,33 +4,33 @@
 [data-user-color-scheme="dark"] {
   --body-bg-color: #000000;
   --board-bg-color: #000000;
-  --text-color: #f5f5f7;
-  --sec-text-color: #a1a1a6;
-  --post-text-color: #d2d2d7;
-  --post-heading-color: #f5f5f7;
-  --post-link-color: #2997ff;
-  --link-hover-color: #6bb7ff;
+  --text-color: #ffffff;
+  --sec-text-color: #ffffff;
+  --post-text-color: #ffffff;
+  --post-heading-color: #ffffff;
+  --post-link-color: #ffffff;
+  --link-hover-color: #ffffff;
   --link-hover-bg-color: #141414;
   --line-color: #2a2a2c;
   --navbar-bg-color: #000000;
-  --navbar-text-color: #f5f5f7;
-  --subtitle-color: #f5f5f7;
+  --navbar-text-color: #ffffff;
+  --subtitle-color: #ffffff;
   --scrollbar-color: #424245;
   --scrollbar-hover-color: #6e6e73;
   --button-bg-color: transparent;
   --button-hover-bg-color: #141414;
   --highlight-bg-color: #0a0a0a;
   --inlinecode-bg-color: #141414;
-  --fold-title-color: #f5f5f7;
+  --fold-title-color: #ffffff;
   --fold-border-color: #2a2a2c;
   --apple-black: #000000;
   --apple-surface: #0a0a0a;
   --apple-surface-hover: #141414;
   --apple-border: #2a2a2c;
   --apple-border-strong: #424245;
-  --apple-text: #f5f5f7;
-  --apple-secondary: #a1a1a6;
-  --apple-tertiary: #6e6e73;
+  --apple-text: #ffffff;
+  --apple-secondary: #ffffff;
+  --apple-tertiary: #ffffff;
   --apple-accent: #2997ff;
 }
 
@@ -52,6 +52,32 @@ body {
   line-height: 1.47059;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+body,
+body a,
+body p,
+body li,
+body time,
+body label,
+body input,
+body textarea,
+body .text-muted,
+body .text-secondary,
+body .index-excerpt,
+body .index-btm,
+body .index-btm a,
+body .post-metas,
+body .post-metas a,
+body .list-group-item,
+body .list-group-item time,
+body .footer-inner,
+body .footer-inner a,
+body .about-intro,
+body .timeline-date,
+body .project-meta,
+body .news-list span {
+  color: #ffffff !important;
 }
 
 ::selection {
@@ -113,7 +139,7 @@ footer {
 
 .navbar .nav-item .nav-link {
   padding: 0.42rem 0.68rem !important;
-  color: #d2d2d7 !important;
+  color: #ffffff !important;
   border-radius: 6px;
   font-size: 0.78rem;
   font-weight: 400;
@@ -244,7 +270,7 @@ main > .container.nopadding-x-md {
 .index-excerpt {
   max-height: none;
   margin: 0.45rem 0 1rem;
-  color: var(--apple-secondary);
+  color: #ffffff;
   font-size: 0.98rem;
   line-height: 1.58;
 }
@@ -256,7 +282,7 @@ main > .container.nopadding-x-md {
 .index-btm,
 .index-btm a,
 .post-metas {
-  color: var(--apple-tertiary);
+  color: #ffffff;
   font-size: 0.78rem;
 }
 
@@ -350,7 +376,7 @@ main > .container.nopadding-x-md {
   padding: 0.8rem 1rem;
   background: var(--apple-surface);
   border-left: 3px solid var(--apple-border-strong);
-  color: var(--apple-secondary);
+  color: #ffffff;
 }
 
 .markdown-body table tr,
@@ -403,11 +429,11 @@ post-custom {
   background: transparent;
   border-bottom: 1px solid var(--apple-border);
   border-radius: 0 !important;
-  color: var(--apple-secondary);
+  color: #ffffff;
 }
 
 .list-group-item time {
-  color: var(--apple-tertiary);
+  color: #ffffff;
   font-variant-numeric: tabular-nums;
 }
 
@@ -427,7 +453,7 @@ post-custom {
   background: var(--apple-surface);
   border: 1px solid var(--apple-border);
   border-radius: 6px;
-  color: var(--apple-secondary) !important;
+  color: #ffffff !important;
   font-size: 0.9rem !important;
 }
 
@@ -475,7 +501,7 @@ post-custom {
 }
 
 .about-intro {
-  color: var(--apple-secondary);
+  color: #ffffff;
 }
 
 .about-icons > a > i {
@@ -526,12 +552,12 @@ footer {
 
 .footer-inner {
   padding: 2rem 0;
-  color: var(--apple-tertiary);
+  color: #ffffff;
   font-size: 0.82rem;
 }
 
 .footer-inner a {
-  color: var(--apple-secondary);
+  color: #ffffff;
 }
 
 @media (max-width: 991.98px) {
