@@ -2,7 +2,8 @@
 .about-name,
 .about-intro,
 .about-content .markdown-body {
-  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
 }
 
 .about-avatar {
@@ -20,7 +21,7 @@
 .about-intro {
   max-width: 44rem;
   margin: 0.35rem auto 0;
-  color: #555;
+  color: var(--apple-secondary);
   font-size: 0.95rem;
   line-height: 1.45;
 }
@@ -30,7 +31,7 @@
 }
 
 .about-icons > a > i {
-  color: #333;
+  color: var(--apple-text);
 }
 
 .about-content {
@@ -39,23 +40,23 @@
 }
 
 .about-content .markdown-body {
-  color: #222;
+  color: var(--post-text-color);
   font-size: 15.5px;
   line-height: 1.65;
 }
 
 .academic-profile {
-  color: #222;
+  color: var(--post-text-color);
 }
 
 .academic-profile a {
-  color: #0645ad;
-  border-bottom: 1px solid rgba(6, 69, 173, 0.28);
+  color: var(--apple-accent);
+  border-bottom: 1px solid rgba(41, 151, 255, 0.32);
 }
 
 .academic-profile a:hover {
-  color: #003f8f;
-  border-bottom-color: rgba(0, 63, 143, 0.65);
+  color: var(--link-hover-color);
+  border-bottom-color: rgba(107, 183, 255, 0.68);
   text-decoration: none;
 }
 
@@ -69,7 +70,7 @@
 
 .profile-section {
   padding: 1rem 0 1.15rem;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid var(--apple-border);
 }
 
 .profile-section:first-child {
@@ -84,7 +85,7 @@
   margin: 0 0 0.65rem;
   padding: 0;
   border-bottom: 0;
-  color: #111;
+  color: var(--apple-text);
   font-size: 1.12rem;
   font-weight: 600;
   line-height: 1.35;
@@ -92,7 +93,7 @@
 
 .about-content .markdown-body .profile-section h3 {
   margin: 0 0 0.2rem;
-  color: #222;
+  color: var(--apple-text);
   font-size: 0.98rem;
   font-weight: 600;
   line-height: 1.45;
@@ -175,6 +176,7 @@
 
 .entry-logo.logo-apple img {
   max-width: 1.28rem;
+  filter: brightness(0) invert(1) !important;
 }
 
 .entry-logo.logo-stack {
@@ -208,18 +210,18 @@
 }
 
 .timeline-date {
-  color: #666;
+  color: var(--apple-tertiary);
   font-weight: 500;
   white-space: nowrap;
 }
 
 .timeline-body {
-  color: #222;
+  color: var(--post-text-color);
 }
 
 .project-list article {
   padding: 0.8rem 0;
-  border-top: 1px solid #ededed;
+  border-top: 1px solid var(--apple-border);
 }
 
 .project-list article:first-child {
@@ -238,7 +240,7 @@
 
 .project-meta {
   margin: 0.05rem 0 0.3rem;
-  color: #666;
+  color: var(--apple-secondary);
   font-size: 0.92rem;
 }
 
@@ -262,7 +264,7 @@
 .news-list span {
   display: inline-block;
   min-width: 4.6rem;
-  color: #666;
+  color: var(--apple-tertiary);
   font-weight: 500;
 }
 
