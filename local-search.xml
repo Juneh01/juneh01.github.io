@@ -451,9 +451,9 @@
     
     <tags>
       
-      <tag>MATLAB</tag>
-      
       <tag>DSP</tag>
+      
+      <tag>MATLAB</tag>
       
       <tag>DTMF</tag>
       
@@ -484,11 +484,11 @@
     
     <tags>
       
-      <tag>Optimization</tag>
-      
       <tag>MCM</tag>
       
       <tag>Mathematical Modeling</tag>
+      
+      <tag>Optimization</tag>
       
       <tag>Bayesian Inference</tag>
       
@@ -583,13 +583,13 @@
       
       <tag>MATLAB</tag>
       
+      <tag>Optimization</tag>
+      
       <tag>Machine Learning</tag>
       
       <tag>Genetic Algorithm</tag>
       
       <tag>Classification</tag>
-      
-      <tag>Optimization</tag>
       
     </tags>
     
@@ -614,9 +614,9 @@
     
     <tags>
       
-      <tag>Digital Image Processing</tag>
-      
       <tag>MATLAB</tag>
+      
+      <tag>Digital Image Processing</tag>
       
       <tag>Target Tracking</tag>
       
