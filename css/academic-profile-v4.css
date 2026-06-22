@@ -10,6 +10,8 @@
   width: 6.25rem;
   height: 6.25rem;
   margin-bottom: 0.8rem;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .about-name {

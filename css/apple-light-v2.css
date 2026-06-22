@@ -490,12 +490,16 @@ post-custom {
 /* About */
 .about-avatar {
   margin-top: -3.2rem;
+  background: var(--apple-surface);
+  border: 1px solid var(--apple-border-strong);
 }
 
 .about-avatar img {
-  background: var(--apple-surface);
-  border: 1px solid var(--apple-border-strong);
+  border: 0;
   box-shadow: none;
+  object-fit: cover;
+  transform: scale(2);
+  transform-origin: 50% 66%;
 }
 
 .about-name {
