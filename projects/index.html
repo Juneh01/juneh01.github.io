@@ -19,15 +19,15 @@
   <meta name="author" content="Zeng Junhao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Project Timeline        GPU-Tutor: Intelligent Q&amp;A System for GPU Programming     2026.01 · UCAS GPU Architecture and Programming Course Competition     Built a domain-specific Q&amp;A system for GPU">
+    <meta name="description" content="Project Timeline        AICAS 2026 PPU Track: Qwen3-VL Inference Optimization     2026.03 - 2026.06 · Fixed-weight VLM inference optimization on Alibaba PPU     Optimized Qwen3-VL-2B-Instruct infe">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Projects">
 <meta property="og:url" content="https://juneh01.github.io/projects/index.html">
 <meta property="og:site_name" content="Zeng Junhao">
-<meta property="og:description" content="Project Timeline        GPU-Tutor: Intelligent Q&amp;A System for GPU Programming     2026.01 · UCAS GPU Architecture and Programming Course Competition     Built a domain-specific Q&amp;A system for GPU">
+<meta property="og:description" content="Project Timeline        AICAS 2026 PPU Track: Qwen3-VL Inference Optimization     2026.03 - 2026.06 · Fixed-weight VLM inference optimization on Alibaba PPU     Optimized Qwen3-VL-2B-Instruct infe">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-06-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-26T09:10:57.691Z">
+<meta property="article:modified_time" content="2026-06-26T09:46:38.181Z">
 <meta property="article:author" content="Zeng Junhao">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -235,6 +235,12 @@
 <section id="project-timeline" class="profile-section">
 
 <h2 id="Project-Timeline"><a href="#Project-Timeline" class="headerlink" title="Project Timeline"></a>Project Timeline</h2><div class="project-list">
+  <article>
+    <h3><a href="/projects/aicas-2026-ppu-qwen3vl-optimization/">AICAS 2026 PPU Track: Qwen3-VL Inference Optimization</a></h3>
+    <p class="project-meta">2026.03 - 2026.06 · Fixed-weight VLM inference optimization on Alibaba PPU</p>
+    <p>Optimized Qwen3-VL-2B-Instruct inference for the AICAS 2026 PPU track under fixed-weight and no-training constraints. The final system used profile-driven visual preprocessing, prompt KV reuse, load-time W8 auxiliary layouts, persistent Mega Kernel decode, reduced grid synchronization, MLP shared-memory staging, and decode call-graph trimming, reaching 2.3803 official score, 0.7178 accuracy, 19.78 ms TTFT, and 369.80 tokens/s throughput.</p>
+  </article>
+
   <article>
     <h3><a href="/projects/gpu-tutor-gpu-programming-qa/">GPU-Tutor: Intelligent Q&A System for GPU Programming</a></h3>
     <p class="project-meta">2026.01 · UCAS GPU Architecture and Programming Course Competition</p>
