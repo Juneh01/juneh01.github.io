@@ -19,21 +19,21 @@
   <meta name="author" content="Zeng Junhao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Selected Projects        PRADO: High-Efficiency Pose Estimation Accelerator     UESTC 6DoF Research Group, 2023.05 - 2025.06     Worked on hardware-oriented acceleration for high-precision 6DoF po">
+    <meta name="description" content="Project Timeline        GPU-Tutor: Intelligent Q&amp;A System for GPU Programming     2026.01 · UCAS GPU Architecture and Programming Course Competition     Built a domain-specific Q&amp;A system for GPU">
 <meta property="og:type" content="website">
-<meta property="og:title" content="本科项目">
+<meta property="og:title" content="Projects">
 <meta property="og:url" content="https://juneh01.github.io/projects/index.html">
 <meta property="og:site_name" content="Zeng Junhao">
-<meta property="og:description" content="Selected Projects        PRADO: High-Efficiency Pose Estimation Accelerator     UESTC 6DoF Research Group, 2023.05 - 2025.06     Worked on hardware-oriented acceleration for high-precision 6DoF po">
+<meta property="og:description" content="Project Timeline        GPU-Tutor: Intelligent Q&amp;A System for GPU Programming     2026.01 · UCAS GPU Architecture and Programming Course Competition     Built a domain-specific Q&amp;A system for GPU">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-06-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-26T08:48:19.870Z">
+<meta property="article:modified_time" content="2026-06-26T09:10:57.691Z">
 <meta property="article:author" content="Zeng Junhao">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>本科项目 - Zeng Junhao</title>
+  <title>Projects - Zeng Junhao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">本科项目</span>
+            <span id="subtitle">Projects</span>
           
         </div>
 
@@ -232,80 +232,130 @@
 <article class="page-content">
   <div class="academic-profile">
 
-<section id="selected-projects" class="profile-section">
+<section id="project-timeline" class="profile-section">
 
-<h2 id="Selected-Projects"><a href="#Selected-Projects" class="headerlink" title="Selected Projects"></a>Selected Projects</h2><div class="project-list">
+<h2 id="Project-Timeline"><a href="#Project-Timeline" class="headerlink" title="Project Timeline"></a>Project Timeline</h2><div class="project-list">
   <article>
-    <h3>PRADO: High-Efficiency Pose Estimation Accelerator</h3>
-    <p class="project-meta">UESTC 6DoF Research Group, 2023.05 - 2025.06</p>
+    <h3><a href="/projects/gpu-tutor-gpu-programming-qa/">GPU-Tutor: Intelligent Q&A System for GPU Programming</a></h3>
+    <p class="project-meta">2026.01 · UCAS GPU Architecture and Programming Course Competition</p>
+    <p>Built a domain-specific Q&A system for GPU architecture and CUDA programming with Qwen3-0.6B fine-tuning, SFT + DPO alignment, multi-index RAG routing, FAISS retrieval, vLLM serving, continuous batching, prefix caching, and embedding caching. The system ranked 4th in the Paratera Tech Track with 0.3733 ROUGE-L and 33,000+ chars/s inference speed.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/scnn-cuda-inference-optimization/">SCNN CUDA Inference Optimization</a></h3>
+    <p class="project-meta">2025.12 · UCAS GPU Architecture and Programming Course Competition</p>
+    <p>Designed and optimized a CUDA inference framework for spiking convolutional neural networks. The work combined batching, pipelining, Ping-Pong buffering, WMMA Tensor Core kernels, CUDA Graph, PTX inline instructions, and timestep-aware retraining, reducing inference time from 5.64s to 15.4ms while maintaining 89.89% accuracy.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/prado-pose-refinement-accelerator/">PRADO: High-Efficiency Pose Refinement Accelerator</a></h3>
+    <p class="project-meta">2023.05 - 2025.06 · UESTC 6DoF Research Group</p>
     <p>Worked on hardware-oriented acceleration for high-precision 6DoF pose estimation in VR/AR and robotic edge scenarios. Implemented fast activation-function hardware modules including Sigmoid and SoftMax, and participated in post-layout simulation verification and compression-aware experiments.</p>
   </article>
 
   <article>
-    <h3><a href="/projects/aicas-2025-llm-inference-optimization/">IEEE AICAS 2025 Grand Challenge: LLM System Optimization</a></h3>
-    <p class="project-meta">Alibaba T-Head Yitian 710, 2025.03</p>
-    <p>Optimized Qwen2.5-0.5B on edge hardware using INT4 quantization and a T-MAC + llama.cpp inference pipeline. The recorded result reduced memory usage by 75% and improved decoding throughput by about 7x.</p>
-  </article>
-
-  <article>
-    <h3>SCNN CUDA Inference Optimization</h3>
-    <p class="project-meta">UCAS GPU Architecture and Programming Course Competition, 2025.12</p>
-    <p>Designed and optimized a CUDA inference framework for spiking convolutional neural networks. Applied batching, pipelining, Ping-Pong buffering, WMMA Tensor Core, CUDA Graph, PTX inline instructions, and timestep-aware retraining. The inference time was reduced from 5.64s to 15.4ms while maintaining 89.89% accuracy.</p>
-  </article>
-
-  <article>
-    <h3>GPU-Tutor: Intelligent Q&A System for GPU Programming</h3>
-    <p class="project-meta">UCAS GPU Architecture and Programming Course Competition, 2026.01</p>
-    <p>Built a domain-specific question answering system for GPU architecture and programming. The system combined Qwen3-0.6B fine-tuning, SFT + DPO, multi-index RAG routing, FAISS retrieval, vLLM serving, continuous batching, prefix caching, and embedding caching.</p>
-  </article>
-
-  <article>
     <h3><a href="/projects/fyp-lightweight-6dof-pose-estimation/">Final Year Project: Lightweight 6DoF Pose Estimation</a></h3>
-    <p class="project-meta">UESTC / Glasgow College, 2024 - 2025</p>
+    <p class="project-meta">2024 - 2025 · UESTC / Glasgow College</p>
     <p>Explored a lightweight HiPose-DG framework by adding dynamic spatial and channel gating into RGB-D 6DoF pose estimation. The project involved BOP dataset preparation, Docker-based training, LMO evaluation, and accuracy-efficiency analysis.</p>
   </article>
 
   <article>
+    <h3><a href="/projects/aicas-2025-llm-inference-optimization/">IEEE AICAS 2025 Grand Challenge: LLM System Optimization</a></h3>
+    <p class="project-meta">2025.03 · Alibaba T-Head Yitian 710</p>
+    <p>Optimized Qwen2.5-0.5B on edge hardware using INT4 quantization and a T-MAC + llama.cpp inference pipeline. The recorded result reduced memory usage by 75% and improved decoding throughput by about 7x.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/information-security-labs/">Information Security: Security Labs</a></h3>
+    <p class="project-meta">2025.01 · System security and cryptography experiments</p>
+    <p>Organized coursework experiments around security tools, cryptographic mechanisms, vulnerability analysis, and structured experiment reporting. The notes focus on reusable analysis methods rather than publishing sensitive lab artifacts.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/rtcsa-realtime-system-labs/">RTCSA: Real-Time Computing System Labs</a></h3>
+    <p class="project-meta">2025.01 · Real-time systems and RTOS experiments</p>
+    <p>Studied real-time tasks, scheduling constraints, RTOS behavior, and deadline-oriented system analysis. The project connects embedded control, edge inference, and systems thinking through deterministic execution under timing constraints.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/vlsi-design-labs/">VLSI Design: Hardware Design Flow Labs</a></h3>
+    <p class="project-meta">2025.01 · VLSI design and verification</p>
+    <p>Collected VLSI design experiments covering design description, simulation, verification, and report analysis. This work formed part of the hardware-design foundation behind later neural-network accelerator and deployment projects.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/sr-pruning-and-compression/">Model Pruning and Compression Survey</a></h3>
+    <p class="project-meta">2024.12 · Scientific research training</p>
+    <p>Surveyed pruning, CrAM, compression-aware optimization, and model efficiency methods. The project connects low-bit deployment, activation-function hardware, DNN scheduling, and edge-side neural network acceleration.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/sr-defines-dnn-accelerator-exploration/">DeFiNES DNN Accelerator Scheduling Exploration</a></h3>
+    <p class="project-meta">2024.11 · Scientific research training</p>
+    <p>Studied DeFiNES, a design-space exploration framework for depth-first scheduling on DNN accelerators. The work focused on analytical modeling, workload mapping, data movement, energy, latency, and accelerator-aware scheduling tradeoffs.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/sr-reafm-activation-function-module/">ReAFM: Reconfigurable Activation Function Module Survey</a></h3>
+    <p class="project-meta">2024.11 · Scientific research training</p>
+    <p>Investigated hardware implementations of nonlinear activation functions, including ReAFM, MinusExp, ReLU, OPart, and symmetric element-wise activation architectures. The project links neural network operators with efficient and flexible hardware realization.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/sr-hipose-and-pose-estimation/">HiPose and 6DoF Pose Estimation Survey</a></h3>
+    <p class="project-meta">2024.10 · Scientific research training</p>
+    <p>Studied RGB-D 6DoF pose estimation through HiPose, HiPose Former, RANSAC, OnePose, and BOP dataset workflows. This research-training work became the technical foundation for the later lightweight 6DoF pose estimation final-year project.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/tdps-embedded-robot-project/">Team Design Project: STM32 and OpenMV Robot</a></h3>
+    <p class="project-meta">2024.06 · Embedded systems and robot control</p>
+    <p>Built an embedded robot system around STM32 control, OpenMV vision recognition, UART communication, motor control, encoders, ST-LINK debugging, and RGB detection. The project integrated perception, communication, and low-level control in one hardware-software system.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/dsp-dtmf-signal-processing/">Digital Signal Processing: DTMF Generation and Recognition</a></h3>
+    <p class="project-meta">2024.05 · MATLAB signal processing project</p>
+    <p>Implemented DTMF dual-tone signal generation and recognition with MATLAB scripts, audio processing, GUI controls, FFT detection, and Goertzel detection. The project translates frequency-domain signal analysis into a complete recognition pipeline.</p>
+  </article>
+
+  <article>
     <h3><a href="/projects/mcm-2024-deep-sea-rescue-modeling/">MCM/ICM 2024: Deep-Sea Rescue Modeling</a></h3>
-    <p class="project-meta">Outstanding Winner & INFORMS Award, 2024</p>
-    <p>Built a multi-model rescue decision framework for submersible trajectory prediction, equipment allocation, and dynamic search strategy using ARIMA, ridge regression, genetic algorithm, Poisson distribution, and Bayesian update.</p>
+    <p class="project-meta">2024.02 · Outstanding Winner & INFORMS Award</p>
+    <p>Built a multi-model rescue decision framework for submersible trajectory prediction, equipment allocation, and dynamic search strategy using ARIMA, ridge regression, genetic algorithms, Poisson distribution, Bayesian updates, and grid-based search modeling.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/signals-devices-power-electronics-labs/">Signals, Devices, and Power Electronics Labs</a></h3>
+    <p class="project-meta">2024.01 · Engineering fundamentals</p>
+    <p>Organized engineering foundation labs across signals and systems, electronic devices, power electronics, circuits, control, and electromagnetic fields. These projects built the electrical and systems background used in later embedded and accelerator work.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/electronic-system-design/">Electronic System Design</a></h3>
+    <p class="project-meta">2024.01 · Electronic system design workflow</p>
+    <p>Practiced the full electronic-system workflow from requirements and module design to simulation, implementation, testing, and reporting. The work emphasized composing multiple circuit and system modules into a functioning design.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/ml-ai-hybrid-optimization/">Machine Learning and AI: Hybrid Optimization and Classification</a></h3>
+    <p class="project-meta">2024.01 · Machine learning and genetic algorithms</p>
+    <p>Combined machine learning models with genetic algorithms for engineering optimization and classification experiments. The project included MATLAB code, notebooks, reports, training data, and visualization outputs for model-assisted search and evaluation.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/digital-image-processing-projects/">Digital Image Processing and Target Tracking</a></h3>
+    <p class="project-meta">2023.12 · Computer vision fundamentals</p>
+    <p>Implemented image processing coursework and target-tracking experiments, including classic filtering, frequency-domain processing, object detection, and MOSSE tracker concepts. This was an early computer-vision practice before later 6DoF pose estimation work.</p>
+  </article>
+
+  <article>
+    <h3><a href="/projects/kaust-metasurface-simulation/">KAUST: Metasurface Simulation</a></h3>
+    <p class="project-meta">2023.07 · Electromagnetic simulation and HFSS workflow</p>
+    <p>Studied metasurface and metamaterial simulation with Generalized Sheet Transition Conditions, S-parameter analysis, HFSS periodic unit modeling, and MATLAB post-processing. The project connected theoretical boundary conditions with numerical EM simulation and curve analysis.</p>
   </article>
 </div>
 
-</section>
-
-<section id="undergraduate-projects" class="profile-section">
-
-<h2 id="Undergraduate-Project-Archive"><a href="#Undergraduate-Project-Archive" class="headerlink" title="Undergraduate Project Archive"></a>Undergraduate Project Archive</h2><p>这里是本科项目文章目录。每个项目都已整理成独立文章，并会自动出现在 Hexo 的 <a href="/archives/">Archives</a> 中。</p>
-<h2 id="重点项目"><a href="#重点项目" class="headerlink" title="重点项目"></a>重点项目</h2><ul>
-<li><a href="/projects/aicas-2025-llm-inference-optimization/">IEEE AICAS 2025 Grand Challenge - 大模型软硬系统优化</a></li>
-<li><a href="/projects/fyp-lightweight-6dof-pose-estimation/">Final Year Project - Lightweight 6DoF Pose Estimation</a></li>
-<li><a href="/projects/mcm-2024-deep-sea-rescue-modeling/">MCM&#x2F;ICM 2024 - Deep-Sea Rescue Modeling</a></li>
-<li><a href="/projects/kaust-metasurface-simulation/">KAUST - Metasurface Simulation</a></li>
-</ul>
-<h2 id="科研训练"><a href="#科研训练" class="headerlink" title="科研训练"></a>科研训练</h2><ul>
-<li><a href="/projects/sr-hipose-and-pose-estimation/">SR - HiPose 与 6DoF 姿态估计调研</a></li>
-<li><a href="/projects/sr-reafm-activation-function-module/">SR - ReAFM 可重构激活函数模块调研</a></li>
-<li><a href="/projects/sr-defines-dnn-accelerator-exploration/">SR - DeFiNES DNN Accelerator 调度空间探索</a></li>
-<li><a href="/projects/sr-pruning-and-compression/">SR - 模型剪枝与压缩调研</a></li>
-</ul>
-<h2 id="课程项目与实验"><a href="#课程项目与实验" class="headerlink" title="课程项目与实验"></a>课程项目与实验</h2><ul>
-<li><a href="/projects/ml-ai-hybrid-optimization/">Machine Learning and AI - 混合优化与分类实验</a></li>
-<li><a href="/projects/tdps-embedded-robot-project/">Team Design Project - STM32 与 OpenMV 小车项目</a></li>
-<li><a href="/projects/dsp-dtmf-signal-processing/">Digital Signal Processing - DTMF 生成与识别</a></li>
-<li><a href="/projects/vlsi-design-labs/">VLSI Design - 实验与硬件设计流程</a></li>
-<li><a href="/projects/rtcsa-realtime-system-labs/">RTCSA - 实时计算系统实验</a></li>
-<li><a href="/projects/information-security-labs/">Information Security - 安全实验整理</a></li>
-<li><a href="/projects/electronic-system-design/">Electronic System Design - 电子系统设计项目</a></li>
-<li><a href="/projects/digital-image-processing-projects/">Digital Image Processing - 图像处理与目标跟踪项目</a></li>
-<li><a href="/projects/signals-devices-power-electronics-labs/">Signals, Devices and Power Electronics - 工程基础实验整理</a></li>
-</ul>
-<h2 id="维护原则"><a href="#维护原则" class="headerlink" title="维护原则"></a>维护原则</h2><ul>
-<li>详细内容写在 <code>source/_posts/undergrad-*.md</code>，不要堆在这个目录页里。</li>
-<li>每篇项目文章设置 <code>categories: Undergraduate Projects</code>，保证能在分类页聚合。</li>
-<li>每篇项目文章设置 <code>permalink: projects/.../</code>，保证链接稳定。</li>
-<li>不公开课程课件、题库、模板、报销材料、排名截图、个人申请表、压缩包、大体积数据集或第三方版权材料。</li>
-</ul>
 </section>
 
 </div>

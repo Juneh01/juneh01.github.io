@@ -19,26 +19,26 @@
   <meta name="author" content="Zeng Junhao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="项目概览SR 中的 Pruning &#x2F; CrAM 板块关注模型压缩和压缩感知优化。材料中包含 CrAM 相关论文、不同版本代码目录和剪枝方向 review。它与 AICAS、ReAFM、DeFiNES 属于同一条大线：如何让神经网络在有限资源下更高效运行。 背景问题深度神经网络通常包含大量冗余参数。剪枝的目标是删除不重要的权重、通道、注意力头或结构单元，在尽量保持精度的同时减少计算量和存">
+    <meta name="description" content="Project OverviewThis project optimized CUDA inference for spiking convolutional neural networks. The original workload had a long inference time and a timestep-heavy computation pattern, so the main c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SR - 模型剪枝与压缩调研">
-<meta property="og:url" content="https://juneh01.github.io/projects/sr-pruning-and-compression/index.html">
+<meta property="og:title" content="SCNN CUDA Inference Optimization">
+<meta property="og:url" content="https://juneh01.github.io/projects/scnn-cuda-inference-optimization/index.html">
 <meta property="og:site_name" content="Zeng Junhao">
-<meta property="og:description" content="项目概览SR 中的 Pruning &#x2F; CrAM 板块关注模型压缩和压缩感知优化。材料中包含 CrAM 相关论文、不同版本代码目录和剪枝方向 review。它与 AICAS、ReAFM、DeFiNES 属于同一条大线：如何让神经网络在有限资源下更高效运行。 背景问题深度神经网络通常包含大量冗余参数。剪枝的目标是删除不重要的权重、通道、注意力头或结构单元，在尽量保持精度的同时减少计算量和存">
+<meta property="og:description" content="Project OverviewThis project optimized CUDA inference for spiking convolutional neural networks. The original workload had a long inference time and a timestep-heavy computation pattern, so the main c">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-05T12:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-06T01:41:02.403Z">
+<meta property="article:published_time" content="2025-12-15T12:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-26T09:09:59.826Z">
 <meta property="article:author" content="Zeng Junhao">
+<meta property="article:tag" content="GPU">
+<meta property="article:tag" content="CUDA">
 <meta property="article:tag" content="Efficient AI">
-<meta property="article:tag" content="Model Compression">
-<meta property="article:tag" content="Scientific Research">
-<meta property="article:tag" content="Pruning">
-<meta property="article:tag" content="CrAM">
+<meta property="article:tag" content="Tensor Core">
+<meta property="article:tag" content="Inference Optimization">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>SR - 模型剪枝与压缩调研 - Zeng Junhao</title>
+  <title>SCNN CUDA Inference Optimization - Zeng Junhao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">SR - 模型剪枝与压缩调研</span>
+            <span id="subtitle">SCNN CUDA Inference Optimization</span>
           
         </div>
 
@@ -224,8 +224,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-05 20:00" pubdate>
-          December 5, 2024 pm
+        <time datetime="2025-12-15 20:00" pubdate>
+          December 15, 2025 pm
         </time>
       </span>
     
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          644 words
+          42 words
         
       </span>
     
@@ -247,7 +247,7 @@
         
         
         
-          6 mins
+          1 mins
         
       </span>
     
@@ -284,41 +284,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">SR - 模型剪枝与压缩调研</h1>
+            <h1 id="seo-header">SCNN CUDA Inference Optimization</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="项目概览"><a href="#项目概览" class="headerlink" title="项目概览"></a>项目概览</h2><p>SR 中的 Pruning &#x2F; CrAM 板块关注模型压缩和压缩感知优化。材料中包含 CrAM 相关论文、不同版本代码目录和剪枝方向 review。它与 AICAS、ReAFM、DeFiNES 属于同一条大线：如何让神经网络在有限资源下更高效运行。</p>
-<h2 id="背景问题"><a href="#背景问题" class="headerlink" title="背景问题"></a>背景问题</h2><p>深度神经网络通常包含大量冗余参数。剪枝的目标是删除不重要的权重、通道、注意力头或结构单元，在尽量保持精度的同时减少计算量和存储成本。</p>
-<p>常见剪枝方向包括：</p>
-<ul>
-<li>非结构化权重剪枝。</li>
-<li>结构化通道剪枝。</li>
-<li>block pruning。</li>
-<li>动态稀疏。</li>
-<li>训练时压缩感知优化。</li>
-</ul>
-<p>剪枝的难点不是“删掉参数”本身，而是如何判断哪些参数可以删、删完之后如何恢复精度，以及稀疏结构能否真正被硬件加速。</p>
-<h2 id="CrAM-方向"><a href="#CrAM-方向" class="headerlink" title="CrAM 方向"></a>CrAM 方向</h2><p>CrAM 的核心关注点是 compression-aware minimization。它试图在训练或优化过程中考虑模型被压缩后的表现，而不是训练完后再被动剪枝。</p>
-<p>这类方法的直觉是：如果一个模型在优化阶段就被引导到更适合压缩的参数区域，那么后续剪枝或量化造成的性能损失可能更小。</p>
-<h2 id="调研重点"><a href="#调研重点" class="headerlink" title="调研重点"></a>调研重点</h2><p>我在这个方向上主要关注几个问题：</p>
-<ul>
-<li>剪枝指标如何定义，例如权重大小、梯度、Hessian 近似或 activation sensitivity。</li>
-<li>剪枝后是否需要 fine-tuning。</li>
-<li>稀疏比例和精度下降之间如何权衡。</li>
-<li>结构化剪枝和硬件实际加速之间的关系。</li>
-<li>压缩感知训练如何影响模型最终落点。</li>
-</ul>
-<h2 id="与其他项目的联系"><a href="#与其他项目的联系" class="headerlink" title="与其他项目的联系"></a>与其他项目的联系</h2><p>这个方向和其他本科项目之间有明显关联：</p>
-<ul>
-<li>和 AICAS 的低比特量化共同服务于端侧部署。</li>
-<li>和 DeFiNES 一样关注硬件友好的模型执行。</li>
-<li>和 ReAFM 一样站在神经网络系统实现角度理解模型。</li>
-<li>和 FYP 的动态门控也有相似思想：不是所有特征都值得同等计算。</li>
-</ul>
-<h2 id="我的收获"><a href="#我的收获" class="headerlink" title="我的收获"></a>我的收获</h2><p>剪枝调研让我更清楚地认识到，模型效率不只是一个训练后压缩步骤，而是一种贯穿模型设计、训练、部署和硬件映射的思路。</p>
-<p>后续如果继续做，可以加入具体模型上的剪枝实验，例如比较剪枝前后参数量、FLOPs、latency 和 accuracy 的变化，并验证稀疏模式是否能真正带来实际推理加速。</p>
+                <h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>This project optimized CUDA inference for spiking convolutional neural networks. The original workload had a long inference time and a timestep-heavy computation pattern, so the main challenge was to redesign execution around GPU parallelism, memory reuse, and reduced launch overhead.</p>
+<p>The optimized version reduced inference time from 5.64s to 15.4ms while maintaining 89.89% accuracy.</p>
+<h2 id="Optimization-Methods"><a href="#Optimization-Methods" class="headerlink" title="Optimization Methods"></a>Optimization Methods</h2><p>The system used batching and pipelining to improve parallelism across samples and computation stages. Ping-Pong buffering helped overlap data movement and computation, reducing idle time between stages.</p>
+<p>For compute kernels, I explored WMMA Tensor Core programming and PTX inline instructions. CUDA Graph was used to reduce repeated kernel-launch overhead, which is especially useful when the inference flow contains many small or repeated operations.</p>
+<h2 id="Model-and-Accuracy-Considerations"><a href="#Model-and-Accuracy-Considerations" class="headerlink" title="Model and Accuracy Considerations"></a>Model and Accuracy Considerations</h2><p>Because spiking neural networks depend on timestep behavior, optimization could not only focus on raw kernel speed. I also considered timestep-aware retraining and accuracy preservation so that acceleration did not destroy the model’s inference quality.</p>
+<p>This made the project a system-level optimization task: kernel design, execution scheduling, graph capture, memory buffering, and model behavior all affected the final result.</p>
+<h2 id="Takeaways"><a href="#Takeaways" class="headerlink" title="Takeaways"></a>Takeaways</h2><p>SCNN CUDA optimization gave me practical experience with GPU performance engineering. The most valuable lesson was that high speedups usually come from combining several layers of optimization: algorithm-level simplification, memory hierarchy awareness, Tensor Core usage, launch-overhead reduction, and model-aware accuracy control.</p>
 
                 
               </div>
@@ -337,7 +314,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Undergraduate-Projects/" class="category-chain-item">Undergraduate Projects</a>
+  <a href="/categories/Projects/" class="category-chain-item">Projects</a>
   
   
 
@@ -352,15 +329,15 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/GPU/" class="print-no-link">#GPU</a>
+      
+        <a href="/tags/CUDA/" class="print-no-link">#CUDA</a>
+      
         <a href="/tags/Efficient-AI/" class="print-no-link">#Efficient AI</a>
       
-        <a href="/tags/Model-Compression/" class="print-no-link">#Model Compression</a>
+        <a href="/tags/Tensor-Core/" class="print-no-link">#Tensor Core</a>
       
-        <a href="/tags/Scientific-Research/" class="print-no-link">#Scientific Research</a>
-      
-        <a href="/tags/Pruning/" class="print-no-link">#Pruning</a>
-      
-        <a href="/tags/CrAM/" class="print-no-link">#CrAM</a>
+        <a href="/tags/Inference-Optimization/" class="print-no-link">#Inference Optimization</a>
       
     </div>
   
@@ -372,8 +349,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SR - 模型剪枝与压缩调研</div>
-      <div>https://juneh01.github.io/projects/sr-pruning-and-compression/</div>
+      <div>SCNN CUDA Inference Optimization</div>
+      <div>https://juneh01.github.io/projects/scnn-cuda-inference-optimization/</div>
     </div>
     <div class="license-meta">
       
@@ -385,7 +362,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>December 5, 2024</div>
+          <div>December 15, 2025</div>
         </div>
       
       
@@ -417,9 +394,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/projects/vlsi-design-labs/" title="VLSI Design - 实验与硬件设计流程">
+                      <a href="/projects/gpu-tutor-gpu-programming-qa/" title="GPU-Tutor - Intelligent Q&amp;A System for GPU Programming">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">VLSI Design - 实验与硬件设计流程</span>
+                        <span class="hidden-mobile">GPU-Tutor - Intelligent Q&amp;A System for GPU Programming</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -427,8 +404,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/projects/sr-defines-dnn-accelerator-exploration/" title="SR - DeFiNES DNN Accelerator 调度空间探索">
-                        <span class="hidden-mobile">SR - DeFiNES DNN Accelerator 调度空间探索</span>
+                      <a href="/projects/prado-pose-refinement-accelerator/" title="PRADO - High-Efficiency Pose Refinement Accelerator">
+                        <span class="hidden-mobile">PRADO - High-Efficiency Pose Refinement Accelerator</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -4,6 +4,103 @@
   
   
   <entry>
+    <title>GPU-Tutor - Intelligent Q&amp;A System for GPU Programming</title>
+    <link href="/projects/gpu-tutor-gpu-programming-qa/"/>
+    <url>/projects/gpu-tutor-gpu-programming-qa/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>GPU-Tutor is an intelligent question-answering system for GPU architecture and CUDA programming. The project targeted a course competition scenario where the system needed to answer domain-specific questions accurately while maintaining high serving throughput.</p><p>The final system combined a small language model, supervised fine-tuning, preference alignment, retrieval, and inference-serving optimization. It achieved 4th place in the Paratera Tech Track with 0.3733 ROUGE-L and more than 33,000 chars&#x2F;s inference speed.</p><h2 id="System-Design"><a href="#System-Design" class="headerlink" title="System Design"></a>System Design</h2><p>The model side was built around Qwen3-0.6B. I used SFT to adapt the model to GPU-programming questions, then introduced DPO to improve answer preference and domain alignment.</p><p>The retrieval side used a multi-index RAG pipeline. Different knowledge sources were routed through separate retrieval indices, then merged into prompts according to the question type. FAISS was used for vector retrieval, while embedding cache reduced repeated encoding overhead.</p><h2 id="Serving-Optimization"><a href="#Serving-Optimization" class="headerlink" title="Serving Optimization"></a>Serving Optimization</h2><p>For serving, the system used vLLM to improve throughput and support efficient batched generation. Continuous batching helped absorb concurrent requests, while prefix caching reduced repeated prompt prefill cost for similar question templates.</p><p>The optimization work was not only about model accuracy. It also required balancing retrieval latency, prompt length, batching behavior, and output speed so that the system stayed responsive under competition workloads.</p><h2 id="Takeaways"><a href="#Takeaways" class="headerlink" title="Takeaways"></a>Takeaways</h2><p>This project connected LLM fine-tuning, RAG system design, and inference serving. It also turned GPU programming knowledge into an application scenario: the model needed to understand CUDA concepts, memory hierarchy, kernel optimization, and architecture-level terminology well enough to produce useful answers.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>GPU</tag>
+      
+      <tag>CUDA</tag>
+      
+      <tag>RAG</tag>
+      
+      <tag>vLLM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SCNN CUDA Inference Optimization</title>
+    <link href="/projects/scnn-cuda-inference-optimization/"/>
+    <url>/projects/scnn-cuda-inference-optimization/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>This project optimized CUDA inference for spiking convolutional neural networks. The original workload had a long inference time and a timestep-heavy computation pattern, so the main challenge was to redesign execution around GPU parallelism, memory reuse, and reduced launch overhead.</p><p>The optimized version reduced inference time from 5.64s to 15.4ms while maintaining 89.89% accuracy.</p><h2 id="Optimization-Methods"><a href="#Optimization-Methods" class="headerlink" title="Optimization Methods"></a>Optimization Methods</h2><p>The system used batching and pipelining to improve parallelism across samples and computation stages. Ping-Pong buffering helped overlap data movement and computation, reducing idle time between stages.</p><p>For compute kernels, I explored WMMA Tensor Core programming and PTX inline instructions. CUDA Graph was used to reduce repeated kernel-launch overhead, which is especially useful when the inference flow contains many small or repeated operations.</p><h2 id="Model-and-Accuracy-Considerations"><a href="#Model-and-Accuracy-Considerations" class="headerlink" title="Model and Accuracy Considerations"></a>Model and Accuracy Considerations</h2><p>Because spiking neural networks depend on timestep behavior, optimization could not only focus on raw kernel speed. I also considered timestep-aware retraining and accuracy preservation so that acceleration did not destroy the model’s inference quality.</p><p>This made the project a system-level optimization task: kernel design, execution scheduling, graph capture, memory buffering, and model behavior all affected the final result.</p><h2 id="Takeaways"><a href="#Takeaways" class="headerlink" title="Takeaways"></a>Takeaways</h2><p>SCNN CUDA optimization gave me practical experience with GPU performance engineering. The most valuable lesson was that high speedups usually come from combining several layers of optimization: algorithm-level simplification, memory hierarchy awareness, Tensor Core usage, launch-overhead reduction, and model-aware accuracy control.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>GPU</tag>
+      
+      <tag>CUDA</tag>
+      
+      <tag>Efficient AI</tag>
+      
+      <tag>Tensor Core</tag>
+      
+      <tag>Inference Optimization</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PRADO - High-Efficiency Pose Refinement Accelerator</title>
+    <link href="/projects/prado-pose-refinement-accelerator/"/>
+    <url>/projects/prado-pose-refinement-accelerator/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>PRADO is a high-efficiency accelerator project for 6DoF pose refinement. The work targeted high-precision RGB-D pose estimation in VR&#x2F;AR and robotic edge scenarios, where latency, energy efficiency, and deployment cost are all important.</p><p>The project later appeared in the TCAS-I publication <strong>PRADO: A Low-Latency and Energy-Efficient 6DoF Pose Refinement Accelerator With Domain-Specific Explorations</strong>.</p><h2 id="My-Work"><a href="#My-Work" class="headerlink" title="My Work"></a>My Work</h2><p>My work focused on hardware-oriented implementation and verification for neural-network components used in pose-estimation acceleration. I implemented fast activation-function hardware modules including Sigmoid and SoftMax, and studied how these operators affect accelerator latency and area.</p><p>I also participated in post-layout simulation verification and compression-aware experiments. These tasks helped connect algorithm-level model design with actual hardware cost, especially around element-wise nonlinear computation and memory-efficient execution.</p><h2 id="Technical-Focus"><a href="#Technical-Focus" class="headerlink" title="Technical Focus"></a>Technical Focus</h2><p>The project sits at the intersection of 3D vision and hardware-software co-design. From the vision side, the goal is accurate pose refinement under RGB-D input. From the hardware side, the challenge is to reduce unnecessary computation and data movement while preserving model behavior.</p><p>This experience became a bridge between my 6DoF pose-estimation research and later efficient-AI system work. It also gave me a concrete view of how algorithm choices translate into hardware modules, timing closure pressure, and deployment constraints.</p><h2 id="Takeaways"><a href="#Takeaways" class="headerlink" title="Takeaways"></a>Takeaways</h2><p>PRADO helped me build intuition for accelerator-aware neural network design. Instead of treating neural networks as abstract software graphs, I learned to examine operators, activation functions, memory access, layout, verification, and post-layout behavior as part of one deployment-oriented system.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Projects</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>6DoF Pose Estimation</tag>
+      
+      <tag>Hardware-Software Co-design</tag>
+      
+      <tag>Neural Network Hardware</tag>
+      
+      <tag>Efficient AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Final Year Project - Lightweight 6DoF Pose Estimation</title>
     <link href="/projects/fyp-lightweight-6dof-pose-estimation/"/>
     <url>/projects/fyp-lightweight-6dof-pose-estimation/</url>
@@ -20,9 +117,9 @@
     
     <tags>
       
-      <tag>Computer Vision</tag>
-      
       <tag>6DoF Pose Estimation</tag>
+      
+      <tag>Computer Vision</tag>
       
       <tag>RGB-D</tag>
       
@@ -53,9 +150,9 @@
     
     <tags>
       
-      <tag>AICAS</tag>
-      
       <tag>LLM</tag>
+      
+      <tag>AICAS</tag>
       
       <tag>Quantization</tag>
       
@@ -117,15 +214,15 @@
     
     <tags>
       
-      <tag>Scheduling</tag>
-      
-      <tag>Embedded Systems</tag>
-      
       <tag>RTCSA</tag>
       
       <tag>Real-time Systems</tag>
       
       <tag>RTOS</tag>
+      
+      <tag>Embedded Systems</tag>
+      
+      <tag>Scheduling</tag>
       
     </tags>
     
@@ -183,6 +280,8 @@
     
     <tags>
       
+      <tag>Efficient AI</tag>
+      
       <tag>Model Compression</tag>
       
       <tag>Scientific Research</tag>
@@ -190,8 +289,6 @@
       <tag>Pruning</tag>
       
       <tag>CrAM</tag>
-      
-      <tag>Efficient AI</tag>
       
     </tags>
     
@@ -216,6 +313,8 @@
     
     <tags>
       
+      <tag>Scheduling</tag>
+      
       <tag>Scientific Research</tag>
       
       <tag>DNN Accelerator</tag>
@@ -223,8 +322,6 @@
       <tag>DeFiNES</tag>
       
       <tag>Design Space Exploration</tag>
-      
-      <tag>Scheduling</tag>
       
     </tags>
     
@@ -249,9 +346,9 @@
     
     <tags>
       
-      <tag>Scientific Research</tag>
-      
       <tag>Neural Network Hardware</tag>
+      
+      <tag>Scientific Research</tag>
       
       <tag>Activation Function</tag>
       
@@ -308,9 +405,9 @@
     
     <tags>
       
-      <tag>Computer Vision</tag>
-      
       <tag>6DoF Pose Estimation</tag>
+      
+      <tag>Computer Vision</tag>
       
       <tag>RGB-D</tag>
       
