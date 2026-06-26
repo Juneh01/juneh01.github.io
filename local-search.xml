@@ -59,9 +59,9 @@
       
       <tag>CUDA</tag>
       
-      <tag>GPU</tag>
-      
       <tag>LLM</tag>
+      
+      <tag>GPU</tag>
       
       <tag>RAG</tag>
       
@@ -94,9 +94,9 @@
       
       <tag>Inference Optimization</tag>
       
-      <tag>Efficient AI</tag>
-      
       <tag>GPU</tag>
+      
+      <tag>Efficient AI</tag>
       
       <tag>Tensor Core</tag>
       
@@ -251,8 +251,6 @@
     
     <tags>
       
-      <tag>Scheduling</tag>
-      
       <tag>RTCSA</tag>
       
       <tag>Real-time Systems</tag>
@@ -260,6 +258,8 @@
       <tag>RTOS</tag>
       
       <tag>Embedded Systems</tag>
+      
+      <tag>Scheduling</tag>
       
     </tags>
     
@@ -350,6 +350,8 @@
     
     <tags>
       
+      <tag>Scheduling</tag>
+      
       <tag>Scientific Research</tag>
       
       <tag>DNN Accelerator</tag>
@@ -357,8 +359,6 @@
       <tag>DeFiNES</tag>
       
       <tag>Design Space Exploration</tag>
-      
-      <tag>Scheduling</tag>
       
     </tags>
     
