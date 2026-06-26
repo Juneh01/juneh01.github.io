@@ -5,8 +5,8 @@
   var intro = document.querySelector(".about-intro");
   var buttons = profile.querySelectorAll("[data-about-lang-button]");
   var introText = {
-    en: "M.Eng. Student, Institute of Computing Technology, Chinese Academy of Sciences | Efficient LLM Inference and GPU Systems",
-    zh: "中国科学院计算技术研究所硕士研究生 | 高效大模型推理与 GPU 系统"
+    en: "M.Eng. Student, Institute of Computing Technology, Chinese Academy of Sciences | Efficient LLM Inference, Agent Memory, and GPU Systems",
+    zh: "中国科学院计算技术研究所硕士研究生 | 高效大模型推理、Agent Memory 与 GPU 系统"
   };
 
   function normalizeLanguage(lang) {
