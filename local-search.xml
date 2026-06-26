@@ -20,17 +20,17 @@
     
     <tags>
       
-      <tag>CUDA</tag>
-      
-      <tag>Inference Optimization</tag>
-      
       <tag>AICAS</tag>
       
       <tag>PPU</tag>
       
       <tag>Qwen3-VL</tag>
       
+      <tag>CUDA</tag>
+      
       <tag>Vision-Language Model</tag>
+      
+      <tag>Inference Optimization</tag>
       
       <tag>Quantization</tag>
       
@@ -57,11 +57,11 @@
     
     <tags>
       
+      <tag>CUDA</tag>
+      
       <tag>LLM</tag>
       
       <tag>GPU</tag>
-      
-      <tag>CUDA</tag>
       
       <tag>RAG</tag>
       
@@ -90,15 +90,15 @@
     
     <tags>
       
-      <tag>GPU</tag>
-      
       <tag>CUDA</tag>
+      
+      <tag>Inference Optimization</tag>
+      
+      <tag>GPU</tag>
       
       <tag>Efficient AI</tag>
       
       <tag>Tensor Core</tag>
-      
-      <tag>Inference Optimization</tag>
       
     </tags>
     
@@ -187,11 +187,11 @@
     
     <tags>
       
-      <tag>LLM</tag>
-      
       <tag>AICAS</tag>
       
       <tag>Quantization</tag>
+      
+      <tag>LLM</tag>
       
       <tag>Edge AI</tag>
       
