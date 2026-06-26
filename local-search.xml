@@ -585,9 +585,9 @@
     
     <tags>
       
-      <tag>DSP</tag>
-      
       <tag>MATLAB</tag>
+      
+      <tag>DSP</tag>
       
       <tag>DTMF</tag>
       
@@ -748,15 +748,15 @@
     
     <tags>
       
-      <tag>MATLAB</tag>
-      
-      <tag>Computer Vision</tag>
-      
       <tag>Digital Image Processing</tag>
+      
+      <tag>MATLAB</tag>
       
       <tag>Target Tracking</tag>
       
       <tag>MOSSE</tag>
+      
+      <tag>Computer Vision</tag>
       
     </tags>
     
