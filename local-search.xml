@@ -59,9 +59,9 @@
       
       <tag>CUDA</tag>
       
-      <tag>LLM</tag>
-      
       <tag>GPU</tag>
+      
+      <tag>LLM</tag>
       
       <tag>RAG</tag>
       
@@ -94,9 +94,9 @@
       
       <tag>Inference Optimization</tag>
       
-      <tag>GPU</tag>
-      
       <tag>Efficient AI</tag>
+      
+      <tag>GPU</tag>
       
       <tag>Tensor Core</tag>
       
