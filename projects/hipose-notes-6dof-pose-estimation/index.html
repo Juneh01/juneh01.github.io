@@ -21,23 +21,24 @@
   
     <meta name="description" content="Introduction在3D计算机视觉中，估计物体的六自由度（6DoF）姿态是一个基本的挑战。这项任务在许多实际应用中扮演着关键角色，包括增强现实，机器人抓取和自动驾驶。尽管其重要性，但在物体纹理均匀和严重遮挡的情况下，实现准确的6DoF姿态估计仍然具有挑战性。 深度学习的出现有助于克服这些挑战。最近的一些基于RGB的工作在处理遮挡方面显示出了有前景的结果。尽管有这些进步，但仅从RGB图像估计物">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hipose_笔记">
-<meta property="og:url" content="https://juneh01.github.io/2024/10/16/Hipose_%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="HiPose Notes - 6DoF Pose Estimation Background">
+<meta property="og:url" content="https://juneh01.github.io/projects/hipose-notes-6dof-pose-estimation/index.html">
 <meta property="og:site_name" content="Zeng Junhao">
 <meta property="og:description" content="Introduction在3D计算机视觉中，估计物体的六自由度（6DoF）姿态是一个基本的挑战。这项任务在许多实际应用中扮演着关键角色，包括增强现实，机器人抓取和自动驾驶。尽管其重要性，但在物体纹理均匀和严重遮挡的情况下，实现准确的6DoF姿态估计仍然具有挑战性。 深度学习的出现有助于克服这些挑战。最近的一些基于RGB的工作在处理遮挡方面显示出了有前景的结果。尽管有这些进步，但仅从RGB图像估计物">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://juneh01.github.io/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
-<meta property="og:image" content="https://juneh01.github.io/Downloads/IMG_1819.HEIC">
-<meta property="og:image" content="https://juneh01.github.io/">
 <meta property="article:published_time" content="2024-10-16T07:28:30.000Z">
-<meta property="article:modified_time" content="2024-10-16T07:29:42.567Z">
+<meta property="article:modified_time" content="2026-06-27T09:10:08.176Z">
 <meta property="article:author" content="Zeng Junhao">
+<meta property="article:tag" content="Project Notes">
+<meta property="article:tag" content="HiPose">
+<meta property="article:tag" content="6DoF Pose Estimation">
+<meta property="article:tag" content="RGB-D">
+<meta property="article:tag" content="Computer Vision">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://juneh01.github.io/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png">
   
   
   
-  <title>Hipose_笔记 - Zeng Junhao</title>
+  <title>HiPose Notes - 6DoF Pose Estimation Background - Zeng Junhao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +213,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hipose_笔记</span>
+            <span id="subtitle">HiPose Notes - 6DoF Pose Estimation Background</span>
           
         </div>
 
@@ -283,7 +284,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hipose_笔记</h1>
+            <h1 id="seo-header">HiPose Notes - 6DoF Pose Estimation Background</h1>
             
             
               <div class="markdown-body">
@@ -308,7 +309,9 @@
 <p>给定一个具有3D扫描或CAD模型网格的物体，网格由N个3D顶点组成。这些顶点被二进制编码，每个顶点对应一个唯一的二进制码。通过上采样预处理物体网格，使得顶点数量等于二的幂。</p>
 <p>ZebraPose算法通过迭代地将网格分割成顶点数量相等的部分，并为每个部分分配一个二进制位，从而构造这种二进制编码。在每次迭代中，都会有更多的子表面，每个子表面包含的顶点数量大致相等。</p>
 <p>这个过程创建了一个分层的二进制编码，这意味着所有二进制编码的前x位相同的顶点都属于同一个子表面，直到第x个分区。换句话说，一个二进制码描述了一个从粗到细的物体表面流形，其中最粗的流形是完整的物体网格，最细的流形是网格的一个单独顶点。</p>
-<p><img src="/Users/majesty/Library/CloudStorage/OneDrive-UniversityofGlasgow/Files/SR/Project/HiPose/HiPose-main/pic/overview.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>Figure omitted in the public version: HiPose coarse-to-fine surface-code overview.</p>
+</blockquote>
 <h2 id="Point-to-Surface-Corrrespondences"><a href="#Point-to-Surface-Corrrespondences" class="headerlink" title="Point-to-Surface Corrrespondences"></a>Point-to-Surface Corrrespondences</h2><p>前人的工作已经使用了二进制编码的表面从RGB图像进行姿态估计，但这种方法并未设计来利用深度图信息，也没有明确利用编码表面预测的层次性质，也没有利用预测表面代码的内在置信。</p>
 <p>相比之下，HiPose方法则做了一些改进。首先，它接受一个RGB-D图像作为输入，这意味着它同时使用了颜色和深度信息，而不仅仅是RGB信息。这样一来，它能够更全面地理解场景，从而提高姿态估计的准确性。</p>
 <p>其次，HiPose方法利用了编码的层次性质。具体来说，它将二进制编码分为两组：前m位和后n位。然后，通过迭代地利用这些位，实现了从粗到细的处理。这意味着，它首先使用前m位来进行粗略的估计，然后再使用后n位来进行细致的估计。这样做的好处是，可以先快速地得到一个大致的结果，然后再慢慢地进行精细化，从而提高了姿态估计的精度。</p>
@@ -327,7 +330,9 @@
 <p>在下一次迭代中，我们会再次计算每个点和它的表面之间的距离，但这次我们会用新的姿态来变换表面。然后，我们会再次选择内点和外点。</p>
 <p>这个过程会重复多次，每次都会提炼和改进姿态的估计。最后，我们会使用所有被认为是内点的点来进行最后一次姿态估计。这个过程的结果就是我们最终的姿态估计。</p>
 <p>这个过程的优点是，它可以逐步提炼和改进姿态的估计，并且可以有效地消除异常值。</p>
-<p>![截屏2024-04-21 14.28.38](&#x2F;Users&#x2F;majesty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;截屏2024-04-21 14.28.38.png)</p>
+<blockquote>
+<p>Figure omitted in the public version: hierarchical correspondence pruning workflow.</p>
+</blockquote>
 <h1 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h1><p>在这一部分，我们从实现、数据集和评估指标开始。接下来，我们展示了使用不同的3D-3D对应关系求解器对我们的方法进行的消融研究。最后，我们呈现了我们方法的实验结果，并与文献中的最新姿态估计方法以及BOP挑战中的方法进行比较。</p>
 <ol>
 <li><p><strong>实现、数据集和评估指标</strong>：在这部分，作者可能会详细介绍他们的实验设置，包括他们使用的硬件和软件，以及他们的方法的具体实现细节。他们还可能会描述他们用于训练和测试的数据集，以及他们用于评估方法性能的指标。</p>
@@ -354,7 +359,9 @@
 <h2 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h2><p>对于LM-O数据集，他们使用了最常见的6DoF姿态度量标准ADD(-S)。ADD计算了在使用估计的姿态和真实姿态将物体顶点投影到相机坐标时，落在距离阈值以下（这个阈值取决于物体大小）的物体顶点的百分比。对于对称物体，ADD(-S)的计算方式有所不同，它匹配最近的模型点（考虑到对称性），而不是完全相同的模型点。</p>
 <p>对于YCB-V数据集，他们报告了ADD(-S)的曲线下面积（AUC），最大阈值为10cm，这是根据文献[63]中的描述。此外，对于这两个数据集，他们还报告了由BOP挑战赛定义的BOP得分度量。</p>
 <p>这些度量标准都是用来评估物体姿态估计算法的性能的，包括算法对物体位置和方向的估计精度，以及算法对复杂场景（如物体遮挡和光照变化）的处理能力。</p>
-<h2 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a>消融实验</h2><p>![截屏2024-04-21 10.15.07](&#x2F;Users&#x2F;majesty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;截屏2024-04-21 10.15.07.png)</p>
+<h2 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a>消融实验</h2><blockquote>
+<p>Figure omitted in the public version: ablation table snapshot.</p>
+</blockquote>
 <ul>
 <li>A0：直接使用Kabsch算法解决物体姿态，不使用对应剪枝。</li>
 <li>A1：使用RANSAC框架识别异常值。</li>
@@ -365,7 +372,9 @@
 <li>E0：使用ZebraPose提供的网络，通过深度图将2D像素反投影到3D点，然后使用RANSAC + Kabsch进行3D-3D对应的姿态估计。</li>
 <li>E1：实现了一个基线模型”Concat”，它学习2D-3D对应关系，但是使用3D-3D对应关系解决姿态。</li>
 </ul>
-<p>![截屏2024-04-21 10.15.41](&#x2F;Users&#x2F;majesty&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;截屏2024-04-21 10.15.41.png)</p>
+<blockquote>
+<p>Figure omitted in the public version: ablation curve snapshot.</p>
+</blockquote>
 <p>Table 2: 精度的提高证实了低质量对应关系的逐步移除。</p>
 <p>Figure 4: 消融研究的结果，研究的对象是选择默认初始位m_defult。这个实验使用了LM-O数据集中的8个对象。这个图的曲线应该是平坦的，显示了他们提出的设计（即层次化的对应关系剪枝策略）是稳健的，并且相比于非层次化的变体（即选择16作为初始位）有明显的优势。</p>
 <p>具体来说，这个图可能展示了当m_defult变化时，模型性能（例如召回率或精度）的变化。如果曲线是平坦的，那么这意味着他们的方法对m_defult的选择不敏感，即使m_defult变化，性能也保持稳定。这进一步表明他们的方法具有很好的鲁棒性。同时，与选择16作为初始位的非层次化方法相比，他们的方法有明显的优势，可能在性能上超过了非层次化方法。</p>
@@ -375,8 +384,12 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs"><br></code></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://baidu.com/">hello</a></p>
-<p> <img src="/../../../../../../../Downloads/IMG_1819.HEIC" srcset="/img/loading.gif" lazyload alt="IMG_1819.HEIC"> </p>
-<p><img src="/" srcset="/img/loading.gif" lazyload alt="hh"></p>
+<blockquote>
+<p>Figure omitted in the public version.</p>
+</blockquote>
+<blockquote>
+<p>Figure omitted in the public version.</p>
+</blockquote>
 
                 
               </div>
@@ -395,8 +408,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Gruduation-Project/" class="category-chain-item">Gruduation Project</a>
+  <a href="/categories/Projects/" class="category-chain-item">Projects</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/Projects/Project-Notes/" class="category-chain-item">Project Notes</a>
+  
+  
+
   
 
       </span>
@@ -407,6 +427,21 @@
     </div>
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Project-Notes/" class="print-no-link">#Project Notes</a>
+      
+        <a href="/tags/HiPose/" class="print-no-link">#HiPose</a>
+      
+        <a href="/tags/6DoF-Pose-Estimation/" class="print-no-link">#6DoF Pose Estimation</a>
+      
+        <a href="/tags/RGB-D/" class="print-no-link">#RGB-D</a>
+      
+        <a href="/tags/Computer-Vision/" class="print-no-link">#Computer Vision</a>
+      
+    </div>
+  
 </div>
 
 
@@ -415,8 +450,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hipose_笔记</div>
-      <div>https://juneh01.github.io/2024/10/16/Hipose_笔记/</div>
+      <div>HiPose Notes - 6DoF Pose Estimation Background</div>
+      <div>https://juneh01.github.io/projects/hipose-notes-6dof-pose-estimation/</div>
     </div>
     <div class="license-meta">
       

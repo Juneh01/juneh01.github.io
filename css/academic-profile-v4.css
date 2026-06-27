@@ -300,6 +300,77 @@ html[data-about-lang="en"] .language-panel[data-lang-panel="zh"] {
   padding-bottom: 0;
 }
 
+.project-archive .profile-section {
+  padding-bottom: 1.35rem;
+}
+
+.project-page-intro {
+  max-width: 46rem;
+  color: var(--apple-secondary);
+}
+
+.project-featured-list article h3 {
+  margin-top: 0;
+}
+
+.project-year-block h3 {
+  margin-top: 1.35rem !important;
+  padding-top: 0.15rem;
+}
+
+.project-timeline-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0.95rem;
+  padding: 0;
+  list-style: none;
+}
+
+.project-timeline-list li {
+  display: grid;
+  grid-template-columns: 8.8rem minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: baseline;
+}
+
+.project-time {
+  color: var(--apple-tertiary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.project-timeline-list em {
+  display: block;
+  margin-top: 0.08rem;
+  color: var(--apple-secondary);
+  font-size: 0.86rem;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.project-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.05rem 1.4rem;
+}
+
+.project-group-grid section {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--apple-border);
+}
+
+.project-group-grid h3,
+.project-group-grid p {
+  margin: 0;
+}
+
+.project-group-grid p {
+  margin-top: 0.3rem;
+  color: var(--post-text-color);
+}
+
 .publication-list article {
   margin: 0;
   padding: 0;
@@ -370,6 +441,19 @@ html[data-about-lang="en"] .language-panel[data-lang-panel="zh"] {
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 0.15rem;
+  }
+
+  .project-timeline-list li {
+    grid-template-columns: 1fr;
+    gap: 0.05rem;
+  }
+
+  .project-time {
+    white-space: normal;
+  }
+
+  .project-group-grid {
+    grid-template-columns: 1fr;
   }
 
   .timeline-item.logo-entry,
