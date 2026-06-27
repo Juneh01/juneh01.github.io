@@ -4,6 +4,80 @@
   
   
   <entry>
+    <title>Postgraduate Technical Coursework</title>
+    <link href="/courses/postgraduate-technical-coursework/"/>
+    <url>/courses/postgraduate-technical-coursework/</url>
+    
+    <content type="html"><![CDATA[<p>This page organizes my postgraduate technical coursework. It only includes courses and materials related to computer science, electronic and computer engineering, AI systems, security, architecture, and data systems. General education, ethics, humanities, and administrative materials are intentionally excluded.</p><p>The course files are kept locally; this public page records the technical scope and learning focus without publishing private notes, assignments, exams, or original course documents.</p><h2 id="Course-Catalog"><a href="#Course-Catalog" class="headerlink" title="Course Catalog"></a>Course Catalog</h2><table><thead><tr><th>Course</th><th>Period</th><th>Technical Focus</th><th>Organized Materials</th></tr></thead><tbody><tr><td>Algorithm Design and Analysis</td><td>2025-2026</td><td>Graph algorithms, divide and conquer, dynamic programming, greedy algorithms, backtracking, branch and bound, approximation algorithms, max-flow, linear programming, probabilistic algorithms, and complexity analysis.</td><td>Lecture slides, textbook references, review notes, homework folders, and implementation code.</td></tr><tr><td>Security Chips</td><td>2025-2026</td><td>Trusted computing, secure processor architecture, TPM, HSM, RFID security, PUF, side-channel attacks, fault attacks, memory security, and Intel SGX.</td><td>Lecture slides, secure processor readings, course report, and paper-reading materials.</td></tr><tr><td>Intelligent Computing System</td><td>2025-2026</td><td>Deep learning applications, programming frameworks, AI processors, accelerator architecture, intelligent programming languages, and LLM computing systems.</td><td>Lecture slides, lab folders, exam review notes, and presentation&#x2F;report materials.</td></tr><tr><td>Distributed Multimedia System and Technology</td><td>2025-2026</td><td>Distributed multimedia systems, media scheduling, video processing, video super-resolution, system design, and multimedia service workflows.</td><td>Lecture slides, review notes, design reports, and system-case materials.</td></tr><tr><td>Big Data Analysis and Mining</td><td>2025-2026</td><td>Big data processing, data mining workflows, HBase, distributed data storage, and analytics-oriented system design.</td><td>Lecture slides, textbook references, homework folders, and review materials.</td></tr><tr><td>Deep Learning</td><td>2025-2026</td><td>Neural network training, optimization, representation learning, deep learning systems, and lab-based model implementation.</td><td>Lecture slides, lab materials, and review resources.</td></tr><tr><td>GPU Architecture and Programming</td><td>2025-2026</td><td>CUDA programming, GPU execution model, memory hierarchy, PTX, massively parallel processors, GPGPU architecture, and performance-oriented programming.</td><td>CUDA references, GPU architecture readings, review notes, project materials, and presentation drafts.</td></tr><tr><td>Computer Systems Architecture</td><td>2025-2026</td><td>Quantitative computer architecture, ISA and microarchitecture, pipelining, memory hierarchy, parallelism, architecture evaluation, and system-level performance tradeoffs.</td><td>Architecture textbooks, lecture slides, homework folders, and project materials.</td></tr></tbody></table><h2 id="Technical-Thread"><a href="#Technical-Thread" class="headerlink" title="Technical Thread"></a>Technical Thread</h2><p>These courses connect around one broad direction: efficient AI and computing systems. Algorithm Design and Analysis provides the formal problem-solving base; Computer Systems Architecture and GPU Architecture and Programming provide the hardware and performance foundation; Intelligent Computing System, Deep Learning, and Big Data Analysis and Mining connect that foundation to AI workloads and data systems; Security Chips adds a hardware-security view of trustworthy computation.</p><p>The strongest overlap with my current research interests is in GPU systems, accelerator-aware AI systems, LLM computing infrastructure, and secure or reliable system design.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Algorithms</tag>
+      
+      <tag>GPU</tag>
+      
+      <tag>Computer Architecture</tag>
+      
+      <tag>Deep Learning</tag>
+      
+      <tag>Security</tag>
+      
+      <tag>Big Data</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Undergraduate Technical Coursework</title>
+    <link href="/courses/undergraduate-technical-coursework/"/>
+    <url>/courses/undergraduate-technical-coursework/</url>
+    
+    <content type="html"><![CDATA[<p>This page organizes my undergraduate technical coursework from the UESTC-University of Glasgow joint programme. It includes professional courses related to electrical engineering, electronics, embedded systems, computer systems, AI, signal processing, and hardware&#x2F;software design. Political, humanities, law, business, and other non-technical courses are intentionally excluded.</p><p>The course files are kept locally; this page is a public course index and does not publish private assignments, exams, answer sheets, or original course documents.</p><h2 id="Course-Catalog"><a href="#Course-Catalog" class="headerlink" title="Course Catalog"></a>Course Catalog</h2><table><thead><tr><th>Course</th><th>Period</th><th>Technical Focus</th><th>Organized Materials</th></tr></thead><tbody><tr><td>Introductory Programming</td><td>2021-2022</td><td>Programming fundamentals, procedural thinking, debugging, and basic software construction.</td><td>Course exercises and programming materials.</td></tr><tr><td>MS &#x2F; Embedded Microcontroller Project</td><td>2021-2022</td><td>Embedded C&#x2F;C++, mbed OS, Nucleo development boards, GPIO, SPI, PWM, interrupts, and a small Snake-style embedded project.</td><td>Source code, project proposal, circuit images, lab manual, and lecture materials.</td></tr><tr><td>Digital Image Processing</td><td>2022-2023</td><td>Image enhancement, image transforms, object representation, MATLAB GUI, OpenCV, Simulink, and course design.</td><td>Lecture notes, practice materials, source code, project output, and final course design materials.</td></tr><tr><td>CAD and Engineering Design Tools</td><td>2022-2023</td><td>Computer-aided design workflow, engineering drawing&#x2F;manual preparation, design data handling, and tool-based documentation.</td><td>CAD manuals, lab data, reports, and design files.</td></tr><tr><td>Embedded Processor</td><td>2022-2023</td><td>ARM architecture, assembly and machine language, GPIO, polling, interrupts, PWM, UART, SPI, I2C, DAC, and embedded software development.</td><td>Lecture slides, lab folders, manuals, review notes, and written assignment materials.</td></tr><tr><td>Fundamentals of Analog Circuits</td><td>2022-2023</td><td>Microelectronic circuits, analog circuit analysis, amplifier fundamentals, fire-alarm circuit design, and lab-based circuit validation.</td><td>Textbooks, lecture notes, lab reports, review slides, and circuit design materials.</td></tr><tr><td>Analog and Digital Design Laboratory</td><td>2022-2023</td><td>Digital logic, Verilog HDL, microprocessor-related digital design, lab implementation, and hardware verification.</td><td>Lab folders, homework, Verilog references, reports, and digital circuit materials.</td></tr><tr><td>Electronic Devices</td><td>2023-2024</td><td>Semiconductor devices, electronic materials, solid-state device principles, device characterization, and lab-based device analysis.</td><td>Lecture slides, textbooks, lab reports, and review notes.</td></tr><tr><td>Electronic System Design</td><td>2023-2024</td><td>Microelectronic circuits, system-level electronics design, lab implementation, and project-oriented electronic system development.</td><td>Lecture materials, lab folders, project materials, textbooks, and review notes.</td></tr><tr><td>Machine Learning and Artificial Intelligence</td><td>2023-2024</td><td>Python and Anaconda, Jupyter notebooks, supervised learning, optimization, AI&#x2F;ML lab workflows, and project-based modeling.</td><td>Lecture slides, labs, live scripts, project materials, and tutorials.</td></tr><tr><td>Signals and Systems</td><td>2023-2024</td><td>Continuous&#x2F;discrete signals, system response, convolution, Fourier analysis, frequency-domain reasoning, and MATLAB-oriented labs.</td><td>Lecture materials, labs, homework, review notes, and exam preparation materials.</td></tr><tr><td>Power Electronics</td><td>2023-2024</td><td>Power conversion, DC-DC converters, switching devices, converter modeling, power electronics labs, and design-oriented analysis.</td><td>Lecture slides, labs, tutorials, homework, references, and review notes.</td></tr><tr><td>Dynamics and Control</td><td>2023-2024</td><td>Dynamic systems, modeling, control fundamentals, lab-based control analysis, and engineering system response.</td><td>Lecture slides, lab reports, tutorials, and course handbooks.</td></tr><tr><td>Digital Signal Processing</td><td>2023-2024</td><td>Discrete-time signals, sampling, FFT, digital filters, MATLAB signal processing, and project-based DSP implementation.</td><td>Lecture slides, review notes, project folders, reference textbooks, and answer&#x2F;review materials.</td></tr><tr><td>Team Design Project Skills</td><td>2023-2024</td><td>Embedded system integration, STM32-based robot development, hardware resources, PCB&#x2F;datasheet usage, reports, and presentation workflow.</td><td>Code packages, notebooks, reports, presentations, project resources, and hardware references.</td></tr><tr><td>Electromagnetic Fields and Waves</td><td>2023-2024</td><td>Electromagnetic fields, wave propagation, transmission concepts, lab&#x2F;project materials, and field-theory problem solving.</td><td>Slides, references, project materials, and review resources.</td></tr><tr><td>Real-Time Computing Systems and Architecture</td><td>2024-2025</td><td>Real-time systems, computer architecture, scheduling, timing analysis, lab-based system work, and architecture-oriented review.</td><td>Lecture slides, labs, tutorials, and review notes.</td></tr><tr><td>Information Security</td><td>2024-2025</td><td>Cryptography, system security, security labs, threat modeling, and information-security fundamentals.</td><td>Lecture slides, labs, review materials, and exam preparation resources.</td></tr><tr><td>VLSI Design</td><td>2024-2025</td><td>CMOS VLSI design, digital integrated circuits, layout-oriented reasoning, hardware design flow, and lab&#x2F;homework practice.</td><td>Textbooks, lecture slides, labs, homework, exam reports, and review notes.</td></tr><tr><td>Computer Science Core Courses</td><td>2021-2025</td><td>Data structures, algorithms, computer organization, operating systems, computer networks, and parallel&#x2F;distributed computing foundations.</td><td>Textbooks, topic slides, notes, source-code practice repositories, and mind maps.</td></tr></tbody></table><h2 id="Technical-Thread"><a href="#Technical-Thread" class="headerlink" title="Technical Thread"></a>Technical Thread</h2><p>The undergraduate curriculum formed a broad electrical and computer engineering base. Circuit and device courses built the electronics foundation; embedded processor, TDPS, VLSI, RTCSA, and information security connected hardware to system design; signals, DSP, electromagnetic fields, power electronics, dynamics&#x2F;control, image processing, and ML&#x2F;AI built the modeling and algorithmic layer.</p><p>Together, these courses supported later work in efficient AI systems, GPU programming, hardware-software co-design, and edge-side intelligent systems.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Electrical Engineering</tag>
+      
+      <tag>Embedded Systems</tag>
+      
+      <tag>VLSI</tag>
+      
+      <tag>DSP</tag>
+      
+      <tag>Information Security</tag>
+      
+      <tag>Computer Systems</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>AICAS 2026 PPU Track - Qwen3-VL Inference Optimization</title>
     <link href="/projects/aicas-2026-ppu-qwen3vl-optimization/"/>
     <url>/projects/aicas-2026-ppu-qwen3vl-optimization/</url>
@@ -20,13 +94,13 @@
     
     <tags>
       
+      <tag>CUDA</tag>
+      
       <tag>AICAS</tag>
       
       <tag>PPU</tag>
       
       <tag>Qwen3-VL</tag>
-      
-      <tag>CUDA</tag>
       
       <tag>Vision-Language Model</tag>
       
@@ -57,11 +131,11 @@
     
     <tags>
       
-      <tag>CUDA</tag>
-      
       <tag>GPU</tag>
       
       <tag>LLM</tag>
+      
+      <tag>CUDA</tag>
       
       <tag>RAG</tag>
       
@@ -90,13 +164,13 @@
     
     <tags>
       
+      <tag>GPU</tag>
+      
       <tag>CUDA</tag>
       
       <tag>Inference Optimization</tag>
       
       <tag>Efficient AI</tag>
-      
-      <tag>GPU</tag>
       
       <tag>Tensor Core</tag>
       
@@ -187,11 +261,11 @@
     
     <tags>
       
+      <tag>LLM</tag>
+      
       <tag>AICAS</tag>
       
       <tag>Quantization</tag>
-      
-      <tag>LLM</tag>
       
       <tag>Edge AI</tag>
       
@@ -251,15 +325,15 @@
     
     <tags>
       
+      <tag>Embedded Systems</tag>
+      
+      <tag>Scheduling</tag>
+      
       <tag>RTCSA</tag>
       
       <tag>Real-time Systems</tag>
       
       <tag>RTOS</tag>
-      
-      <tag>Embedded Systems</tag>
-      
-      <tag>Scheduling</tag>
       
     </tags>
     
@@ -284,9 +358,9 @@
     
     <tags>
       
-      <tag>Lab</tag>
-      
       <tag>VLSI</tag>
+      
+      <tag>Lab</tag>
       
       <tag>Digital Design</tag>
       
@@ -350,8 +424,6 @@
     
     <tags>
       
-      <tag>Scheduling</tag>
-      
       <tag>Scientific Research</tag>
       
       <tag>DNN Accelerator</tag>
@@ -359,6 +431,8 @@
       <tag>DeFiNES</tag>
       
       <tag>Design Space Exploration</tag>
+      
+      <tag>Scheduling</tag>
       
     </tags>
     
@@ -585,9 +659,9 @@
     
     <tags>
       
-      <tag>MATLAB</tag>
-      
       <tag>DSP</tag>
+      
+      <tag>MATLAB</tag>
       
       <tag>DTMF</tag>
       
@@ -748,9 +822,9 @@
     
     <tags>
       
-      <tag>Digital Image Processing</tag>
-      
       <tag>MATLAB</tag>
+      
+      <tag>Digital Image Processing</tag>
       
       <tag>Target Tracking</tag>
       
