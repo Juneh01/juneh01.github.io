@@ -228,6 +228,19 @@ main > .container.nopadding-x-md {
   max-width: 1020px;
 }
 
+body:has(.home-page) #banner {
+  min-height: 4.25rem !important;
+  height: 4.25rem !important;
+}
+
+body:has(.home-page) #banner .banner-text {
+  display: none;
+}
+
+body:has(.home-page) #board {
+  padding-top: 5rem;
+}
+
 .page-content,
 .post-content,
 .markdown-body {

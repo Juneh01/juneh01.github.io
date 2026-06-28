@@ -1,0 +1,1118 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png?v=junhao-20260621">
+  <link rel="icon" href="/favicon.ico?v=junhao-20260621">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#ffffff">
+  <meta name="author" content="Zeng Junhao">
+  <meta name="keywords" content="Zeng Junhao,Efficient LLM Inference,Agent Memory,GPU Systems,Hardware-Software Co-design">
+  
+    <meta name="description" content="Zeng Junhao is an M.Eng. student at the Institute of Computing Technology, Chinese Academy of Sciences, working on efficient LLM inference, agent memory, GPU systems, and hardware-software co-design.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zeng Junhao">
+<meta property="og:url" content="https://juneh01.github.io/notes/page/6/index.html">
+<meta property="og:site_name" content="Zeng Junhao">
+<meta property="og:description" content="Zeng Junhao is an M.Eng. student at the Institute of Computing Technology, Chinese Academy of Sciences, working on efficient LLM inference, agent memory, GPU systems, and hardware-software co-design.">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Zeng Junhao">
+<meta property="article:tag" content="Zeng Junhao">
+<meta property="article:tag" content="Efficient LLM Inference">
+<meta property="article:tag" content="Agent Memory">
+<meta property="article:tag" content="GPU Systems">
+<meta property="article:tag" content="Hardware-Software Co-design">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Zeng Junhao</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/apple-light-v2.css">
+<link rel="stylesheet" href="/css/academic-profile-v4.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"juneh01.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":2,"color":"#2997ff","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 62vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Zeng Junhao</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/projects/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" false
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">Efficient AI Systems · GPU Computing · Hardware–Software Co-design</span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/projects/electronic-system-design/" target="_self">
+          Electronic System Design - 电子系统设计项目
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/projects/electronic-system-design/" target="_self">
+        <div>
+          项目概览Electronic System Design 课程目录包含实验、项目和报告材料，主要训练电子系统从需求、设计、仿真、实现到测试的完整流程。 这个项目板块比单纯电路课程更系统，因为它强调把多个模块组合成可工作的电子系统，而不是只分析某个孤立电路。 设计流程电子系统设计通常包含：  明确系统目标和输入输出。 拆分功能模块。 选择元件和电路结构。 搭建仿真或原型。 进行测试和调参。 分析误差
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-01-12 20:00" pubdate>
+              2024-01-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Projects/" class="category-chain-item">Projects</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Projects/Engineering-Labs/" class="category-chain-item">Engineering Labs</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Electronic-System-Design/">#Electronic System Design</a>
+            
+              <a href="/tags/Circuit/">#Circuit</a>
+            
+              <a href="/tags/Lab/">#Lab</a>
+            
+              <a href="/tags/Engineering/">#Engineering</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/projects/ml-ai-hybrid-optimization/" target="_self">
+          Machine Learning and AI - 混合优化与分类实验
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/projects/ml-ai-hybrid-optimization/" target="_self">
+        <div>
+          项目概览Machine Learning and AI 课程项目包含两条主要实践线索：一条是基于机器学习与遗传算法的混合优化，另一条是分类模型实验。项目材料中包含 MATLAB 代码、notebook、报告、训练数据和可视化结果。 这个项目的重点不是只训练一个模型，而是把机器学习模型和优化算法结合，用模型预测、搜索和评价函数共同求解工程设计问题。 Thermistor MixedIntegerGA
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-01-02 20:00" pubdate>
+              2024-01-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Projects/" class="category-chain-item">Projects</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Projects/Course-Projects/" class="category-chain-item">Course Projects</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Optimization/">#Optimization</a>
+            
+              <a href="/tags/MATLAB/">#MATLAB</a>
+            
+              <a href="/tags/Machine-Learning/">#Machine Learning</a>
+            
+              <a href="/tags/Genetic-Algorithm/">#Genetic Algorithm</a>
+            
+              <a href="/tags/Classification/">#Classification</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/projects/digital-image-processing-projects/" target="_self">
+          Digital Image Processing - 图像处理与目标跟踪项目
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/projects/digital-image-processing-projects/" target="_self">
+        <div>
+          项目概览Digital Image Processing 选修课材料中包含图像处理课程设计、目标跟踪项目和 MOSSE tracker 相关资料。它是我较早接触计算机视觉算法实践的一组项目。 相比后来的 6DoF 姿态估计，这个项目更基础，重点是理解图像滤波、频域处理、目标检测和跟踪等经典方法。 图像处理课程设计课程设计目录中有多个 project，涵盖不同图像处理任务。典型内容可能包括：  图像
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-12-25 20:00" pubdate>
+              2023-12-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Projects/" class="category-chain-item">Projects</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Projects/Course-Projects/" class="category-chain-item">Course Projects</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Computer-Vision/">#Computer Vision</a>
+            
+              <a href="/tags/MATLAB/">#MATLAB</a>
+            
+              <a href="/tags/Digital-Image-Processing/">#Digital Image Processing</a>
+            
+              <a href="/tags/Target-Tracking/">#Target Tracking</a>
+            
+              <a href="/tags/MOSSE/">#MOSSE</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/projects/kaust-metasurface-simulation/" target="_self">
+          KAUST - Metasurface Simulation
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/projects/kaust-metasurface-simulation/" target="_self">
+        <div>
+          项目概览KAUST 项目主要围绕超表面和超材料的电磁仿真展开。我学习了 metasurface 的基本理论、Generalized Sheet Transition Conditions、S 参数含义，以及如何使用 HFSS 搭建周期性单元模型并提取反射和传输特性。 这个项目更偏电磁方向，但它对我很有价值，因为它让我第一次系统地把理论边界条件、数值仿真工具和结果曲线分析连接起来。 背景概念Meta
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-18 20:00" pubdate>
+              2023-07-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Projects/" class="category-chain-item">Projects</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Projects/Research-Training/" class="category-chain-item">Research Training</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MATLAB/">#MATLAB</a>
+            
+              <a href="/tags/Electromagnetics/">#Electromagnetics</a>
+            
+              <a href="/tags/Metasurface/">#Metasurface</a>
+            
+              <a href="/tags/KAUST/">#KAUST</a>
+            
+              <a href="/tags/HFSS/">#HFSS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/courses/undergraduate/embedded-processor/" target="_self">
+          Embedded Processor
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/courses/undergraduate/embedded-processor/" target="_self">
+        <div>
+          学习阶段： 2022-2023课程方向： ARM、汇编、外设接口和嵌入式软件  Course Overview课程从 ARM 处理器与机器语言出发，覆盖 GPIO、中断、PWM、UART、SPI、I2C、DAC 和嵌入式软件开发。 Complete Syllabus 嵌入式处理器概述、ARM 架构与寄存器。 指令执行、汇编语言、机器码和寻址。 C&#x2F;C++ 与底层硬件接口。 内存映射 I
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-20 20:00" pubdate>
+              2023-06-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Courses/" class="category-chain-item">Courses</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Courses/Undergraduate-Courses/" class="category-chain-item">Undergraduate Courses</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Courses/">#Courses</a>
+            
+              <a href="/tags/Undergraduate-Courses/">#Undergraduate Courses</a>
+            
+              <a href="/tags/ARM/">#ARM</a>
+            
+              <a href="/tags/Embedded-Systems/">#Embedded Systems</a>
+            
+              <a href="/tags/SPI/">#SPI</a>
+            
+              <a href="/tags/I2C/">#I2C</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/courses/undergraduate/fundamentals-of-analog-circuits/" target="_self">
+          Fundamentals of Analog Circuits
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/courses/undergraduate/fundamentals-of-analog-circuits/" target="_self">
+        <div>
+          学习阶段： 2022-2023课程方向： 二极管、MOSFET、放大器、运放与反馈  Course Overview课程从信号与放大器、半导体器件和电路分析进入 MOSFET 放大器、运算放大器、反馈、差分与频率响应。 Complete Syllabus 信号、放大器、增益、阻抗和频率响应。 电路基本定律、等效网络和暂态&#x2F;正弦稳态。 半导体、PN 结和二极管模型。 BJT 与 MOSF
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-18 20:00" pubdate>
+              2023-06-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Courses/" class="category-chain-item">Courses</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Courses/Undergraduate-Courses/" class="category-chain-item">Undergraduate Courses</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Courses/">#Courses</a>
+            
+              <a href="/tags/Undergraduate-Courses/">#Undergraduate Courses</a>
+            
+              <a href="/tags/MOSFET/">#MOSFET</a>
+            
+              <a href="/tags/Operational-Amplifier/">#Operational Amplifier</a>
+            
+              <a href="/tags/Analog-Circuits/">#Analog Circuits</a>
+            
+              <a href="/tags/Amplifiers/">#Amplifiers</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/courses/undergraduate/analog-and-digital-design-laboratory/" target="_self">
+          Analog and Digital Design Laboratory
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/courses/undergraduate/analog-and-digital-design-laboratory/" target="_self">
+        <div>
+          学习阶段： 2022-2023课程方向： 数字逻辑、Verilog、组合&#x2F;时序电路与处理器设计  Course Overview课程覆盖逻辑代数、组合&#x2F;时序电路、Verilog 和 FPGA 实验，并延伸到数据通路、控制通路和处理器系统。 Complete Syllabus 数制、编码、数模转换和数据表示。 布尔代数、逻辑化简和门级实现。 数字集成电路、时序参数和电气特性。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-16 20:00" pubdate>
+              2023-06-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Courses/" class="category-chain-item">Courses</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Courses/Undergraduate-Courses/" class="category-chain-item">Undergraduate Courses</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Courses/">#Courses</a>
+            
+              <a href="/tags/Undergraduate-Courses/">#Undergraduate Courses</a>
+            
+              <a href="/tags/Digital-Logic/">#Digital Logic</a>
+            
+              <a href="/tags/Verilog/">#Verilog</a>
+            
+              <a href="/tags/FPGA/">#FPGA</a>
+            
+              <a href="/tags/Processor-Design/">#Processor Design</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/courses/undergraduate/digital-image-processing/" target="_self">
+          Digital Image Processing
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/courses/undergraduate/digital-image-processing/" target="_self">
+        <div>
+          学习阶段： 2022-2023课程方向： 图像增强、变换、目标描述与 MATLAB&#x2F;OpenCV 实践  Course Overview课程覆盖数字图像表示、增强、频域变换、目标表达与描述，并使用 MATLAB GUI、Simulink 和 OpenCV 完成课程设计。 Complete Syllabus 数字图像处理概述、成像流程、分辨率和应用场景。 像素、灰度、彩色空间、直方图和图
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-20 20:00" pubdate>
+              2023-01-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Courses/" class="category-chain-item">Courses</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Courses/Undergraduate-Courses/" class="category-chain-item">Undergraduate Courses</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Computer-Vision/">#Computer Vision</a>
+            
+              <a href="/tags/Courses/">#Courses</a>
+            
+              <a href="/tags/Undergraduate-Courses/">#Undergraduate Courses</a>
+            
+              <a href="/tags/Image-Processing/">#Image Processing</a>
+            
+              <a href="/tags/MATLAB/">#MATLAB</a>
+            
+              <a href="/tags/OpenCV/">#OpenCV</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/courses/undergraduate/cad-and-engineering-design-tools/" target="_self">
+          CAD and Engineering Design Tools
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/courses/undergraduate/cad-and-engineering-design-tools/" target="_self">
+        <div>
+          学习阶段： 2022-2023课程方向： 工程制图、CAD 建模与设计文档  Course Overview课程训练使用 CAD 工具表达工程结构、尺寸、装配关系和设计数据，并形成规范的技术手册与设计文档。 Complete Syllabus 工程制图规范、视图、投影和图纸布局。 几何约束、尺寸、比例、公差和标注。 二维草图绘制与编辑。 三维实体、特征建模和参数化设计。 零件、装配和结构关系。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-18 20:00" pubdate>
+              2023-01-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Courses/" class="category-chain-item">Courses</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Courses/Undergraduate-Courses/" class="category-chain-item">Undergraduate Courses</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Courses/">#Courses</a>
+            
+              <a href="/tags/Undergraduate-Courses/">#Undergraduate Courses</a>
+            
+              <a href="/tags/CAD/">#CAD</a>
+            
+              <a href="/tags/Engineering-Design/">#Engineering Design</a>
+            
+              <a href="/tags/Technical-Drawing/">#Technical Drawing</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/courses/undergraduate/microcontroller-systems-project/" target="_self">
+          Microcontroller Systems and Embedded Project
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/courses/undergraduate/microcontroller-systems-project/" target="_self">
+        <div>
+          学习阶段： 2021-2022课程方向： 微控制器接口、mbed OS 和嵌入式项目集成  Course Overview课程通过 Nucleo&#x2F;mbed 平台学习微控制器输入输出和事件控制，并完成一个 Snake 风格嵌入式游戏项目。 Complete Syllabus 微控制器、开发板、交叉编译和固件下载流程。 嵌入式 C&#x2F;C++ 程序结构和资源约束。 数字输入输出、GP
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-06-15 20:00" pubdate>
+              2022-06-15
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Courses/" class="category-chain-item">Courses</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Courses/Undergraduate-Courses/" class="category-chain-item">Undergraduate Courses</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Courses/">#Courses</a>
+            
+              <a href="/tags/Undergraduate-Courses/">#Undergraduate Courses</a>
+            
+              <a href="/tags/Embedded-Systems/">#Embedded Systems</a>
+            
+              <a href="/tags/C/">#C++</a>
+            
+              <a href="/tags/Microcontroller/">#Microcontroller</a>
+            
+              <a href="/tags/mbed/">#mbed</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/notes/page/5/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/notes/">1</a><span class="space">&hellip;</span><a class="page-number" href="/notes/page/4/#board">4</a><a class="page-number" href="/notes/page/5/#board">5</a><span class="page-number current">6</span><a class="page-number" href="/notes/page/7/#board">7</a><a class="extend next" rel="next" href="/notes/page/7/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      <span>&copy; 2026 Zeng Junhao</span>
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/about-language.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

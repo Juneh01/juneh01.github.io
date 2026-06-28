@@ -604,9 +604,9 @@
       
       <tag>Computer Architecture</tag>
       
-      <tag>Undergraduate Courses</tag>
-      
       <tag>Scheduling</tag>
+      
+      <tag>Undergraduate Courses</tag>
       
       <tag>Real-Time Systems</tag>
       
@@ -744,9 +744,9 @@
     
     <tags>
       
-      <tag>Embedded Systems</tag>
-      
       <tag>Scheduling</tag>
+      
+      <tag>Embedded Systems</tag>
       
       <tag>RTOS</tag>
       
@@ -1513,11 +1513,11 @@
       
       <tag>Undergraduate Courses</tag>
       
-      <tag>MOSFET</tag>
-      
       <tag>Semiconductor</tag>
       
       <tag>BJT</tag>
+      
+      <tag>MOSFET</tag>
       
       <tag>Optoelectronics</tag>
       
@@ -1620,9 +1620,9 @@
     
     <tags>
       
-      <tag>Signals and Systems</tag>
-      
       <tag>Power Electronics</tag>
+      
+      <tag>Signals and Systems</tag>
       
       <tag>Lab</tag>
       
@@ -1871,11 +1871,11 @@
       
       <tag>Undergraduate Courses</tag>
       
+      <tag>MOSFET</tag>
+      
       <tag>Operational Amplifier</tag>
       
       <tag>Analog Circuits</tag>
-      
-      <tag>MOSFET</tag>
       
       <tag>Amplifiers</tag>
       
