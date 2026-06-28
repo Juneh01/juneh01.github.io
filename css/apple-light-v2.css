@@ -580,6 +580,19 @@ footer {
   color: var(--apple-secondary);
 }
 
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-divider,
+.site-visit-counter {
+  color: var(--apple-secondary);
+}
+
 @media (max-width: 991.98px) {
   .navbar .navbar-collapse {
     margin-top: 0.6rem;
