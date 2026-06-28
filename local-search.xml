@@ -8,31 +8,23 @@
     <link href="/courses/postgraduate-technical-coursework/"/>
     <url>/courses/postgraduate-technical-coursework/</url>
     
-    <content type="html"><![CDATA[<p>This page organizes my postgraduate technical coursework. It only includes courses and materials related to computer science, electronic and computer engineering, AI systems, security, architecture, and data systems. General education, ethics, humanities, and administrative materials are intentionally excluded.</p><p>The course files are kept locally; this public page records the technical scope, learning focus, and basic knowledge map without publishing private notes, assignments, exams, or original course documents.</p><h2 id="Course-Catalog"><a href="#Course-Catalog" class="headerlink" title="Course Catalog"></a>Course Catalog</h2><table><thead><tr><th>Course</th><th>Period</th><th>Technical Focus</th><th>Organized Materials</th></tr></thead><tbody><tr><td>Algorithm Design and Analysis</td><td>2025-2026</td><td>Graph algorithms, divide and conquer, dynamic programming, greedy algorithms, backtracking, branch and bound, approximation algorithms, max-flow, linear programming, probabilistic algorithms, and complexity analysis.</td><td>Lecture slides, textbook references, review notes, homework folders, and implementation code.</td></tr><tr><td>Security Chips</td><td>2025-2026</td><td>Trusted computing, secure processor architecture, TPM, HSM, RFID security, PUF, side-channel attacks, fault attacks, memory security, and Intel SGX.</td><td>Lecture slides, secure processor readings, course report, and paper-reading materials.</td></tr><tr><td>Intelligent Computing System</td><td>2025-2026</td><td>Deep learning applications, programming frameworks, AI processors, accelerator architecture, intelligent programming languages, and LLM computing systems.</td><td>Lecture slides, lab folders, exam review notes, and presentation&#x2F;report materials.</td></tr><tr><td>Distributed Multimedia System and Technology</td><td>2025-2026</td><td>Distributed multimedia systems, media scheduling, video processing, video super-resolution, system design, and multimedia service workflows.</td><td>Lecture slides, review notes, design reports, and system-case materials.</td></tr><tr><td>Big Data Analysis and Mining</td><td>2025-2026</td><td>Big data processing, data mining workflows, HBase, distributed data storage, and analytics-oriented system design.</td><td>Lecture slides, textbook references, homework folders, and review materials.</td></tr><tr><td>Deep Learning</td><td>2025-2026</td><td>Neural network training, optimization, representation learning, deep learning systems, and lab-based model implementation.</td><td>Lecture slides, lab materials, and review resources.</td></tr><tr><td>GPU Architecture and Programming</td><td>2025-2026</td><td>CUDA programming, GPU execution model, memory hierarchy, PTX, massively parallel processors, GPGPU architecture, and performance-oriented programming.</td><td>CUDA references, GPU architecture readings, review notes, project materials, and presentation drafts.</td></tr><tr><td>Computer Systems Architecture</td><td>2025-2026</td><td>Quantitative computer architecture, ISA and microarchitecture, pipelining, memory hierarchy, parallelism, architecture evaluation, and system-level performance tradeoffs.</td><td>Architecture textbooks, lecture slides, homework folders, and project materials.</td></tr></tbody></table><h2 id="Basic-Knowledge-Map"><a href="#Basic-Knowledge-Map" class="headerlink" title="Basic Knowledge Map"></a>Basic Knowledge Map</h2><h3 id="Algorithm-Design-and-Analysis"><a href="#Algorithm-Design-and-Analysis" class="headerlink" title="Algorithm Design and Analysis"></a>Algorithm Design and Analysis</h3><ul><li><strong>Algorithmic models:</strong> input size, asymptotic complexity, worst-case and average-case analysis, recurrence relations, and proof of correctness.</li><li><strong>Core paradigms:</strong> divide and conquer, dynamic programming, greedy algorithms, backtracking, branch and bound, brute-force search, and randomized&#x2F;probabilistic algorithms.</li><li><strong>Graph and optimization foundations:</strong> graph traversal, shortest path reasoning, matching-style problems, max-flow&#x2F;min-cut, linear programming, approximation algorithms, and complexity classes.</li><li><strong>Engineering value:</strong> converting a problem statement into states, transitions, constraints, pruning rules, and complexity-aware implementations.</li></ul><h3 id="Security-Chips"><a href="#Security-Chips" class="headerlink" title="Security Chips"></a>Security Chips</h3><ul><li><strong>Security foundations:</strong> confidentiality, integrity, availability, authentication, threat models, attack surfaces, and hardware&#x2F;software trust boundaries.</li><li><strong>Trusted hardware:</strong> TPM, HSM, secure boot, secure processor concepts, enclave-style execution, root of trust, and hardware-backed key protection.</li><li><strong>Physical and microarchitectural attacks:</strong> side-channel leakage, power&#x2F;timing analysis, fault injection, PUF, RFID security, and memory confidentiality&#x2F;integrity attacks.</li><li><strong>Design mindset:</strong> evaluating security not only as cryptographic strength, but also as system architecture, implementation leakage, and attacker capability.</li></ul><h3 id="Intelligent-Computing-System"><a href="#Intelligent-Computing-System" class="headerlink" title="Intelligent Computing System"></a>Intelligent Computing System</h3><ul><li><strong>Deep learning system stack:</strong> model computation graphs, tensor operators, automatic differentiation, training&#x2F;inference workflows, and programming framework abstractions.</li><li><strong>AI processor principles:</strong> dataflow, systolic arrays, tensor accelerators, on-chip memory hierarchy, operator mapping, and accelerator-friendly model execution.</li><li><strong>LLM computing systems:</strong> prefill&#x2F;decode phases, KV cache pressure, batching, memory bandwidth, model parallelism, and serving throughput&#x2F;latency tradeoffs.</li><li><strong>System view:</strong> connecting algorithms, frameworks, compilers, hardware architecture, and deployment constraints into one AI computing pipeline.</li></ul><h3 id="Distributed-Multimedia-System-and-Technology"><a href="#Distributed-Multimedia-System-and-Technology" class="headerlink" title="Distributed Multimedia System and Technology"></a>Distributed Multimedia System and Technology</h3><ul><li><strong>Multimedia fundamentals:</strong> image&#x2F;video representation, compression concepts, rate-distortion tradeoffs, streaming quality, and multimedia workload characteristics.</li><li><strong>Distributed system concepts:</strong> scheduling, resource allocation, latency, bandwidth, caching, load balancing, and service-level performance.</li><li><strong>Video processing pipeline:</strong> acquisition, encoding, transmission, decoding, enhancement, super-resolution, and quality evaluation.</li><li><strong>System design focus:</strong> mapping media tasks to distributed computing resources while balancing quality, throughput, delay, and cost.</li></ul><h3 id="Big-Data-Analysis-and-Mining"><a href="#Big-Data-Analysis-and-Mining" class="headerlink" title="Big Data Analysis and Mining"></a>Big Data Analysis and Mining</h3><ul><li><strong>Data system basics:</strong> distributed storage, data partitioning, indexing, batch processing, stream-style thinking, and consistency&#x2F;performance tradeoffs.</li><li><strong>Data mining workflow:</strong> data cleaning, feature construction, similarity&#x2F;distance metrics, clustering, classification, association analysis, and evaluation.</li><li><strong>Big data infrastructure:</strong> HBase-style storage, distributed computation, scalable query&#x2F;analysis pipelines, and data locality.</li><li><strong>Practical mindset:</strong> designing analytics pipelines that remain robust when data volume, sparsity, heterogeneity, and update frequency increase.</li></ul><h3 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h3><ul><li><strong>Neural network basics:</strong> multilayer perceptrons, convolutional networks, recurrent&#x2F;sequence models, attention, loss functions, and regularization.</li><li><strong>Training mechanics:</strong> backpropagation, gradient descent variants, initialization, normalization, overfitting, validation, and hyperparameter tuning.</li><li><strong>Representation learning:</strong> embeddings, feature hierarchies, transfer learning, self-supervised learning, and task-specific fine-tuning.</li><li><strong>System connection:</strong> understanding how model structure affects memory use, compute intensity, parallelism, and deployment cost.</li></ul><h3 id="GPU-Architecture-and-Programming"><a href="#GPU-Architecture-and-Programming" class="headerlink" title="GPU Architecture and Programming"></a>GPU Architecture and Programming</h3><ul><li><strong>CUDA execution model:</strong> host&#x2F;device programming, kernels, grids, blocks, warps, threads, synchronization, and occupancy.</li><li><strong>Memory hierarchy:</strong> registers, shared memory, L1&#x2F;L2 cache, global memory, constant&#x2F;texture memory, coalescing, bank conflicts, and bandwidth limits.</li><li><strong>Performance techniques:</strong> tiling, parallel reduction, prefix operations, warp-level primitives, asynchronous copy, Tensor Core usage, and kernel fusion.</li><li><strong>Architecture view:</strong> connecting PTX&#x2F;SASS-level thinking, SIMT execution, scheduling, memory latency hiding, and roofline-style performance reasoning.</li></ul><h3 id="Computer-Systems-Architecture"><a href="#Computer-Systems-Architecture" class="headerlink" title="Computer Systems Architecture"></a>Computer Systems Architecture</h3><ul><li><strong>ISA and microarchitecture:</strong> instruction sets, datapath&#x2F;control, pipelining, hazards, branch prediction, out-of-order execution, and superscalar design.</li><li><strong>Memory systems:</strong> cache hierarchy, virtual memory, TLBs, memory consistency, prefetching, bandwidth&#x2F;latency tradeoffs, and locality.</li><li><strong>Parallelism:</strong> instruction-level, data-level, thread-level, and memory-level parallelism; multicore and accelerator interaction.</li><li><strong>Quantitative analysis:</strong> CPI, speedup, Amdahl’s Law, bottleneck analysis, benchmark interpretation, and architecture-performance tradeoff evaluation.</li></ul><h2 id="Technical-Thread"><a href="#Technical-Thread" class="headerlink" title="Technical Thread"></a>Technical Thread</h2><p>These courses connect around one broad direction: efficient AI and computing systems. Algorithm Design and Analysis provides the formal problem-solving base; Computer Systems Architecture and GPU Architecture and Programming provide the hardware and performance foundation; Intelligent Computing System, Deep Learning, and Big Data Analysis and Mining connect that foundation to AI workloads and data systems; Security Chips adds a hardware-security view of trustworthy computation.</p><p>The strongest overlap with my current research interests is in GPU systems, accelerator-aware AI systems, LLM computing infrastructure, and secure or reliable system design.</p>]]></content>
+    <content type="html"><![CDATA[<p>该索引按课程阶段汇总专业技术课程。每门课程均有独立页面，包含完整大纲、实验&#x2F;项目内容和知识目标。</p><h2 id="Course-Entries"><a href="#Course-Entries" class="headerlink" title="Course Entries"></a>Course Entries</h2><table><thead><tr><th>Period</th><th>Course</th><th>Technical Focus</th></tr></thead><tbody><tr><td>2025-2026</td><td><a href="/courses/postgraduate/intelligent-computing-system/">Intelligent Computing System</a></td><td>深度学习框架、AI 处理器、智能编程语言与大模型计算系统</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/deep-learning/">Deep Learning</a></td><td>神经网络、视觉&#x2F;序列模型、生成模型与完整实验流程</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/distributed-multimedia-system-and-technology/">Distributed Multimedia System and Technology</a></td><td>多媒体数字化、分布式计算、流媒体网络、调度与缓存</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/algorithm-design-and-analysis/">Algorithm Design and Analysis</a></td><td>算法范式、复杂性分析、图算法与组合优化</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/security-chips/">Security Chips</a></td><td>可信硬件、安全处理器与物理&#x2F;微架构攻击防御</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/gpu-architecture-and-programming/">GPU Architecture and Programming</a></td><td>GPU&#x2F;SIMT 架构、CUDA、存储层次、Tensor Core 与推理优化</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/computer-systems-architecture/">Computer Systems Architecture</a></td><td>乱序处理器、存储系统、一致性与体系结构定量评价</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/big-data-analysis-and-mining/">Big Data Analysis and Mining</a></td><td>大规模数据处理、相似性搜索、推荐、图计算与关联规则</td></tr></tbody></table><h2 id="Organization"><a href="#Organization" class="headerlink" title="Organization"></a>Organization</h2><ul><li><strong>Categories：</strong> Courses &#x2F; Postgraduate Courses</li><li><strong>Archives：</strong> 各课程使用实际学习阶段的时间排序</li><li><strong>Tags：</strong> 按算法、系统、硬件、AI、信号、安全等技术方向交叉索引</li><li><strong>Privacy：</strong> 不发布原始课件、试卷、答案、学号、个人报告或本地路径</li></ul>]]></content>
     
     
     <categories>
       
       <category>Courses</category>
       
+      <category>Postgraduate Courses</category>
+      
     </categories>
     
     
     <tags>
       
+      <tag>Courses</tag>
+      
       <tag>Postgraduate Courses</tag>
-      
-      <tag>Algorithms</tag>
-      
-      <tag>GPU</tag>
-      
-      <tag>Computer Architecture</tag>
-      
-      <tag>Deep Learning</tag>
-      
-      <tag>Security</tag>
-      
-      <tag>Big Data</tag>
       
     </tags>
     
@@ -45,31 +37,97 @@
     <link href="/courses/undergraduate-technical-coursework/"/>
     <url>/courses/undergraduate-technical-coursework/</url>
     
-    <content type="html"><![CDATA[<p>This page organizes my undergraduate technical coursework from the UESTC-University of Glasgow joint programme. It includes professional courses related to electrical engineering, electronics, embedded systems, computer systems, AI, signal processing, and hardware&#x2F;software design. Political, humanities, law, business, and other non-technical courses are intentionally excluded.</p><p>The course files are kept locally; this page is a public course index and basic knowledge map. It does not publish private assignments, exams, answer sheets, or original course documents.</p><h2 id="Course-Catalog"><a href="#Course-Catalog" class="headerlink" title="Course Catalog"></a>Course Catalog</h2><table><thead><tr><th>Course</th><th>Period</th><th>Technical Focus</th><th>Organized Materials</th></tr></thead><tbody><tr><td>Introductory Programming</td><td>2021-2022</td><td>Programming fundamentals, procedural thinking, debugging, and basic software construction.</td><td>Course exercises and programming materials.</td></tr><tr><td>MS &#x2F; Embedded Microcontroller Project</td><td>2021-2022</td><td>Embedded C&#x2F;C++, mbed OS, Nucleo development boards, GPIO, SPI, PWM, interrupts, and a small Snake-style embedded project.</td><td>Source code, project proposal, circuit images, lab manual, and lecture materials.</td></tr><tr><td>Digital Image Processing</td><td>2022-2023</td><td>Image enhancement, image transforms, object representation, MATLAB GUI, OpenCV, Simulink, and course design.</td><td>Lecture notes, practice materials, source code, project output, and final course design materials.</td></tr><tr><td>CAD and Engineering Design Tools</td><td>2022-2023</td><td>Computer-aided design workflow, engineering drawing&#x2F;manual preparation, design data handling, and tool-based documentation.</td><td>CAD manuals, lab data, reports, and design files.</td></tr><tr><td>Embedded Processor</td><td>2022-2023</td><td>ARM architecture, assembly and machine language, GPIO, polling, interrupts, PWM, UART, SPI, I2C, DAC, and embedded software development.</td><td>Lecture slides, lab folders, manuals, review notes, and written assignment materials.</td></tr><tr><td>Fundamentals of Analog Circuits</td><td>2022-2023</td><td>Microelectronic circuits, analog circuit analysis, amplifier fundamentals, fire-alarm circuit design, and lab-based circuit validation.</td><td>Textbooks, lecture notes, lab reports, review slides, and circuit design materials.</td></tr><tr><td>Analog and Digital Design Laboratory</td><td>2022-2023</td><td>Digital logic, Verilog HDL, microprocessor-related digital design, lab implementation, and hardware verification.</td><td>Lab folders, homework, Verilog references, reports, and digital circuit materials.</td></tr><tr><td>Electronic Devices</td><td>2023-2024</td><td>Semiconductor devices, electronic materials, solid-state device principles, device characterization, and lab-based device analysis.</td><td>Lecture slides, textbooks, lab reports, and review notes.</td></tr><tr><td>Electronic System Design</td><td>2023-2024</td><td>Microelectronic circuits, system-level electronics design, lab implementation, and project-oriented electronic system development.</td><td>Lecture materials, lab folders, project materials, textbooks, and review notes.</td></tr><tr><td>Machine Learning and Artificial Intelligence</td><td>2023-2024</td><td>Python and Anaconda, Jupyter notebooks, supervised learning, optimization, AI&#x2F;ML lab workflows, and project-based modeling.</td><td>Lecture slides, labs, live scripts, project materials, and tutorials.</td></tr><tr><td>Signals and Systems</td><td>2023-2024</td><td>Continuous&#x2F;discrete signals, system response, convolution, Fourier analysis, frequency-domain reasoning, and MATLAB-oriented labs.</td><td>Lecture materials, labs, homework, review notes, and exam preparation materials.</td></tr><tr><td>Power Electronics</td><td>2023-2024</td><td>Power conversion, DC-DC converters, switching devices, converter modeling, power electronics labs, and design-oriented analysis.</td><td>Lecture slides, labs, tutorials, homework, references, and review notes.</td></tr><tr><td>Dynamics and Control</td><td>2023-2024</td><td>Dynamic systems, modeling, control fundamentals, lab-based control analysis, and engineering system response.</td><td>Lecture slides, lab reports, tutorials, and course handbooks.</td></tr><tr><td>Digital Signal Processing</td><td>2023-2024</td><td>Discrete-time signals, sampling, FFT, digital filters, MATLAB signal processing, and project-based DSP implementation.</td><td>Lecture slides, review notes, project folders, reference textbooks, and review materials.</td></tr><tr><td>Team Design Project Skills</td><td>2023-2024</td><td>Embedded system integration, STM32-based robot development, hardware resources, PCB&#x2F;datasheet usage, reports, and presentation workflow.</td><td>Code packages, notebooks, reports, presentations, project resources, and hardware references.</td></tr><tr><td>Electromagnetic Fields and Waves</td><td>2023-2024</td><td>Electromagnetic fields, wave propagation, transmission concepts, lab&#x2F;project materials, and field-theory problem solving.</td><td>Slides, references, project materials, and review resources.</td></tr><tr><td>Real-Time Computing Systems and Architecture</td><td>2024-2025</td><td>Real-time systems, computer architecture, scheduling, timing analysis, lab-based system work, and architecture-oriented review.</td><td>Lecture slides, labs, tutorials, and review notes.</td></tr><tr><td>Information Security</td><td>2024-2025</td><td>Cryptography, system security, security labs, threat modeling, and information-security fundamentals.</td><td>Lecture slides, labs, review materials, and exam preparation resources.</td></tr><tr><td>VLSI Design</td><td>2024-2025</td><td>CMOS VLSI design, digital integrated circuits, layout-oriented reasoning, hardware design flow, and lab&#x2F;homework practice.</td><td>Textbooks, lecture slides, labs, homework, exam reports, and review notes.</td></tr><tr><td>Computer Science Core Courses</td><td>2021-2025</td><td>Data structures, algorithms, computer organization, operating systems, computer networks, and parallel&#x2F;distributed computing foundations.</td><td>Textbooks, topic slides, notes, source-code practice repositories, and mind maps.</td></tr></tbody></table><h2 id="Basic-Knowledge-Map"><a href="#Basic-Knowledge-Map" class="headerlink" title="Basic Knowledge Map"></a>Basic Knowledge Map</h2><h3 id="Introductory-Programming"><a href="#Introductory-Programming" class="headerlink" title="Introductory Programming"></a>Introductory Programming</h3><ul><li><strong>Programming basics:</strong> variables, expressions, control flow, functions, arrays, strings, structures, and modular code organization.</li><li><strong>Problem solving:</strong> decomposition, edge cases, debugging, test cases, and translating a small specification into executable logic.</li><li><strong>Engineering habits:</strong> readable naming, incremental development, compiler&#x2F;runtime errors, and basic versioned source-code thinking.</li></ul><h3 id="MS-Embedded-Microcontroller-Project"><a href="#MS-Embedded-Microcontroller-Project" class="headerlink" title="MS &#x2F; Embedded Microcontroller Project"></a>MS &#x2F; Embedded Microcontroller Project</h3><ul><li><strong>Embedded platform basics:</strong> microcontroller I&#x2F;O, GPIO, timers, interrupts, PWM, SPI, and hardware-software interaction.</li><li><strong>C&#x2F;C++ on devices:</strong> memory constraints, peripheral configuration, polling versus interrupt-driven control, and state-machine design.</li><li><strong>Project integration:</strong> connecting input, output, game logic, physical circuit behavior, and board-level debugging into one embedded application.</li></ul><h3 id="Digital-Image-Processing"><a href="#Digital-Image-Processing" class="headerlink" title="Digital Image Processing"></a>Digital Image Processing</h3><ul><li><strong>Image representation:</strong> pixels, color spaces, grayscale images, histograms, spatial-domain and frequency-domain views.</li><li><strong>Core operations:</strong> enhancement, filtering, convolution, image transforms, edge&#x2F;feature extraction, segmentation, and object description.</li><li><strong>Implementation tools:</strong> MATLAB&#x2F;OpenCV workflows, GUI-based visualization, batch processing, and evaluation through visual and quantitative comparison.</li></ul><h3 id="CAD-and-Engineering-Design-Tools"><a href="#CAD-and-Engineering-Design-Tools" class="headerlink" title="CAD and Engineering Design Tools"></a>CAD and Engineering Design Tools</h3><ul><li><strong>Design representation:</strong> engineering drawings, dimensions, tolerances, part modeling, assemblies, and technical documentation.</li><li><strong>Workflow basics:</strong> requirement-to-design translation, iterative revision, data table handling, and design-manual preparation.</li><li><strong>Engineering value:</strong> making designs communicable, reproducible, and verifiable through structured CAD files and documentation.</li></ul><h3 id="Embedded-Processor"><a href="#Embedded-Processor" class="headerlink" title="Embedded Processor"></a>Embedded Processor</h3><ul><li><strong>Processor fundamentals:</strong> ARM architecture, registers, instruction execution, assembly&#x2F;machine language, memory-mapped I&#x2F;O, and interrupt handling.</li><li><strong>Peripheral interfaces:</strong> GPIO, PWM, UART, SPI, I2C, ADC&#x2F;DAC-style interfacing, polling, and hardware&#x2F;software timing.</li><li><strong>Embedded software design:</strong> device drivers, low-level debugging, firmware structure, and real-time interaction with external hardware.</li></ul><h3 id="Fundamentals-of-Analog-Circuits"><a href="#Fundamentals-of-Analog-Circuits" class="headerlink" title="Fundamentals of Analog Circuits"></a>Fundamentals of Analog Circuits</h3><ul><li><strong>Circuit theory:</strong> Kirchhoff laws, nodal&#x2F;mesh analysis, Thevenin&#x2F;Norton equivalents, frequency response, and small-signal reasoning.</li><li><strong>Analog devices:</strong> diodes, BJTs, MOSFETs, operational amplifiers, biasing, gain, impedance, and amplifier stages.</li><li><strong>Lab and design:</strong> measurement, simulation, circuit validation, noise&#x2F;sensitivity awareness, and translating a circuit idea into a working prototype.</li></ul><h3 id="Analog-and-Digital-Design-Laboratory"><a href="#Analog-and-Digital-Design-Laboratory" class="headerlink" title="Analog and Digital Design Laboratory"></a>Analog and Digital Design Laboratory</h3><ul><li><strong>Digital logic:</strong> Boolean algebra, combinational circuits, sequential circuits, finite-state machines, counters, registers, and timing.</li><li><strong>HDL and verification:</strong> Verilog modules, testbenches, simulation, synthesis awareness, and hardware debugging.</li><li><strong>Mixed lab ability:</strong> combining analog measurement, digital control, and microprocessor-related logic into lab-scale hardware systems.</li></ul><h3 id="Electronic-Devices"><a href="#Electronic-Devices" class="headerlink" title="Electronic Devices"></a>Electronic Devices</h3><ul><li><strong>Semiconductor basics:</strong> bands, carriers, doping, PN junctions, drift&#x2F;diffusion, recombination, and device I-V characteristics.</li><li><strong>Device families:</strong> diodes, BJTs, MOSFETs, optoelectronic devices, and solid-state device behavior.</li><li><strong>Engineering interpretation:</strong> using device physics to explain threshold, leakage, breakdown, capacitance, switching, and measurement results.</li></ul><h3 id="Electronic-System-Design"><a href="#Electronic-System-Design" class="headerlink" title="Electronic System Design"></a>Electronic System Design</h3><ul><li><strong>System-level electronics:</strong> requirements, block diagrams, power supply, sensing, signal conditioning, actuation, and interface design.</li><li><strong>Circuit integration:</strong> analog front-end, digital control, microelectronic circuits, PCB-aware thinking, and verification planning.</li><li><strong>Project workflow:</strong> specification, simulation, implementation, testing, documentation, and design review.</li></ul><h3 id="Machine-Learning-and-Artificial-Intelligence"><a href="#Machine-Learning-and-Artificial-Intelligence" class="headerlink" title="Machine Learning and Artificial Intelligence"></a>Machine Learning and Artificial Intelligence</h3><ul><li><strong>ML foundations:</strong> supervised&#x2F;unsupervised learning, features, labels, loss functions, optimization, train&#x2F;validation&#x2F;test splits, and metrics.</li><li><strong>Model families:</strong> regression, classification, clustering, decision trees, neural networks, and basic probabilistic reasoning.</li><li><strong>Practical workflow:</strong> Python environment setup, Jupyter notebooks, data preprocessing, model selection, overfitting control, and experiment reporting.</li></ul><h3 id="Signals-and-Systems"><a href="#Signals-and-Systems" class="headerlink" title="Signals and Systems"></a>Signals and Systems</h3><ul><li><strong>Signal models:</strong> continuous&#x2F;discrete time, periodicity, impulse&#x2F;step signals, linear time-invariant systems, convolution, and impulse response.</li><li><strong>Transform methods:</strong> Fourier series, Fourier transform, Laplace&#x2F;Z-transform basics, frequency response, and filtering interpretation.</li><li><strong>System thinking:</strong> stability, causality, time&#x2F;frequency-domain tradeoffs, and using mathematical tools to reason about physical signals.</li></ul><h3 id="Power-Electronics"><a href="#Power-Electronics" class="headerlink" title="Power Electronics"></a>Power Electronics</h3><ul><li><strong>Power conversion basics:</strong> switching devices, rectifiers, buck&#x2F;boost converters, DC-DC conversion, duty cycle, and efficiency.</li><li><strong>Circuit behavior:</strong> inductor&#x2F;capacitor energy storage, ripple, conduction modes, losses, thermal constraints, and control loops.</li><li><strong>Design mindset:</strong> balancing power quality, efficiency, device stress, switching frequency, and practical implementation limits.</li></ul><h3 id="Dynamics-and-Control"><a href="#Dynamics-and-Control" class="headerlink" title="Dynamics and Control"></a>Dynamics and Control</h3><ul><li><strong>Dynamic modeling:</strong> differential equations, transfer functions, state-space concepts, linearization, and system response.</li><li><strong>Control basics:</strong> feedback, stability, transient&#x2F;steady-state response, PID-style reasoning, root-locus&#x2F;frequency-domain intuition, and disturbance rejection.</li><li><strong>Lab interpretation:</strong> connecting measured system behavior to model parameters, controller tuning, and performance requirements.</li></ul><h3 id="Digital-Signal-Processing"><a href="#Digital-Signal-Processing" class="headerlink" title="Digital Signal Processing"></a>Digital Signal Processing</h3><ul><li><strong>Discrete signals:</strong> sampling, quantization, aliasing, discrete-time systems, convolution, and difference equations.</li><li><strong>Frequency analysis:</strong> DFT&#x2F;FFT, spectral leakage, windowing, digital filter design, FIR&#x2F;IIR filters, and frequency response.</li><li><strong>Implementation:</strong> MATLAB-based DSP pipelines, signal generation&#x2F;recognition, filtering, transform-domain reasoning, and performance&#x2F;accuracy tradeoffs.</li></ul><h3 id="Team-Design-Project-Skills"><a href="#Team-Design-Project-Skills" class="headerlink" title="Team Design Project Skills"></a>Team Design Project Skills</h3><ul><li><strong>Engineering teamwork:</strong> requirement analysis, task division, interface definition, risk tracking, and design documentation.</li><li><strong>Embedded integration:</strong> STM32-style development, sensors, motors, communication modules, power, mechanical constraints, and debugging.</li><li><strong>Delivery workflow:</strong> prototype iteration, testing, report writing, presentation, and turning a hardware idea into a complete demonstrator.</li></ul><h3 id="Electromagnetic-Fields-and-Waves"><a href="#Electromagnetic-Fields-and-Waves" class="headerlink" title="Electromagnetic Fields and Waves"></a>Electromagnetic Fields and Waves</h3><ul><li><strong>Field fundamentals:</strong> electric&#x2F;magnetic fields, Maxwell’s equations, boundary conditions, wave propagation, and energy flow.</li><li><strong>Transmission concepts:</strong> plane waves, reflection, refraction, impedance, transmission lines, and antenna&#x2F;waveguide intuition.</li><li><strong>Engineering use:</strong> linking field theory to circuits, communication systems, microwave behavior, and electromagnetic compatibility.</li></ul><h3 id="Real-Time-Computing-Systems-and-Architecture"><a href="#Real-Time-Computing-Systems-and-Architecture" class="headerlink" title="Real-Time Computing Systems and Architecture"></a>Real-Time Computing Systems and Architecture</h3><ul><li><strong>Real-time concepts:</strong> tasks, deadlines, latency, jitter, scheduling, priority, response-time analysis, and resource sharing.</li><li><strong>Architecture basics:</strong> processor organization, memory hierarchy, interrupts, timers, and hardware features that affect timing.</li><li><strong>System design:</strong> matching timing requirements to scheduling policy, implementation structure, and verification method.</li></ul><h3 id="Information-Security"><a href="#Information-Security" class="headerlink" title="Information Security"></a>Information Security</h3><ul><li><strong>Security principles:</strong> confidentiality, integrity, availability, authentication, authorization, and threat modeling.</li><li><strong>Cryptography basics:</strong> symmetric&#x2F;asymmetric encryption, hashing, digital signatures, key exchange, and protocol-level reasoning.</li><li><strong>System security:</strong> vulnerabilities, access control, network&#x2F;security labs, secure design habits, and risk-aware engineering judgment.</li></ul><h3 id="VLSI-Design"><a href="#VLSI-Design" class="headerlink" title="VLSI Design"></a>VLSI Design</h3><ul><li><strong>CMOS fundamentals:</strong> MOS transistors, logic gates, inverter characteristics, noise margins, delay, power, and scaling.</li><li><strong>Digital IC design:</strong> combinational&#x2F;sequential logic, timing constraints, layout concepts, clocking, and design-rule awareness.</li><li><strong>Hardware flow:</strong> schematic-to-layout thinking, verification, synthesis&#x2F;place-and-route awareness, and area-power-performance tradeoffs.</li></ul><h3 id="Computer-Science-Core-Courses"><a href="#Computer-Science-Core-Courses" class="headerlink" title="Computer Science Core Courses"></a>Computer Science Core Courses</h3><ul><li><strong>Data structures and algorithms:</strong> arrays, lists, stacks, queues, trees, graphs, hashing, sorting, searching, and complexity analysis.</li><li><strong>Computer organization and operating systems:</strong> CPU datapath, memory hierarchy, processes, threads, scheduling, synchronization, virtual memory, and file systems.</li><li><strong>Computer networks and distributed computing:</strong> layered protocols, TCP&#x2F;IP, routing, congestion, client-server models, parallelism, and distributed-system coordination.</li></ul><h2 id="Technical-Thread"><a href="#Technical-Thread" class="headerlink" title="Technical Thread"></a>Technical Thread</h2><p>The undergraduate curriculum formed a broad electrical and computer engineering base. Circuit and device courses built the electronics foundation; embedded processor, TDPS, VLSI, RTCSA, and information security connected hardware to system design; signals, DSP, electromagnetic fields, power electronics, dynamics&#x2F;control, image processing, and ML&#x2F;AI built the modeling and algorithmic layer.</p><p>Together, these courses supported later work in efficient AI systems, GPU programming, hardware-software co-design, and edge-side intelligent systems.</p>]]></content>
+    <content type="html"><![CDATA[<p>该索引按课程阶段汇总专业技术课程。每门课程均有独立页面，包含完整大纲、实验&#x2F;项目内容和知识目标。</p><h2 id="Course-Entries"><a href="#Course-Entries" class="headerlink" title="Course Entries"></a>Course Entries</h2><table><thead><tr><th>Period</th><th>Course</th><th>Technical Focus</th></tr></thead><tbody><tr><td>2024-2025</td><td><a href="/courses/undergraduate/real-time-computing-systems-and-architecture/">Real-Time Computing Systems and Architecture</a></td><td>实时系统、计算机组成、并行处理与 CPU 调度</td></tr><tr><td>2024-2025</td><td><a href="/courses/undergraduate/information-security/">Information Security</a></td><td>经典&#x2F;现代密码、网络安全与区块链</td></tr><tr><td>2024-2025</td><td><a href="/courses/undergraduate/vlsi-design/">VLSI Design</a></td><td>CMOS 数字&#x2F;模拟 IC、版图、时延、功耗与设计流程</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/data-structures-and-algorithms/">Data Structures and Algorithms</a></td><td>基础数据结构、排序搜索、图与算法复杂度</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/computer-organization/">Computer Organization</a></td><td>数据表示、CPU、存储层次和 I&#x2F;O</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/operating-systems/">Operating Systems</a></td><td>进程线程、同步、内存、文件系统与 I&#x2F;O</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/computer-networks/">Computer Networks</a></td><td>分层协议、TCP&#x2F;IP、路由、链路与网络应用</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/power-electronics/">Power Electronics</a></td><td>功率开关、DC-DC、逆变器、PWM 与热设计</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/dynamics-and-control/">Dynamics and Control</a></td><td>动态建模、反馈稳定性、Root Locus、Bode 与补偿器</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/digital-signal-processing/">Digital Signal Processing</a></td><td>离散信号、DFT&#x2F;FFT、多采样率和数字滤波器</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/team-design-project-skills/">Team Design Project Skills</a></td><td>团队工程、STM32&#x2F;OpenMV 机器人和系统集成</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electromagnetic-fields-and-waves/">Electromagnetic Fields and Waves</a></td><td>Maxwell 方程、静电&#x2F;稳恒场、波传播与超表面</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electronic-devices/">Electronic Devices</a></td><td>半导体物理、PN 结、晶体管与光电子器件</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electronic-system-design/">Electronic System Design</a></td><td>运放非理想性、测量前端、噪声、接地与系统设计</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/machine-learning-and-artificial-intelligence/">Machine Learning and Artificial Intelligence</a></td><td>监督学习、神经网络、遗传算法与工程优化</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/signals-and-systems/">Signals and Systems</a></td><td>LTI 系统、卷积、Fourier&#x2F;Laplace&#x2F;Z 变换</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/embedded-processor/">Embedded Processor</a></td><td>ARM、汇编、外设接口和嵌入式软件</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/fundamentals-of-analog-circuits/">Fundamentals of Analog Circuits</a></td><td>二极管、MOSFET、放大器、运放与反馈</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/analog-and-digital-design-laboratory/">Analog and Digital Design Laboratory</a></td><td>数字逻辑、Verilog、组合&#x2F;时序电路与处理器设计</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/digital-image-processing/">Digital Image Processing</a></td><td>图像增强、变换、目标描述与 MATLAB&#x2F;OpenCV 实践</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/cad-and-engineering-design-tools/">CAD and Engineering Design Tools</a></td><td>工程制图、CAD 建模与设计文档</td></tr><tr><td>2021-2022</td><td><a href="/courses/undergraduate/microcontroller-systems-project/">Microcontroller Systems and Embedded Project</a></td><td>微控制器接口、mbed OS 和嵌入式项目集成</td></tr><tr><td>2021-2022</td><td><a href="/courses/undergraduate/introductory-programming/">Introductory Programming</a></td><td>程序设计基础、控制流、数组、指针和调试</td></tr></tbody></table><h2 id="Organization"><a href="#Organization" class="headerlink" title="Organization"></a>Organization</h2><ul><li><strong>Categories：</strong> Courses &#x2F; Undergraduate Courses</li><li><strong>Archives：</strong> 各课程使用实际学习阶段的时间排序</li><li><strong>Tags：</strong> 按算法、系统、硬件、AI、信号、安全等技术方向交叉索引</li><li><strong>Privacy：</strong> 不发布原始课件、试卷、答案、学号、个人报告或本地路径</li></ul>]]></content>
     
     
     <categories>
       
       <category>Courses</category>
       
+      <category>Undergraduate Courses</category>
+      
     </categories>
     
     
     <tags>
       
+      <tag>Courses</tag>
+      
       <tag>Undergraduate Courses</tag>
       
-      <tag>Electrical Engineering</tag>
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Intelligent Computing System</title>
+    <link href="/courses/postgraduate/intelligent-computing-system/"/>
+    <url>/courses/postgraduate/intelligent-computing-system/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> 深度学习框架、AI 处理器、智能编程语言与大模型计算系统</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程把深度学习算法、编程框架、编译、处理器架构和大模型系统串成完整技术栈，强调从算子与计算图到硬件执行、训练和推理服务的系统视角。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>智能计算系统概述：人工智能发展、系统分层、大模型与算力基础设施。</li><li>深度学习基础：回归、感知机、MLP、反向传播、激活&#x2F;损失函数、正则化。</li><li>深度学习应用：CNN、目标检测、风格迁移、生成模型、RNN、Transformer、多模态。</li><li>编程框架使用：Tensor、广播、计算图、模型构建、数据管线、训练、保存与调试。</li><li>编程框架原理：自动微分、图执行、AMP、算子调度、深度学习编译和分布式训练。</li><li>处理器原理：CPU&#x2F;SIMD&#x2F;GPU、I&#x2F;O 复杂度、BLAS、数据复用与 DLP 结构。</li><li>深度学习处理器架构：矩阵&#x2F;向量&#x2F;标量单元、片上存储、NoC、访存和通信。</li><li>智能编程语言：异构抽象、算子开发、编译映射、功能调试和性能调优。</li><li>大模型训练：预训练、Scaling Law、指令微调、RLHF&#x2F;DPO&#x2F;RLAIF、PEFT。</li><li>大模型推理：prefill&#x2F;decode、KV cache、解码策略、批处理、量化与推测解码。</li><li>训练与推理定量分析：算力、通信、存储、带宽、吞吐、延迟和扩展效率。</li><li>大模型推理服务：调度、连续批处理、并行策略、服务软件和基础硬件。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>三层神经网络的 CPU 训练和 DLP 推理。</li><li>VGG19 图像分类与实时风格迁移训练&#x2F;推理。</li><li>自定义 PyTorch CPU 算子与 Transformer 架构实现。</li><li>DLP 算子映射、处理器功能与性能实验。</li><li>智能编程语言算子开发、集成和性能优化。</li><li>Triton 矩阵乘、Flash Attention 与模型算子应用。</li><li>DianNao、DaDianNao、Cambricon-X&#x2F;C&#x2F;SR 等加速器论文研读。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够解释模型、框架、编译器、运行时和硬件之间的接口。</li><li>能够定量分析训练&#x2F;推理中的计算、通信和存储瓶颈。</li><li>能够完成从高层模型到自定义算子和加速器映射的实验。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
       
-      <tag>Embedded Systems</tag>
+      <category>Courses</category>
       
-      <tag>VLSI</tag>
+      <category>Postgraduate Courses</category>
       
-      <tag>DSP</tag>
+    </categories>
+    
+    
+    <tags>
       
-      <tag>Information Security</tag>
+      <tag>Courses</tag>
       
-      <tag>Computer Systems</tag>
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Deep Learning</tag>
+      
+      <tag>AI Systems</tag>
+      
+      <tag>Accelerators</tag>
+      
+      <tag>LLM Systems</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Deep Learning</title>
+    <link href="/courses/postgraduate/deep-learning/"/>
+    <url>/courses/postgraduate/deep-learning/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> 神经网络、视觉&#x2F;序列模型、生成模型与完整实验流程</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从数学与机器学习基础进入 CNN、RNN、Transformer、GAN、深度森林和优化正则化，并通过 8 个实验覆盖分类、生成、翻译、检测、分割和图像描述。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>深度学习导论：任务类型、数据集、表示学习和端到端训练。</li><li>数学与学习基础：线性代数、概率、信息论、损失函数和梯度优化。</li><li>神经网络与反向传播：MLP、激活函数、链式法则、初始化和训练稳定性。</li><li>CNN：卷积、池化、感受野、参数共享、经典网络和残差连接。</li><li>视觉任务：图像分类、目标检测、语义分割、姿态估计和超分辨率。</li><li>RNN 与序列建模：BPTT、LSTM、GRU、语言模型和文本生成。</li><li>Attention 与 Transformer：自注意力、多头注意力、位置编码和编码器&#x2F;解码器。</li><li>预训练模型：BERT、GPT 系列、指令模型和视觉 Transformer。</li><li>GAN 与生成模型：对抗目标、训练过程、模式崩溃和条件生成。</li><li>深度森林与集成学习：级联结构、树模型与深度表示。</li><li>正则化与归一化：Dropout、权重衰减、BatchNorm 和数据增强。</li><li>优化：SGD、Momentum、Adam、学习率策略和超参数选择。</li><li>工程工具：PyTorch、数据加载、GPU 训练、评估、保存与复现。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>MNIST 手写数字识别。</li><li>基于 ViT 的 CIFAR-10 图像分类。</li><li>自动写诗与序列生成。</li><li>基于 Transformer 的神经机器翻译。</li><li>YOLOv5 目标检测。</li><li>SegNet 街景语义分割。</li><li>LSTM 神经网络语言模型。</li><li>CNN-Transformer 图像描述。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够选择与实现适合视觉、文本和生成任务的模型。</li><li>能够分析网络尺寸、参数量、感受野、损失和训练行为。</li><li>能够完成数据、训练、验证、指标和实验报告的完整流程。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Postgraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Computer Vision</tag>
+      
+      <tag>Courses</tag>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Deep Learning</tag>
+      
+      <tag>Transformer</tag>
+      
+      <tag>Generative Models</tag>
       
     </tags>
     
@@ -96,21 +154,58 @@
     
     <tags>
       
-      <tag>AICAS</tag>
+      <tag>CUDA</tag>
       
       <tag>AI Systems</tag>
+      
+      <tag>AICAS</tag>
       
       <tag>PPU</tag>
       
       <tag>Qwen3-VL</tag>
-      
-      <tag>CUDA</tag>
       
       <tag>Vision-Language Model</tag>
       
       <tag>Inference Optimization</tag>
       
       <tag>Quantization</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Distributed Multimedia System and Technology</title>
+    <link href="/courses/postgraduate/distributed-multimedia-system-and-technology/"/>
+    <url>/courses/postgraduate/distributed-multimedia-system-and-technology/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> 多媒体数字化、分布式计算、流媒体网络、调度与缓存</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程研究音视频等连续媒体在分布式环境中的采集、编码、传输、缓存、调度与服务质量问题，并讨论端边云协同和实时视频增强等应用。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>多媒体系统概述：文本、音频、图像、视频的表示、时空特征和数据规模。</li><li>分布式多媒体架构：客户端-服务器、P2P、端边云协同和分层功能模型。</li><li>分布式计算模型：硬件、控制、数据分布与 Enslow 模型。</li><li>进程与服务通信：IPC、RPC、RMI、MPI、消息传递和服务调用。</li><li>媒体采集与数字化：采样、量化、图像&#x2F;视频采集和音频数字化。</li><li>多媒体处理与压缩：时空冗余、变换编码、图像&#x2F;音频&#x2F;视频编码标准。</li><li>多媒体网络需求：带宽、时延、抖动、丢包、同步和 QoS。</li><li>传输与会话协议：TCP&#x2F;UDP、RTP&#x2F;RTCP、RTSP、HTTP 流媒体和内容分发。</li><li>资源协同优化：计算、存储、网络资源的联合分配与目标建模。</li><li>缓存策略：边缘缓存、内容热度、替换策略和协同缓存。</li><li>调度方法：实时&#x2F;非实时调度、启发式算法、路由与调度联合优化。</li><li>典型应用：视频会议、直播、点播、云游戏、远程医疗、AR&#x2F;VR 和智能媒体。</li><li>发展趋势：AI 编解码、视频超分辨率、边缘智能和沉浸式媒体。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>分布式资源调度模型案例分析。</li><li>实时视频超分辨率与算力&#x2F;画质&#x2F;延迟权衡方案设计。</li><li>面向课程展示的系统调研、技术路线和演示材料组织。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够从媒体、网络和计算三方面分析端到端系统。</li><li>能够为实时媒体服务建立 QoS 与资源调度模型。</li><li>能够评估压缩、缓存、传输和增强算法的系统级权衡。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Postgraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Distributed Systems</tag>
+      
+      <tag>Multimedia</tag>
+      
+      <tag>Streaming</tag>
+      
+      <tag>Scheduling</tag>
       
     </tags>
     
@@ -139,15 +234,163 @@
       
       <tag>GPU</tag>
       
-      <tag>AI Systems</tag>
-      
       <tag>CUDA</tag>
+      
+      <tag>AI Systems</tag>
       
       <tag>LLM</tag>
       
       <tag>RAG</tag>
       
       <tag>vLLM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Algorithm Design and Analysis</title>
+    <link href="/courses/postgraduate/algorithm-design-and-analysis/"/>
+    <url>/courses/postgraduate/algorithm-design-and-analysis/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> 算法范式、复杂性分析、图算法与组合优化</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程系统训练从问题建模、正确性证明到复杂度分析的完整算法设计流程，重点覆盖经典算法范式、图问题、NP 完全性、近似与随机算法，以及线性规划和最大流。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>算法引论：算法问题、输入规模、渐近记号、最坏与平均复杂度、正确性证明。</li><li>图与遍历：图表示、BFS、DFS、连通性、拓扑排序、强连通分量与遍历树。</li><li>分治法：递归分解、主定理、归并排序、快速排序、最近点对与棋盘覆盖。</li><li>贪心法：贪心选择性质、最优子结构、活动选择、Huffman 编码与最小生成树。</li><li>动态规划：状态、转移、边界、记忆化、最长公共子序列、矩阵链与背包问题。</li><li>回溯法：解空间树、约束函数、剪枝、N 皇后、图着色和组合搜索。</li><li>分支限界法：上界与下界、优先队列、活结点管理、旅行商和装载问题。</li><li>蛮力与枚举：全排列、子集枚举、搜索空间估计和工程化优化。</li><li>计算复杂性：P、NP、NP-hard、NP-complete、归约与不可解性分析。</li><li>近似算法：近似比、覆盖类问题、调度与组合优化中的可证明近似。</li><li>概率算法：随机选择、Monte Carlo、Las Vegas、概率界与期望复杂度。</li><li>线性规划：标准形式、可行域、对偶思想、单纯形法与组合问题建模。</li><li>最大流：残量网络、增广路、Ford-Fulkerson、Edmonds-Karp、最大流最小割。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>最大相邻间隔与线性时间桶式思路。</li><li>棋盘覆盖与典型分治递归。</li><li>移除 K 位数字、最大子数组和等贪心&#x2F;动态规划练习。</li><li>24 点求解与组合搜索。</li><li>最小骰子次数等状态建模实践。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够把自然语言问题转换为状态、约束、目标函数和算法步骤。</li><li>能够证明算法正确性，并分析时间与空间复杂度。</li><li>能够根据规模和结构选择精确、近似、随机或优化方法。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Postgraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Algorithms</tag>
+      
+      <tag>Complexity</tag>
+      
+      <tag>Optimization</tag>
+      
+      <tag>Graph Algorithms</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Security Chips</title>
+    <link href="/courses/postgraduate/security-chips/"/>
+    <url>/courses/postgraduate/security-chips/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> 可信硬件、安全处理器与物理&#x2F;微架构攻击防御</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从安全属性和攻击模型出发，讨论可信计算、TPM、HSM、RFID、PUF、安全存储器与处理器隔离，并覆盖能量、故障和远程时序等硬件侧信道攻击。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>安全基本属性：机密性、完整性、可用性、认证、授权与不可否认性。</li><li>威胁模型与攻击面：软件、微架构、物理接触、供应链和远程攻击。</li><li>系统度量与可信认证：可信根、度量启动、远程证明和证书链。</li><li>可信计算与 TPM：PCR、密钥封装、完整性度量及 TPM 安全性分析。</li><li>HSM 与密钥保护：密钥生命周期、隔离执行和密码服务接口。</li><li>RFID 安全与隐私：轻量认证、跟踪风险、中继攻击和协议设计。</li><li>PUF：制造随机性、挑战响应、可靠性、唯一性和辅助数据。</li><li>能量与时序侧信道：SPA、DPA、CPA、缓存&#x2F;功耗泄露和 Hertzbleed。</li><li>故障攻击：时钟、电压、激光和电磁故障注入及检测&#x2F;冗余防御。</li><li>存储器完整性：重放、篡改、Merkle Tree 与认证存储。</li><li>存储器机密性：内存加密、计数器模式、完整性与性能权衡。</li><li>Intel SGX：Enclave、隔离边界、证明机制、侧信道与可信计算基。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>Hertzbleed 论文阅读：把功耗侧信道转化为远程时序泄露。</li><li>安全处理器架构案例分析。</li><li>围绕攻击能力、泄露路径、利用条件和防御代价撰写研究报告。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够建立硬件安全威胁模型并定位信任边界。</li><li>能够区分密码算法安全、实现安全和系统架构安全。</li><li>能够分析侧信道、故障和存储器攻击的机制与防御代价。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Postgraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Hardware Security</tag>
+      
+      <tag>Trusted Computing</tag>
+      
+      <tag>Side Channel</tag>
+      
+      <tag>SGX</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>GPU Architecture and Programming</title>
+    <link href="/courses/postgraduate/gpu-architecture-and-programming/"/>
+    <url>/courses/postgraduate/gpu-architecture-and-programming/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> GPU&#x2F;SIMT 架构、CUDA、存储层次、Tensor Core 与推理优化</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从 GPU 微架构和 SIMT 执行出发，覆盖 CUDA 编程、存储层次、并行模式、PTX、Tensor Core、性能分析，以及面向神经网络和大模型算子的系统优化。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>并行计算基础：吞吐导向设计、CPU&#x2F;GPU 差异、Amdahl 和并行扩展。</li><li>GPU 架构：SM、warp scheduler、执行管线、寄存器文件和线程束。</li><li>CUDA 执行模型：host&#x2F;device、kernel、grid、block、warp 和 thread。</li><li>线程组织与同步：block 内同步、原子操作、warp-level primitive 和协作组。</li><li>存储层次：register、shared、L1&#x2F;L2、global、constant、texture 和 local memory。</li><li>访存优化：coalescing、bank conflict、对齐、缓存复用、tiling 和 latency hiding。</li><li>并行算法模式：reduction、scan、histogram、stencil、transpose 和矩阵乘。</li><li>占用率与资源约束：寄存器、shared memory、block size 和并发。</li><li>Tensor Core 与 WMMA：混合精度矩阵乘、tile 映射和数据布局。</li><li>PTX 与底层执行：指令级观察、inline PTX 和编译生成代码。</li><li>CUDA Graph、流水线和异步拷贝：降低 launch 开销并重叠计算与传输。</li><li>性能模型与剖析：roofline、带宽&#x2F;计算瓶颈、Nsight 指标和优化闭环。</li><li>Triton&#x2F;TileLang：高层 GPU kernel 编程与自动化映射。</li><li>大模型算子：Paged Attention、KV cache、vLLM 扩展和推理服务优化。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>SCNN CUDA 推理框架优化：批处理、流水线、WMMA、CUDA Graph 和 PTX。</li><li>Qwen 部署与 GPU 编程问答系统。</li><li>Triton&#x2F;TileLang 加速 vLLM Paged Attention 算子。</li><li>GPU 性能分析、内存复用和 kernel 级调优。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够从 SIMT、存储层次和资源约束解释 GPU 性能。</li><li>能够设计、实现和剖析 CUDA kernel。</li><li>能够把模型推理瓶颈映射到 kernel、运行时和服务层优化。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Postgraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>GPU</tag>
+      
+      <tag>CUDA</tag>
+      
+      <tag>Tensor Core</tag>
+      
+      <tag>Performance Engineering</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Computer Systems Architecture</title>
+    <link href="/courses/postgraduate/computer-systems-architecture/"/>
+    <url>/courses/postgraduate/computer-systems-architecture/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> 乱序处理器、存储系统、一致性与体系结构定量评价</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程围绕现代处理器与存储系统展开，覆盖复杂流水线、乱序执行、分支预测、缓存和一致性，并通过 RISC-V 处理器、gem5 与系统实验连接理论和实现。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>体系结构基础与定量原则：ISA、微架构、性能指标、CPI 和 Amdahl。</li><li>复杂流水线：数据&#x2F;结构&#x2F;控制相关、旁路、停顿和异常。</li><li>动态调度与乱序执行：scoreboard、Tomasulo、ROB、提交和精确异常。</li><li>寄存器重命名、发射、唤醒选择和 load&#x2F;store queue。</li><li>分支预测：静态&#x2F;动态预测、两位计数器、局部&#x2F;全局历史和预测代价。</li><li>指令级并行：superscalar、VLIW、SIMD 和数据流执行。</li><li>内存技术与组织：SRAM、DRAM、bank、rank、通道和控制器。</li><li>缓存基础：映射、替换、写策略、AMAT 和局部性。</li><li>高性能缓存：非阻塞缓存、MSHR、预取、victim cache 和多级层次。</li><li>虚拟内存：页表、TLB、地址转换、缺页与保护。</li><li>缓存一致性：snooping、directory、MESI 类协议和一致性流量。</li><li>内存一致性模型：程序顺序、可见性、同步和多核行为。</li><li>多处理器与互连：共享内存、多核、NoC 和扩展性。</li><li>异构与近存计算：GPU&#x2F;加速器、PIM 和体系结构协同。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>五级流水线 RISC-V 处理器、旁路、冒险处理和两位分支预测。</li><li>gem5 入门与体系结构模拟。</li><li>面向处理器&#x2F;缓存&#x2F;系统性能的实践题。</li><li>CoreMark、Dhrystone 和微基准测试分析。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够分析处理器前端、执行后端和存储系统的瓶颈。</li><li>能够使用定量模型比较体系结构方案。</li><li>能够通过 RTL、模拟器和 benchmark 验证体系结构设计。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Postgraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Computer Architecture</tag>
+      
+      <tag>RISC-V</tag>
+      
+      <tag>Memory Systems</tag>
+      
+      <tag>Out-of-Order</tag>
       
     </tags>
     
@@ -176,15 +419,52 @@
       
       <tag>GPU</tag>
       
-      <tag>AI Systems</tag>
-      
       <tag>CUDA</tag>
+      
+      <tag>Tensor Core</tag>
+      
+      <tag>AI Systems</tag>
       
       <tag>Inference Optimization</tag>
       
       <tag>Efficient AI</tag>
       
-      <tag>Tensor Core</tag>
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Big Data Analysis and Mining</title>
+    <link href="/courses/postgraduate/big-data-analysis-and-mining/"/>
+    <url>/courses/postgraduate/big-data-analysis-and-mining/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2025-2026<br><strong>课程方向：</strong> 大规模数据处理、相似性搜索、推荐、图计算与关联规则</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程覆盖大数据平台与数据挖掘核心算法，重点包括 MapReduce、HBase、MinHash&#x2F;LSH、推荐系统、PageRank 和关联规则，并强调可扩展数据处理。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>大数据特征与分析流程：规模、速度、多样性、质量和价值。</li><li>分布式文件与批处理：数据切分、Map、Shuffle、Reduce 和容错。</li><li>MapReduce 算法设计：倒排索引、聚合、连接和迭代计算。</li><li>HBase：列族数据模型、Region、RowKey、读写路径和分布式存储。</li><li>数据预处理：清洗、缺失值、归一化、特征构造和采样。</li><li>相似度与距离：Jaccard、Cosine、欧氏距离和集合&#x2F;向量表示。</li><li>MinHash：集合签名、碰撞概率和相似度估计。</li><li>LSH：候选生成、banding、近似最近邻和精度&#x2F;成本权衡。</li><li>推荐系统：用户-用户、物品-物品协同过滤与相似度计算。</li><li>PageRank：随机游走、转移矩阵、阻尼因子和迭代收敛。</li><li>关联规则：支持度、置信度、提升度、Apriori 与频繁项集。</li><li>聚类与分类基础：特征空间、模型评价和规模化实现。</li><li>数据系统实践：存储布局、数据局部性、扩展性和性能瓶颈。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>MapReduce 数据处理作业。</li><li>MinHash 与 LSH 相似性搜索。</li><li>Item-Item 推荐算法。</li><li>PageRank 迭代图计算。</li><li>关联规则和频繁项集分析。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够把数据挖掘算法改写为可扩展的数据处理流程。</li><li>能够分析近似算法在准确率、内存和计算成本之间的权衡。</li><li>能够理解分布式存储和计算框架对算法设计的约束。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Postgraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Postgraduate Courses</tag>
+      
+      <tag>Big Data</tag>
+      
+      <tag>Data Mining</tag>
+      
+      <tag>MapReduce</tag>
+      
+      <tag>HBase</tag>
       
     </tags>
     
@@ -283,9 +563,9 @@
     
     <tags>
       
-      <tag>AICAS</tag>
-      
       <tag>AI Systems</tag>
+      
+      <tag>AICAS</tag>
       
       <tag>Quantization</tag>
       
@@ -294,6 +574,117 @@
       <tag>Edge AI</tag>
       
       <tag>Hardware Software Co-design</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Real-Time Computing Systems and Architecture</title>
+    <link href="/courses/undergraduate/real-time-computing-systems-and-architecture/"/>
+    <url>/courses/undergraduate/real-time-computing-systems-and-architecture/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2024-2025<br><strong>课程方向：</strong> 实时系统、计算机组成、并行处理与 CPU 调度</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程融合实时系统与计算机体系结构，覆盖性能、OS、互连、存储、指令集、处理器、并行和 CPU 调度，并配套 RTOS 实验。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>实时系统、deadline、latency、jitter 和确定性。</li><li>数制、数据表示和基本逻辑。</li><li>计算机性能、benchmark、加速比和瓶颈。</li><li>操作系统概述、进程、线程和资源管理。</li><li>计算机组件、总线和系统互连。</li><li>通信机制和 I&#x2F;O。</li><li>存储技术、层次、cache 和局部性。</li><li>输入输出、中断和 DMA。</li><li>指令集特征、寻址方式和指令执行。</li><li>处理器结构、控制和流水线。</li><li>指令级并行和冒险。</li><li>并行处理与多核计算机。</li><li>CPU 调度、优先级、响应时间和实时调度。</li><li>RTOS 任务、队列、信号量和同步。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>开发环境和板级基础实验。</li><li>处理器&#x2F;外设和中断实验。</li><li>FreeRTOS 任务、优先级与调度实验。</li><li>同步、通信和实时行为分析。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够把体系结构行为与实时约束联系起来。</li><li>能够分析调度、同步和资源竞争。</li><li>能够在 RTOS 上实现并验证实时任务。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Computer Architecture</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Scheduling</tag>
+      
+      <tag>Real-Time Systems</tag>
+      
+      <tag>RTOS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Information Security</title>
+    <link href="/courses/undergraduate/information-security/"/>
+    <url>/courses/undergraduate/information-security/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2024-2025<br><strong>课程方向：</strong> 经典&#x2F;现代密码、网络安全与区块链</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从信息安全原则和经典密码进入分组密码、DES&#x2F;AES、随机序列、PKCS 和网络安全，并系统介绍区块链、共识和应用。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>信息安全目标、威胁、风险、攻击和安全服务。</li><li>经典加密：替换、置换、频率分析和密码分析。</li><li>对称加密基本结构、Feistel 网络和工作模式。</li><li>分组密码设计原则。</li><li>DES、3DES 和安全性。</li><li>AES、有限域运算、轮函数和密钥扩展。</li><li>随机数、伪随机序列和安全要求。</li><li>Hash、MAC、数字签名和认证基础。</li><li>公钥密码和密钥管理概念。</li><li>PKCS 与网络安全协议。</li><li>分布式账本和区块链系统结构。</li><li>区块、交易、Merkle Tree 和链式完整性。</li><li>PoW、PoS、BFT 等共识机制。</li><li>区块链在车联网、设备通信和可信协作中的应用。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>经典&#x2F;现代密码算法实现与分析。</li><li>Python&#x2F;MATLAB 安全实验。</li><li>安全协议、密钥和攻击结果分析。</li><li>区块链机制与应用案例实验。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够区分加密、认证、完整性和授权机制。</li><li>能够分析密码系统和网络协议的威胁。</li><li>能够解释区块链数据结构和共识机制。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Information Security</tag>
+      
+      <tag>Cryptography</tag>
+      
+      <tag>Network Security</tag>
+      
+      <tag>Blockchain</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>VLSI Design</title>
+    <link href="/courses/undergraduate/vlsi-design/"/>
+    <url>/courses/undergraduate/vlsi-design/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2024-2025<br><strong>课程方向：</strong> CMOS 数字&#x2F;模拟 IC、版图、时延、功耗与设计流程</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程覆盖 CMOS 晶体管、逻辑门、版图、时延、逻辑努力和功耗，并延伸到 MOS 放大器、运放、级联、差分和频率响应。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>VLSI 设计流程、抽象层次和 PPA 目标。</li><li>CMOS 晶体管、反相器和静态逻辑。</li><li>版图、设计规则、lambda 规则和寄生参数。</li><li>非理想晶体管、短沟道和工艺变化。</li><li>DC&#x2F;瞬态响应、噪声裕量和传播延迟。</li><li>组合&#x2F;时序 CMOS 电路和动态逻辑。</li><li>Logical Effort、路径优化和门尺寸。</li><li>动态&#x2F;静态功耗、短路功耗和低功耗方法。</li><li>时钟、互连、扇出和时序约束。</li><li>存储单元和数字 IC 结构基础。</li><li>MOS 模拟放大器和偏置。</li><li>运算放大器、cascode 和增益提升。</li><li>差分放大器、共模和频率响应。</li><li>模拟版图匹配、对称和寄生控制。</li><li>DRC、LVS、仿真和版图验证。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>数字 CMOS 门和版图实验。</li><li>组合&#x2F;时序电路的仿真、版图与验证。</li><li>模拟 MOS 放大器和差分&#x2F;运放实验。</li><li>使用 Electric 等设计软件完成 DRC&#x2F;LVS。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够分析 CMOS 电路的时延、功耗和噪声裕量。</li><li>能够完成原理图、版图、DRC&#x2F;LVS 和仿真流程。</li><li>能够理解数字与模拟 IC 的 PPA&#x2F;匹配权衡。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>VLSI</tag>
+      
+      <tag>CMOS</tag>
+      
+      <tag>IC Design</tag>
+      
+      <tag>Layout</tag>
       
     </tags>
     
@@ -322,9 +713,9 @@
       
       <tag>Information Security</tag>
       
-      <tag>Security Lab</tag>
-      
       <tag>Cryptography</tag>
+      
+      <tag>Security Lab</tag>
       
       <tag>System Security</tag>
       
@@ -355,13 +746,13 @@
       
       <tag>Embedded Systems</tag>
       
-      <tag>RTCSA</tag>
-      
-      <tag>Real-time Systems</tag>
+      <tag>Scheduling</tag>
       
       <tag>RTOS</tag>
       
-      <tag>Scheduling</tag>
+      <tag>RTCSA</tag>
+      
+      <tag>Real-time Systems</tag>
       
     </tags>
     
@@ -664,6 +1055,337 @@
   
   
   <entry>
+    <title>Data Structures and Algorithms</title>
+    <link href="/courses/undergraduate/data-structures-and-algorithms/"/>
+    <url>/courses/undergraduate/data-structures-and-algorithms/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2021-2025<br><strong>课程方向：</strong> 基础数据结构、排序搜索、图与算法复杂度</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>该条目整理本科阶段的数据结构与算法补充学习材料，覆盖从线性结构到树、图、排序、搜索和常用算法范式。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>复杂度、递归、Master 公式和规模分析。</li><li>数组、字符串、链表和双端结构。</li><li>栈、队列、双端队列和单调结构。</li><li>哈希表、有序表、集合和映射。</li><li>二叉树、遍历、搜索树、堆和优先队列。</li><li>Trie、并查集和高级集合结构。</li><li>排序：插入、选择、冒泡、归并、快排、堆排和基数排序。</li><li>二分搜索、双指针、滑动窗口和前缀和。</li><li>位运算、bitmap 和数值技巧。</li><li>图表示、BFS、DFS、拓扑、最短路和最小生成树。</li><li>贪心、分治、动态规划、回溯和剪枝。</li><li>算法测试、对数器、边界条件和工程实现。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>C&#x2F;C++&#x2F;Java 数据结构实现。</li><li>排序、搜索、链表、树和图题目训练。</li><li>通过测试数据和复杂度分析验证算法。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够根据问题访问模式选择数据结构。</li><li>能够设计并分析常见算法。</li><li>能够写出可验证、边界清晰的实现。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Algorithms</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Data Structures</tag>
+      
+      <tag>Problem Solving</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Computer Organization</title>
+    <link href="/courses/undergraduate/computer-organization/"/>
+    <url>/courses/undergraduate/computer-organization/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2021-2025<br><strong>课程方向：</strong> 数据表示、CPU、存储层次和 I&#x2F;O</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>该条目整理计算机组成基础，包括数据表示、指令执行、CPU 数据通路、存储层次、总线与输入输出。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>计算机系统层次、性能与基本组成。</li><li>数制、编码、定点&#x2F;浮点和算术运算。</li><li>存储器芯片、地址组织和层次结构。</li><li>Cache 映射、替换、写策略和性能。</li><li>主存、虚拟存储和地址转换基础。</li><li>指令格式、寻址方式和指令系统。</li><li>CPU 数据通路、控制器和指令周期。</li><li>流水线、相关、冒险和分支。</li><li>总线、互连和系统通信。</li><li>I&#x2F;O 接口、中断、DMA 和设备。</li><li>并行结构和多核基础。</li><li>性能指标、CPI 和系统瓶颈。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>指令执行与数据通路分析。</li><li>Cache&#x2F;存储层次计算。</li><li>处理器、流水线和 I&#x2F;O 题目训练。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够解释程序如何在处理器和存储系统上执行。</li><li>能够分析 CPU、cache 和 I&#x2F;O 性能。</li><li>能够把软件行为与硬件结构联系起来。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Computer Organization</tag>
+      
+      <tag>CPU</tag>
+      
+      <tag>Memory Hierarchy</tag>
+      
+      <tag>I/O</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Operating Systems</title>
+    <link href="/courses/undergraduate/operating-systems/"/>
+    <url>/courses/undergraduate/operating-systems/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2021-2025<br><strong>课程方向：</strong> 进程线程、同步、内存、文件系统与 I&#x2F;O</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>该条目整理操作系统核心机制，覆盖进程线程、调度同步、死锁、虚拟内存、文件系统和设备管理。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>操作系统角色、内核、系统调用和用户&#x2F;内核态。</li><li>进程、线程、上下文切换和状态模型。</li><li>CPU 调度、优先级和多级队列。</li><li>并发、临界区、原子性和竞态。</li><li>锁、信号量、条件变量和经典同步问题。</li><li>死锁条件、检测、避免和恢复。</li><li>连续&#x2F;分页&#x2F;分段内存管理。</li><li>虚拟内存、页表、TLB 和缺页。</li><li>页面替换、工作集和抖动。</li><li>文件、目录、索引和空间分配。</li><li>磁盘、I&#x2F;O、缓存和设备驱动。</li><li>保护、安全、虚拟化和多核 OS 基础。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>进程、线程和调度问题分析。</li><li>同步、死锁和虚拟内存练习。</li><li>文件系统和 I&#x2F;O 路径学习。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够解释 OS 如何隔离和复用硬件资源。</li><li>能够分析并发、调度和内存问题。</li><li>能够理解应用性能与系统调用&#x2F;内核机制的关系。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Operating Systems</tag>
+      
+      <tag>Concurrency</tag>
+      
+      <tag>Virtual Memory</tag>
+      
+      <tag>File Systems</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Computer Networks</title>
+    <link href="/courses/undergraduate/computer-networks/"/>
+    <url>/courses/undergraduate/computer-networks/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2021-2025<br><strong>课程方向：</strong> 分层协议、TCP&#x2F;IP、路由、链路与网络应用</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>该条目整理计算机网络基础，从分层模型和物理链路进入 IP、路由、TCP&#x2F;UDP、拥塞控制与应用协议。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>网络体系结构、OSI&#x2F;TCP-IP 分层和封装。</li><li>时延、吞吐、带宽、丢包和排队。</li><li>物理层信号、编码、调制和传输介质。</li><li>数据链路、成帧、差错检测和可靠传输。</li><li>MAC、以太网、交换机、VLAN 和无线基础。</li><li>IPv4&#x2F;IPv6、子网、CIDR、ARP 和 ICMP。</li><li>路由算法、距离向量、链路状态和路由协议。</li><li>UDP、TCP 连接、可靠传输和流量控制。</li><li>拥塞控制、慢启动、拥塞避免和公平性。</li><li>DNS、HTTP、邮件、文件传输和 socket。</li><li>NAT、DHCP、CDN 和网络应用架构。</li><li>网络安全、TLS、隧道和性能诊断基础。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>子网、路由和协议报文分析。</li><li>TCP 可靠传输与拥塞控制练习。</li><li>应用层协议和 socket 编程基础。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够按层分析端到端通信。</li><li>能够理解路由、可靠传输和拥塞控制。</li><li>能够定位常见地址、连接和性能问题。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Computer Networks</tag>
+      
+      <tag>TCP-IP</tag>
+      
+      <tag>Routing</tag>
+      
+      <tag>Network Protocols</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Power Electronics</title>
+    <link href="/courses/undergraduate/power-electronics/"/>
+    <url>/courses/undergraduate/power-electronics/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> 功率开关、DC-DC、逆变器、PWM 与热设计</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程研究功率半导体开关和变换电路，覆盖 Buck&#x2F;Boost&#x2F;Buck-Boost、DC-AC 逆变器、PWM、散热、snubber 和系统应用。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>功率电子概述、能量变换、效率和应用。</li><li>电路、RMS、功率因数和交流基础复习。</li><li>功率二极管、MOSFET、IGBT 等开关器件。</li><li>导通&#x2F;开关损耗、器件应力和安全工作区。</li><li>散热器、热阻、结温和热设计。</li><li>Snubber、过压&#x2F;过流和开关保护。</li><li>Buck 变换器：状态、波形、CCM&#x2F;DCM 和纹波。</li><li>Boost 和 Buck-Boost 变换器。</li><li>电感、电容、负载和控制对动态的影响。</li><li>DC-AC 逆变器和桥式拓扑。</li><li>PWM 生成、调制比、谐波和输出滤波。</li><li>电源系统、驱动、控制回路和应用。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>功率开关和驱动基础实验。</li><li>DC-DC 变换器搭建与波形测量。</li><li>PWM&#x2F;逆变器实验。</li><li>效率、损耗、热和器件应力分析。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够分析基本功率变换器的稳态波形。</li><li>能够估算器件损耗、纹波和热约束。</li><li>能够在效率、体积、频率和可靠性间权衡。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Power Electronics</tag>
+      
+      <tag>DC-DC Converter</tag>
+      
+      <tag>Inverter</tag>
+      
+      <tag>PWM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Dynamics and Control</title>
+    <link href="/courses/undergraduate/dynamics-and-control/"/>
+    <url>/courses/undergraduate/dynamics-and-control/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> 动态建模、反馈稳定性、Root Locus、Bode 与补偿器</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从动态系统建模和响应进入反馈控制、稳定性、根轨迹、Nyquist、Bode 图和补偿器设计，并使用 MATLAB&#x2F;Simulink 实验。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>动态系统、微分方程和物理建模。</li><li>Laplace 变换、传递函数和方框图。</li><li>一阶&#x2F;二阶系统的时域响应。</li><li>瞬态指标、稳态误差和系统类型。</li><li>反馈结构、扰动抑制和灵敏度。</li><li>稳定性概念与特征方程。</li><li>Routh-Hurwitz 等稳定性判断。</li><li>Root Locus 绘制、参数变化和设计。</li><li>Nyquist 判据与频域稳定性。</li><li>Bode 图、增益&#x2F;相位裕度和带宽。</li><li>超前、滞后和超前-滞后补偿器。</li><li>控制器调节、性能权衡和工程验证。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>MATLAB 动态响应和模型分析。</li><li>Simulink 系统搭建与反馈实验。</li><li>根轨迹、Nyquist 和 Bode 分析。</li><li>补偿器设计与闭环性能比较。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够从物理系统建立传递函数模型。</li><li>能够用时域和频域方法分析稳定性。</li><li>能够设计并验证基本反馈补偿器。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>MATLAB</tag>
+      
+      <tag>Control Systems</tag>
+      
+      <tag>Dynamics</tag>
+      
+      <tag>Root Locus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Digital Signal Processing</title>
+    <link href="/courses/undergraduate/digital-signal-processing/"/>
+    <url>/courses/undergraduate/digital-signal-processing/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> 离散信号、DFT&#x2F;FFT、多采样率和数字滤波器</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从离散时间信号与 DTFT 进入采样、DFT&#x2F;FFT、频谱分析、系统结构以及 FIR&#x2F;IIR 设计，并完成 DTMF 等项目。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>离散时间信号、序列运算和 LTI 系统。</li><li>差分方程、卷积和系统函数。</li><li>DTFT、频率响应和基本性质。</li><li>采样与重建、混叠和实际 A&#x2F;D、D&#x2F;A。</li><li>采样率转换、抽取、插值和 polyphase。</li><li>DFT 定义、性质和频域采样。</li><li>使用 DFT 实现线性卷积。</li><li>FFT：时间抽取、频率抽取和计算复杂度。</li><li>窗函数、频谱泄漏和稳态&#x2F;非稳态频谱分析。</li><li>Z 变换、极点零点和 LTI 系统。</li><li>全通、最小相位和线性相位系统。</li><li>数字系统实现结构与量化影响。</li><li>FIR 滤波器设计。</li><li>IIR 滤波器设计。</li><li>分数延迟、FMCW、Hilbert 变换等扩展专题。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>DTMF 双音信号生成与 GUI。</li><li>FFT 和 Goertzel 按键识别。</li><li>数字滤波、频谱和卷积实验。</li><li>分数延迟、FMCW 雷达或 Hilbert 变换专题研讨。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够分析离散信号的频谱和系统响应。</li><li>能够选择 DFT&#x2F;FFT 和数字滤波结构。</li><li>能够使用 MATLAB 实现完整 DSP 流程。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>DSP</tag>
+      
+      <tag>FFT</tag>
+      
+      <tag>FIR</tag>
+      
+      <tag>IIR</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Team Design Project Skills</title>
+    <link href="/courses/undergraduate/team-design-project-skills/"/>
+    <url>/courses/undergraduate/team-design-project-skills/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> 团队工程、STM32&#x2F;OpenMV 机器人和系统集成</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程以团队工程项目为核心，训练需求、分工、接口、实验记录、软件构造和完整交付，并完成 STM32&#x2F;OpenMV 移动机器人。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>工程项目任务、需求、约束和验收标准。</li><li>团队角色、任务分解、沟通和接口管理。</li><li>实验 notebook、设计证据和可追溯记录。</li><li>软件构造、模块化、版本和调试。</li><li>STM32 主控、GPIO、定时器、PWM 和串口。</li><li>OpenMV 图像采集、颜色&#x2F;目标识别和 Python 脚本。</li><li>UART 感知-控制通信协议。</li><li>电机、编码器、驱动、电源和机械约束。</li><li>机器人状态机、运动控制和传感反馈。</li><li>板级调试、ST-LINK 和系统故障定位。</li><li>原型迭代、测试矩阵和风险管理。</li><li>初期报告、中期检查、最终报告和口头展示。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>STM32 与 OpenMV 接口集成。</li><li>RGB&#x2F;视觉目标检测。</li><li>串口通信、电机与编码器控制。</li><li>完成机器人原型、notebook、IEEE 风格报告和演示。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够在团队中管理软硬件接口和工程证据。</li><li>能够集成感知、通信和控制系统。</li><li>能够完成从提案到演示的工程项目生命周期。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Embedded Systems</tag>
+      
+      <tag>Robotics</tag>
+      
+      <tag>STM32</tag>
+      
+      <tag>OpenMV</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Electromagnetic Fields and Waves</title>
+    <link href="/courses/undergraduate/electromagnetic-fields-and-waves/"/>
+    <url>/courses/undergraduate/electromagnetic-fields-and-waves/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> Maxwell 方程、静电&#x2F;稳恒场、波传播与超表面</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程覆盖矢量分析、静电场、稳恒电流、静磁场、Maxwell 方程和电磁波，并通过超表面天线增益项目连接理论和仿真。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>矢量代数、坐标系、梯度、散度、旋度和积分定理。</li><li>Coulomb 定律、电场、电势和 Gauss 定律。</li><li>静电边值问题、Poisson&#x2F;Laplace 方程和镜像法。</li><li>电介质、极化、边界条件和电容。</li><li>稳恒电流、导电介质和电阻模型。</li><li>磁场、Biot-Savart、Ampere 定律和磁性材料。</li><li>Faraday 感应、位移电流和 Maxwell 方程组。</li><li>时谐场、复数表示和电磁能量。</li><li>平面波、传播常数、极化和 Poynting 矢量。</li><li>反射、透射、阻抗和边界。</li><li>传输线、波导和天线基础。</li><li>超材料&#x2F;超表面、S 参数和天线增益增强。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>矢量场和静电边值问题练习。</li><li>波传播、反射和传输分析。</li><li>超表面改善天线增益的文献调研与设计报告。</li><li>HFSS&#x2F;电磁仿真和 S 参数分析思路。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够使用 Maxwell 方程分析场和波。</li><li>能够处理材料边界、传播和能量流问题。</li><li>能够把场论与传输线、天线和超表面应用连接。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Electromagnetics</tag>
+      
+      <tag>Maxwell Equations</tag>
+      
+      <tag>Waves</tag>
+      
+      <tag>Metasurface</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Team Design Project - STM32 与 OpenMV 小车项目</title>
     <link href="/projects/tdps-embedded-robot-project/"/>
     <url>/projects/tdps-embedded-robot-project/</url>
@@ -684,13 +1406,13 @@
       
       <tag>Embedded Systems</tag>
       
+      <tag>Robotics</tag>
+      
       <tag>STM32</tag>
       
       <tag>OpenMV</tag>
       
       <tag>UART</tag>
-      
-      <tag>Robotics</tag>
       
     </tags>
     
@@ -717,13 +1439,13 @@
     
     <tags>
       
-      <tag>DSP</tag>
-      
       <tag>MATLAB</tag>
       
-      <tag>DTMF</tag>
+      <tag>DSP</tag>
       
       <tag>FFT</tag>
+      
+      <tag>DTMF</tag>
       
       <tag>Goertzel</tag>
       
@@ -754,13 +1476,124 @@
       
       <tag>Optimization</tag>
       
+      <tag>Dynamics</tag>
+      
       <tag>MCM</tag>
       
       <tag>Mathematical Modeling</tag>
       
       <tag>Bayesian Inference</tag>
       
-      <tag>Dynamics</tag>
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Electronic Devices</title>
+    <link href="/courses/undergraduate/electronic-devices/"/>
+    <url>/courses/undergraduate/electronic-devices/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> 半导体物理、PN 结、晶体管与光电子器件</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从能带、载流子和 PN 结出发，覆盖 BJT、JFET、MOSFET，并讨论光电二极管、LED 和太阳能电池。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>固体材料、能带、费米能级和半导体分类。</li><li>电子与空穴、掺杂、载流子浓度和温度效应。</li><li>漂移、扩散、迁移率、复合与连续性方程。</li><li>PN 结、耗尽区、内建电势和二极管 I-V。</li><li>二极管电容、击穿、开关和非理想特性。</li><li>BJT 结构、载流子输运、工作区和增益。</li><li>JFET 沟道、夹断和转移特性。</li><li>MOS 电容、阈值电压和 MOSFET 工作机理。</li><li>MOSFET I-V、短沟道&#x2F;非理想效应和开关行为。</li><li>光吸收、发射和半导体光电子基础。</li><li>Photodiode、LED 和太阳能电池。</li><li>器件数据手册、测量和模型解释。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>PN 结二极管特性实验。</li><li>BJT 特性和工作区实验。</li><li>JFET 特性实验。</li><li>器件数据和测量结果分析。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够用半导体物理解释器件特性。</li><li>能够读懂 I-V 曲线和数据手册参数。</li><li>能够把器件行为与电路性能联系起来。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>MOSFET</tag>
+      
+      <tag>Semiconductor</tag>
+      
+      <tag>BJT</tag>
+      
+      <tag>Optoelectronics</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Electronic System Design</title>
+    <link href="/courses/undergraduate/electronic-system-design/"/>
+    <url>/courses/undergraduate/electronic-system-design/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> 运放非理想性、测量前端、噪声、接地与系统设计</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程强调从系统指标到电路实现的设计流程，重点讨论运放非理想性、接地、CMRR、仪表放大器、噪声和工程验证。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>电子系统需求、模块划分、接口和系统级指标。</li><li>运算放大器复习与闭环分析。</li><li>输入偏置电流、失调电流、失调电压和漂移。</li><li>增益带宽、压摆率、输出摆幅和负载能力。</li><li>Figure of Merit 与器件&#x2F;方案比较。</li><li>接地问题、地环路、屏蔽和布线。</li><li>共模信号、CMRR 和电阻失配。</li><li>仪表放大器结构、误差和传感应用。</li><li>噪声来源、噪声密度、积分噪声和信噪比。</li><li>Chopper&#x2F;chopper-stabilized amplifier。</li><li>SPICE 建模、仿真和参数扫描。</li><li>需求、原理图、器件选型、测试和设计报告。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>SPICE 运放和电路仿真实验。</li><li>LM324 等器件的实验测量和技术备忘录。</li><li>传感&#x2F;测量系统设计项目。</li><li>基于指标、误差和噪声的设计验证。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够把系统指标分解为电路模块和器件参数。</li><li>能够分析非理想、接地和噪声问题。</li><li>能够完成仿真、实测和设计报告闭环。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Electronic Systems</tag>
+      
+      <tag>Operational Amplifier</tag>
+      
+      <tag>Noise</tag>
+      
+      <tag>SPICE</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Machine Learning and Artificial Intelligence</title>
+    <link href="/courses/undergraduate/machine-learning-and-artificial-intelligence/"/>
+    <url>/courses/undergraduate/machine-learning-and-artificial-intelligence/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> 监督学习、神经网络、遗传算法与工程优化</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程覆盖监督学习工作流、KNN、SVM、回归、Bayes 和神经网络，并进一步学习组合、多目标、约束优化与遗传算法。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>AI&#x2F;ML 应用、数据、特征、标签和学习任务。</li><li>Python、Anaconda、Jupyter 与 MATLAB 技术计算环境。</li><li>训练&#x2F;验证&#x2F;测试划分、预处理和评价指标。</li><li>监督学习工作流、偏差方差和过拟合。</li><li>KNN、距离度量和分类边界。</li><li>SVM、间隔、核方法和超参数。</li><li>线性&#x2F;非线性回归与误差分析。</li><li>Bayes 分类和概率建模。</li><li>神经网络、反向传播和分类模型。</li><li>聚类、统计判别和线性判别。</li><li>优化基础：目标函数、变量、约束和搜索空间。</li><li>组合优化、约束优化和多目标优化。</li><li>遗传算法：编码、选择、交叉、变异和适应度。</li><li>机器学习代理模型与遗传搜索的混合优化。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>监督学习与分类 notebook 实验。</li><li>KNN&#x2F;SVM&#x2F;Bayes&#x2F;神经网络比较。</li><li>MATLAB 遗传算法工具箱实验。</li><li>热敏电阻电路的 ML + Mixed-Integer GA 优化。</li><li>微阵列分类中的 GA 特征选择与分类器比较。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够完成数据到模型评价的机器学习流程。</li><li>能够选择分类、回归和优化算法。</li><li>能够把 ML 模型与搜索算法结合解决工程问题。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Optimization</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Machine Learning</tag>
+      
+      <tag>Artificial Intelligence</tag>
+      
+      <tag>Genetic Algorithm</tag>
       
     </tags>
     
@@ -787,15 +1620,52 @@
     
     <tags>
       
-      <tag>Lab</tag>
-      
       <tag>Signals and Systems</tag>
-      
-      <tag>Electronic Devices</tag>
       
       <tag>Power Electronics</tag>
       
+      <tag>Lab</tag>
+      
+      <tag>Electronic Devices</tag>
+      
       <tag>Engineering Fundamentals</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Signals and Systems</title>
+    <link href="/courses/undergraduate/signals-and-systems/"/>
+    <url>/courses/undergraduate/signals-and-systems/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2023-2024<br><strong>课程方向：</strong> LTI 系统、卷积、Fourier&#x2F;Laplace&#x2F;Z 变换</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程建立连续时间和离散时间信号的统一分析框架，覆盖 LTI 系统、卷积、Fourier、Laplace 和 Z 变换，并通过 MATLAB 验证。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>连续&#x2F;离散时间信号、周期性、能量&#x2F;功率和基本变换。</li><li>系统性质：线性、时不变、因果、稳定和可逆。</li><li>LTI 系统、冲激响应和卷积。</li><li>微分&#x2F;差分方程与系统响应。</li><li>Fourier 级数与周期信号频谱。</li><li>连续时间 Fourier 变换及性质。</li><li>离散时间 Fourier 变换及性质。</li><li>采样、频谱重复、混叠和重建。</li><li>调制、滤波和频域系统分析。</li><li>Laplace 变换、ROC、极点零点和连续系统。</li><li>Z 变换、ROC、离散系统和稳定性。</li><li>频率响应、Bode&#x2F;滤波直觉和工程应用。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>MATLAB 信号生成、时移、尺度和基本运算。</li><li>卷积、系统响应和 LTI 性质验证。</li><li>Fourier 级数&#x2F;变换、频谱和滤波。</li><li>采样、重建、Laplace&#x2F;Z 变换实践。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够在时域、频域和复频域分析信号系统。</li><li>能够判断系统的因果性、稳定性和频率响应。</li><li>能够使用 MATLAB 验证信号处理结论。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>MATLAB</tag>
+      
+      <tag>Signals and Systems</tag>
+      
+      <tag>Fourier Transform</tag>
+      
+      <tag>LTI</tag>
       
     </tags>
     
@@ -855,6 +1725,8 @@
     
     <tags>
       
+      <tag>Optimization</tag>
+      
       <tag>MATLAB</tag>
       
       <tag>Machine Learning</tag>
@@ -862,8 +1734,6 @@
       <tag>Genetic Algorithm</tag>
       
       <tag>Classification</tag>
-      
-      <tag>Optimization</tag>
       
     </tags>
     
@@ -892,9 +1762,9 @@
       
       <tag>Computer Vision</tag>
       
-      <tag>Digital Image Processing</tag>
-      
       <tag>MATLAB</tag>
+      
+      <tag>Digital Image Processing</tag>
       
       <tag>Target Tracking</tag>
       
@@ -927,13 +1797,268 @@
       
       <tag>MATLAB</tag>
       
-      <tag>KAUST</tag>
+      <tag>Electromagnetics</tag>
       
       <tag>Metasurface</tag>
       
+      <tag>KAUST</tag>
+      
       <tag>HFSS</tag>
       
-      <tag>Electromagnetics</tag>
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Embedded Processor</title>
+    <link href="/courses/undergraduate/embedded-processor/"/>
+    <url>/courses/undergraduate/embedded-processor/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2022-2023<br><strong>课程方向：</strong> ARM、汇编、外设接口和嵌入式软件</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从 ARM 处理器与机器语言出发，覆盖 GPIO、中断、PWM、UART、SPI、I2C、DAC 和嵌入式软件开发。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>嵌入式处理器概述、ARM 架构与寄存器。</li><li>指令执行、汇编语言、机器码和寻址。</li><li>C&#x2F;C++ 与底层硬件接口。</li><li>内存映射 I&#x2F;O、寄存器配置和 GPIO。</li><li>轮询、中断、优先级和实时响应。</li><li>定时器、PWM 和波形控制。</li><li>UART 串行通信。</li><li>SPI 与同步外设接口。</li><li>I2C 总线、地址和设备通信。</li><li>ADC&#x2F;DAC 与传感器&#x2F;执行器连接。</li><li>嵌入式软件结构、驱动封装和调试。</li><li>LCD、传感器、蜂鸣器等综合接口。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>ARM 和 GPIO 基础实验。</li><li>轮询与中断实验。</li><li>PWM&#x2F;UART、SPI&#x2F;I2C 和 DAC 实验。</li><li>传感器与 LCD 综合嵌入式作业。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够理解 ARM 指令与处理器状态。</li><li>能够配置常见外设并编写驱动。</li><li>能够分析软硬件时序和接口故障。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>ARM</tag>
+      
+      <tag>Embedded Systems</tag>
+      
+      <tag>SPI</tag>
+      
+      <tag>I2C</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Fundamentals of Analog Circuits</title>
+    <link href="/courses/undergraduate/fundamentals-of-analog-circuits/"/>
+    <url>/courses/undergraduate/fundamentals-of-analog-circuits/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2022-2023<br><strong>课程方向：</strong> 二极管、MOSFET、放大器、运放与反馈</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程从信号与放大器、半导体器件和电路分析进入 MOSFET 放大器、运算放大器、反馈、差分与频率响应。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>信号、放大器、增益、阻抗和频率响应。</li><li>电路基本定律、等效网络和暂态&#x2F;正弦稳态。</li><li>半导体、PN 结和二极管模型。</li><li>BJT 与 MOSFET 的工作区、偏置和小信号模型。</li><li>共源、共漏、共栅等基本放大级。</li><li>多级放大、耦合、增益和输入输出阻抗。</li><li>集成运算放大器和理想&#x2F;非理想特性。</li><li>反馈放大器、稳定性、带宽和灵敏度。</li><li>差分放大、共模抑制和电流源。</li><li>频率响应、极点零点和补偿。</li><li>噪声、失真、器件容差和实验测量。</li><li>模拟系统从需求、仿真到实物验证。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>声光火灾报警器设计。</li><li>MOSFET 放大器实验。</li><li>反馈放大电路实验。</li><li>差分放大与运放实验。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够分析常见模拟放大电路。</li><li>能够根据增益、带宽、阻抗和稳定性选择结构。</li><li>能够进行仿真、测量和故障定位。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Operational Amplifier</tag>
+      
+      <tag>Analog Circuits</tag>
+      
+      <tag>MOSFET</tag>
+      
+      <tag>Amplifiers</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Analog and Digital Design Laboratory</title>
+    <link href="/courses/undergraduate/analog-and-digital-design-laboratory/"/>
+    <url>/courses/undergraduate/analog-and-digital-design-laboratory/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2022-2023<br><strong>课程方向：</strong> 数字逻辑、Verilog、组合&#x2F;时序电路与处理器设计</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程覆盖逻辑代数、组合&#x2F;时序电路、Verilog 和 FPGA 实验，并延伸到数据通路、控制通路和处理器系统。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>数制、编码、数模转换和数据表示。</li><li>布尔代数、逻辑化简和门级实现。</li><li>数字集成电路、时序参数和电气特性。</li><li>Verilog HDL 模块、组合逻辑和结构化描述。</li><li>组合电路：译码器、多路器、加法器、比较器和 ALU。</li><li>时序电路：触发器、寄存器、计数器和状态机。</li><li>同步设计、时钟、复位、建立&#x2F;保持时间。</li><li>仿真、testbench、波形和功能验证。</li><li>综合、时序约束、资源和功耗分析。</li><li>数据通路、控制通路和处理器指令执行。</li><li>FPGA&#x2F;SoC 开发流程和板级验证。</li><li>ASIC 设计流程基础。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>Verilog 组合逻辑和时序逻辑实验。</li><li>计数器、状态机和数字系统实验。</li><li>CPU 数据通路、控制通路、整合与功能验证。</li><li>FPGA 综合、时序和资源分析。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够用 Verilog 描述并验证数字系统。</li><li>能够分析时序、资源和同步问题。</li><li>能够理解从逻辑模块到处理器的层次化设计。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Digital Logic</tag>
+      
+      <tag>Verilog</tag>
+      
+      <tag>FPGA</tag>
+      
+      <tag>Processor Design</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Digital Image Processing</title>
+    <link href="/courses/undergraduate/digital-image-processing/"/>
+    <url>/courses/undergraduate/digital-image-processing/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2022-2023<br><strong>课程方向：</strong> 图像增强、变换、目标描述与 MATLAB&#x2F;OpenCV 实践</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程覆盖数字图像表示、增强、频域变换、目标表达与描述，并使用 MATLAB GUI、Simulink 和 OpenCV 完成课程设计。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>数字图像处理概述、成像流程、分辨率和应用场景。</li><li>像素、灰度、彩色空间、直方图和图像数据结构。</li><li>空间域增强：点运算、直方图均衡、平滑和锐化。</li><li>二维卷积、滤波模板和边缘处理。</li><li>频域处理：DFT、频谱、低通&#x2F;高通和频域滤波。</li><li>几何变换、插值、旋转、缩放和配准基础。</li><li>形态学处理、分割和连通区域。</li><li>目标表示、边界、区域、形状和特征描述。</li><li>MATLAB GUI 与交互式图像处理工具。</li><li>Simulink 图像处理流程。</li><li>OpenCV 基础和计算机视觉实现。</li><li>目标检测、跟踪和 MOSSE 等经典方法。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>图像增强与滤波。</li><li>DFT 和低通滤波器实现。</li><li>目标处理与特征描述。</li><li>MATLAB GUI、Simulink 和 OpenCV 实践。</li><li>综合课程设计与目标跟踪。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够在空间域和频域分析图像。</li><li>能够使用 MATLAB&#x2F;OpenCV 实现经典处理流程。</li><li>能够为增强、分割、描述和跟踪任务选择方法。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Computer Vision</tag>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Image Processing</tag>
+      
+      <tag>MATLAB</tag>
+      
+      <tag>OpenCV</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CAD and Engineering Design Tools</title>
+    <link href="/courses/undergraduate/cad-and-engineering-design-tools/"/>
+    <url>/courses/undergraduate/cad-and-engineering-design-tools/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2022-2023<br><strong>课程方向：</strong> 工程制图、CAD 建模与设计文档</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程训练使用 CAD 工具表达工程结构、尺寸、装配关系和设计数据，并形成规范的技术手册与设计文档。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>工程制图规范、视图、投影和图纸布局。</li><li>几何约束、尺寸、比例、公差和标注。</li><li>二维草图绘制与编辑。</li><li>三维实体、特征建模和参数化设计。</li><li>零件、装配和结构关系。</li><li>设计数据、表格和工程信息管理。</li><li>从需求到模型、图纸和技术手册的转换。</li><li>版本修改、可制造性和可复现文档。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>完成 CAD 图纸和工程设计文件。</li><li>整理设计数据并撰写技术手册。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够用规范图纸和模型表达工程设计。</li><li>能够维护尺寸、公差和装配关系。</li><li>能够输出可交流、可复核的设计文档。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>CAD</tag>
+      
+      <tag>Engineering Design</tag>
+      
+      <tag>Technical Drawing</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Microcontroller Systems and Embedded Project</title>
+    <link href="/courses/undergraduate/microcontroller-systems-project/"/>
+    <url>/courses/undergraduate/microcontroller-systems-project/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2021-2022<br><strong>课程方向：</strong> 微控制器接口、mbed OS 和嵌入式项目集成</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程通过 Nucleo&#x2F;mbed 平台学习微控制器输入输出和事件控制，并完成一个 Snake 风格嵌入式游戏项目。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>微控制器、开发板、交叉编译和固件下载流程。</li><li>嵌入式 C&#x2F;C++ 程序结构和资源约束。</li><li>数字输入输出、GPIO 和按键&#x2F;LED 接口。</li><li>定时器、延时、PWM 和周期任务。</li><li>中断、事件驱动控制和状态机。</li><li>SPI 等外设通信与显示&#x2F;输入设备连接。</li><li>mbed OS API、板级抽象和模块封装。</li><li>游戏地图、输入、角色状态、碰撞和输出显示。</li><li>软硬件联调、串口调试和故障定位。</li><li>项目提案、模块分工、验证和演示。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>Nucleo 输入输出与外设控制实验。</li><li>Snake 项目中的 Game、Map、Input、Output 和角色模块实现。</li><li>完成项目提案、集成测试和演示。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够编写面向微控制器的事件驱动程序。</li><li>能够把输入、状态逻辑和硬件输出集成为嵌入式应用。</li><li>能够进行板级调试和模块化项目开发。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Embedded Systems</tag>
+      
+      <tag>C++</tag>
+      
+      <tag>Microcontroller</tag>
+      
+      <tag>mbed</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Introductory Programming</title>
+    <link href="/courses/undergraduate/introductory-programming/"/>
+    <url>/courses/undergraduate/introductory-programming/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><strong>学习阶段：</strong> 2021-2022<br><strong>课程方向：</strong> 程序设计基础、控制流、数组、指针和调试</p></blockquote><h2 id="Course-Overview"><a href="#Course-Overview" class="headerlink" title="Course Overview"></a>Course Overview</h2><p>课程建立结构化程序设计基础，从表达式和控制流逐步进入函数、数组、指针、数据组织与调试。</p><h2 id="Complete-Syllabus"><a href="#Complete-Syllabus" class="headerlink" title="Complete Syllabus"></a>Complete Syllabus</h2><ol><li>计算机程序、编译执行流程和基本程序结构。</li><li>变量、数据类型、常量、表达式和类型转换。</li><li>算术、关系、逻辑和位运算符。</li><li>条件语句与多分支控制。</li><li>for、while、do-while 循环和嵌套循环。</li><li>函数、参数、返回值、作用域和模块化。</li><li>数组、字符串和基础数据处理。</li><li>指针、地址、间接访问和数组&#x2F;指针关系。</li><li>结构体与简单抽象数据组织。</li><li>输入输出、文件基础、错误定位和测试。</li></ol><h2 id="Labs-and-Projects"><a href="#Labs-and-Projects" class="headerlink" title="Labs and Projects"></a>Labs and Projects</h2><ul><li>按讲次完成运算、条件、循环、数组和指针练习。</li><li>使用小型程序训练问题分解、边界条件和调试。</li></ul><h2 id="Knowledge-Outcomes"><a href="#Knowledge-Outcomes" class="headerlink" title="Knowledge Outcomes"></a>Knowledge Outcomes</h2><ul><li>能够把简单需求转换为结构化程序。</li><li>能够使用函数、数组和指针组织数据与逻辑。</li><li>能够定位编译、运行和逻辑错误。</li></ul><h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>本页面依据课程讲义目录、实验主题、项目材料和个人学习记录整理，只公开知识结构与学习范围。原始课件、作业、试卷、答案、个人信息和本地文件路径均不在网站发布。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Courses</category>
+      
+      <category>Undergraduate Courses</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Courses</tag>
+      
+      <tag>Undergraduate Courses</tag>
+      
+      <tag>Programming</tag>
+      
+      <tag>C++</tag>
+      
+      <tag>Software Fundamentals</tag>
       
     </tags>
     
