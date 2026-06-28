@@ -241,6 +241,19 @@ body:has(.home-page) #board {
   padding-top: 5rem;
 }
 
+body:has(.archive-hub) #banner {
+  min-height: 4.25rem !important;
+  height: 4.25rem !important;
+}
+
+body:has(.archive-hub) #banner .banner-text {
+  display: none;
+}
+
+body:has(.archive-hub) #board {
+  padding-top: 5rem;
+}
+
 .page-content,
 .post-content,
 .markdown-body {
