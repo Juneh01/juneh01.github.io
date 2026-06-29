@@ -8,7 +8,7 @@
     <link href="/courses/postgraduate-technical-coursework/"/>
     <url>/courses/postgraduate-technical-coursework/</url>
     
-    <content type="html"><![CDATA[<p>该索引按课程阶段汇总专业技术课程。每门课程均有独立页面，包含完整大纲、实验&#x2F;项目内容和知识目标。</p><h2 id="Course-Entries"><a href="#Course-Entries" class="headerlink" title="Course Entries"></a>Course Entries</h2><table><thead><tr><th>Period</th><th>Course</th><th>Technical Focus</th></tr></thead><tbody><tr><td>2025-2026</td><td><a href="/courses/postgraduate/intelligent-computing-system/">Intelligent Computing System</a></td><td>深度学习框架、AI 处理器、智能编程语言与大模型计算系统</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/deep-learning/">Deep Learning</a></td><td>神经网络、视觉&#x2F;序列模型、生成模型与完整实验流程</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/distributed-multimedia-system-and-technology/">Distributed Multimedia System and Technology</a></td><td>多媒体数字化、分布式计算、流媒体网络、调度与缓存</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/algorithm-design-and-analysis/">Algorithm Design and Analysis</a></td><td>算法范式、复杂性分析、图算法与组合优化</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/security-chips/">Security Chips</a></td><td>可信硬件、安全处理器与物理&#x2F;微架构攻击防御</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/gpu-architecture-and-programming/">GPU Architecture and Programming</a></td><td>GPU&#x2F;SIMT 架构、CUDA、存储层次、Tensor Core 与推理优化</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/computer-systems-architecture/">Computer Systems Architecture</a></td><td>乱序处理器、存储系统、一致性与体系结构定量评价</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/big-data-analysis-and-mining/">Big Data Analysis and Mining</a></td><td>大规模数据处理、相似性搜索、推荐、图计算与关联规则</td></tr></tbody></table><h2 id="Organization"><a href="#Organization" class="headerlink" title="Organization"></a>Organization</h2><ul><li><strong>Categories：</strong> Courses &#x2F; Postgraduate Courses</li><li><strong>Archives：</strong> 各课程使用实际学习阶段的时间排序</li><li><strong>Tags：</strong> 按算法、系统、硬件、AI、信号、安全等技术方向交叉索引</li><li><strong>Privacy：</strong> 不发布原始课件、试卷、答案、学号、个人报告或本地路径</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>该索引按课程阶段汇总专业技术课程。每门课程均有独立页面，包含完整大纲、实验&#x2F;项目内容和知识目标。</p><h2 id="Course-Entries"><a href="#Course-Entries" class="headerlink" title="Course Entries"></a>Course Entries</h2><table><thead><tr><th>Period</th><th>Course</th><th>Technical Focus</th></tr></thead><tbody><tr><td>2025-2026</td><td><a href="/courses/postgraduate/intelligent-computing-system/">Intelligent Computing System</a></td><td>深度学习框架、AI 处理器、智能编程语言与大模型计算系统</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/deep-learning/">Deep Learning</a></td><td>神经网络、视觉&#x2F;序列模型、生成模型与完整实验流程</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/distributed-multimedia-system-and-technology/">Distributed Multimedia System and Technology</a></td><td>多媒体数字化、分布式计算、流媒体网络、调度与缓存</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/algorithm-design-and-analysis/">Algorithm Design and Analysis</a></td><td>算法范式、复杂性分析、图算法与组合优化</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/security-chips/">Security Chips</a></td><td>可信硬件、安全处理器与物理&#x2F;微架构攻击防御</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/gpu-architecture-and-programming/">GPU Architecture and Programming</a></td><td>GPU&#x2F;SIMT 架构、CUDA、存储层次、Tensor Core 与推理优化</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/computer-systems-architecture/">Computer Systems Architecture</a></td><td>乱序处理器、存储系统、一致性与体系结构定量评价</td></tr><tr><td>2025-2026</td><td><a href="/courses/postgraduate/big-data-analysis-and-mining/">Big Data Analysis and Mining</a></td><td>大规模数据处理、相似性搜索、推荐、图计算与关联规则</td></tr></tbody></table><h2 id="Organization"><a href="#Organization" class="headerlink" title="Organization"></a>Organization</h2><ul><li><strong>Categories：</strong> Courses &#x2F; Postgraduate Courses</li><li><strong>Archives：</strong> 各课程使用实际学习阶段的时间排序</li><li><strong>Tags：</strong> 课程不再占用 Tags；技术方向通过 Categories、Archives 和课程独立页面组织</li><li><strong>Privacy：</strong> 不发布原始课件、试卷、答案、学号、个人报告或本地路径</li></ul>]]></content>
     
     
     <categories>
@@ -20,14 +20,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -37,7 +29,7 @@
     <link href="/courses/undergraduate-technical-coursework/"/>
     <url>/courses/undergraduate-technical-coursework/</url>
     
-    <content type="html"><![CDATA[<p>该索引按课程阶段汇总专业技术课程。每门课程均有独立页面，包含完整大纲、实验&#x2F;项目内容和知识目标。</p><h2 id="Course-Entries"><a href="#Course-Entries" class="headerlink" title="Course Entries"></a>Course Entries</h2><table><thead><tr><th>Period</th><th>Course</th><th>Technical Focus</th></tr></thead><tbody><tr><td>2024-2025</td><td><a href="/courses/undergraduate/real-time-computing-systems-and-architecture/">Real-Time Computing Systems and Architecture</a></td><td>实时系统、计算机组成、并行处理与 CPU 调度</td></tr><tr><td>2024-2025</td><td><a href="/courses/undergraduate/information-security/">Information Security</a></td><td>经典&#x2F;现代密码、网络安全与区块链</td></tr><tr><td>2024-2025</td><td><a href="/courses/undergraduate/vlsi-design/">VLSI Design</a></td><td>CMOS 数字&#x2F;模拟 IC、版图、时延、功耗与设计流程</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/data-structures-and-algorithms/">Data Structures and Algorithms</a></td><td>基础数据结构、排序搜索、图与算法复杂度</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/computer-organization/">Computer Organization</a></td><td>数据表示、CPU、存储层次和 I&#x2F;O</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/operating-systems/">Operating Systems</a></td><td>进程线程、同步、内存、文件系统与 I&#x2F;O</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/computer-networks/">Computer Networks</a></td><td>分层协议、TCP&#x2F;IP、路由、链路与网络应用</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/power-electronics/">Power Electronics</a></td><td>功率开关、DC-DC、逆变器、PWM 与热设计</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/dynamics-and-control/">Dynamics and Control</a></td><td>动态建模、反馈稳定性、Root Locus、Bode 与补偿器</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/digital-signal-processing/">Digital Signal Processing</a></td><td>离散信号、DFT&#x2F;FFT、多采样率和数字滤波器</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/team-design-project-skills/">Team Design Project Skills</a></td><td>团队工程、STM32&#x2F;OpenMV 机器人和系统集成</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electromagnetic-fields-and-waves/">Electromagnetic Fields and Waves</a></td><td>Maxwell 方程、静电&#x2F;稳恒场、波传播与超表面</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electronic-devices/">Electronic Devices</a></td><td>半导体物理、PN 结、晶体管与光电子器件</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electronic-system-design/">Electronic System Design</a></td><td>运放非理想性、测量前端、噪声、接地与系统设计</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/machine-learning-and-artificial-intelligence/">Machine Learning and Artificial Intelligence</a></td><td>监督学习、神经网络、遗传算法与工程优化</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/signals-and-systems/">Signals and Systems</a></td><td>LTI 系统、卷积、Fourier&#x2F;Laplace&#x2F;Z 变换</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/embedded-processor/">Embedded Processor</a></td><td>ARM、汇编、外设接口和嵌入式软件</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/fundamentals-of-analog-circuits/">Fundamentals of Analog Circuits</a></td><td>二极管、MOSFET、放大器、运放与反馈</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/analog-and-digital-design-laboratory/">Analog and Digital Design Laboratory</a></td><td>数字逻辑、Verilog、组合&#x2F;时序电路与处理器设计</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/digital-image-processing/">Digital Image Processing</a></td><td>图像增强、变换、目标描述与 MATLAB&#x2F;OpenCV 实践</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/cad-and-engineering-design-tools/">CAD and Engineering Design Tools</a></td><td>工程制图、CAD 建模与设计文档</td></tr><tr><td>2021-2022</td><td><a href="/courses/undergraduate/microcontroller-systems-project/">Microcontroller Systems and Embedded Project</a></td><td>微控制器接口、mbed OS 和嵌入式项目集成</td></tr><tr><td>2021-2022</td><td><a href="/courses/undergraduate/introductory-programming/">Introductory Programming</a></td><td>程序设计基础、控制流、数组、指针和调试</td></tr></tbody></table><h2 id="Organization"><a href="#Organization" class="headerlink" title="Organization"></a>Organization</h2><ul><li><strong>Categories：</strong> Courses &#x2F; Undergraduate Courses</li><li><strong>Archives：</strong> 各课程使用实际学习阶段的时间排序</li><li><strong>Tags：</strong> 按算法、系统、硬件、AI、信号、安全等技术方向交叉索引</li><li><strong>Privacy：</strong> 不发布原始课件、试卷、答案、学号、个人报告或本地路径</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>该索引按课程阶段汇总专业技术课程。每门课程均有独立页面，包含完整大纲、实验&#x2F;项目内容和知识目标。</p><h2 id="Course-Entries"><a href="#Course-Entries" class="headerlink" title="Course Entries"></a>Course Entries</h2><table><thead><tr><th>Period</th><th>Course</th><th>Technical Focus</th></tr></thead><tbody><tr><td>2024-2025</td><td><a href="/courses/undergraduate/real-time-computing-systems-and-architecture/">Real-Time Computing Systems and Architecture</a></td><td>实时系统、计算机组成、并行处理与 CPU 调度</td></tr><tr><td>2024-2025</td><td><a href="/courses/undergraduate/information-security/">Information Security</a></td><td>经典&#x2F;现代密码、网络安全与区块链</td></tr><tr><td>2024-2025</td><td><a href="/courses/undergraduate/vlsi-design/">VLSI Design</a></td><td>CMOS 数字&#x2F;模拟 IC、版图、时延、功耗与设计流程</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/data-structures-and-algorithms/">Data Structures and Algorithms</a></td><td>基础数据结构、排序搜索、图与算法复杂度</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/computer-organization/">Computer Organization</a></td><td>数据表示、CPU、存储层次和 I&#x2F;O</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/operating-systems/">Operating Systems</a></td><td>进程线程、同步、内存、文件系统与 I&#x2F;O</td></tr><tr><td>2021-2025</td><td><a href="/courses/undergraduate/computer-networks/">Computer Networks</a></td><td>分层协议、TCP&#x2F;IP、路由、链路与网络应用</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/power-electronics/">Power Electronics</a></td><td>功率开关、DC-DC、逆变器、PWM 与热设计</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/dynamics-and-control/">Dynamics and Control</a></td><td>动态建模、反馈稳定性、Root Locus、Bode 与补偿器</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/digital-signal-processing/">Digital Signal Processing</a></td><td>离散信号、DFT&#x2F;FFT、多采样率和数字滤波器</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/team-design-project-skills/">Team Design Project Skills</a></td><td>团队工程、STM32&#x2F;OpenMV 机器人和系统集成</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electromagnetic-fields-and-waves/">Electromagnetic Fields and Waves</a></td><td>Maxwell 方程、静电&#x2F;稳恒场、波传播与超表面</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electronic-devices/">Electronic Devices</a></td><td>半导体物理、PN 结、晶体管与光电子器件</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/electronic-system-design/">Electronic System Design</a></td><td>运放非理想性、测量前端、噪声、接地与系统设计</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/machine-learning-and-artificial-intelligence/">Machine Learning and Artificial Intelligence</a></td><td>监督学习、神经网络、遗传算法与工程优化</td></tr><tr><td>2023-2024</td><td><a href="/courses/undergraduate/signals-and-systems/">Signals and Systems</a></td><td>LTI 系统、卷积、Fourier&#x2F;Laplace&#x2F;Z 变换</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/embedded-processor/">Embedded Processor</a></td><td>ARM、汇编、外设接口和嵌入式软件</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/fundamentals-of-analog-circuits/">Fundamentals of Analog Circuits</a></td><td>二极管、MOSFET、放大器、运放与反馈</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/analog-and-digital-design-laboratory/">Analog and Digital Design Laboratory</a></td><td>数字逻辑、Verilog、组合&#x2F;时序电路与处理器设计</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/digital-image-processing/">Digital Image Processing</a></td><td>图像增强、变换、目标描述与 MATLAB&#x2F;OpenCV 实践</td></tr><tr><td>2022-2023</td><td><a href="/courses/undergraduate/cad-and-engineering-design-tools/">CAD and Engineering Design Tools</a></td><td>工程制图、CAD 建模与设计文档</td></tr><tr><td>2021-2022</td><td><a href="/courses/undergraduate/microcontroller-systems-project/">Microcontroller Systems and Embedded Project</a></td><td>微控制器接口、mbed OS 和嵌入式项目集成</td></tr><tr><td>2021-2022</td><td><a href="/courses/undergraduate/introductory-programming/">Introductory Programming</a></td><td>程序设计基础、控制流、数组、指针和调试</td></tr></tbody></table><h2 id="Organization"><a href="#Organization" class="headerlink" title="Organization"></a>Organization</h2><ul><li><strong>Categories：</strong> Courses &#x2F; Undergraduate Courses</li><li><strong>Archives：</strong> 各课程使用实际学习阶段的时间排序</li><li><strong>Tags：</strong> 课程不再占用 Tags；技术方向通过 Categories、Archives 和课程独立页面组织</li><li><strong>Privacy：</strong> 不发布原始课件、试卷、答案、学号、个人报告或本地路径</li></ul>]]></content>
     
     
     <categories>
@@ -48,14 +40,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-    </tags>
     
   </entry>
   
@@ -78,22 +62,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>Deep Learning</tag>
-      
-      <tag>AI Systems</tag>
-      
-      <tag>Accelerators</tag>
-      
-      <tag>LLM Systems</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -114,22 +82,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Computer Vision</tag>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>Deep Learning</tag>
-      
-      <tag>Transformer</tag>
-      
-      <tag>Generative Models</tag>
-      
-    </tags>
     
   </entry>
   
@@ -154,19 +106,15 @@
     
     <tags>
       
+      <tag>AICAS</tag>
+      
+      <tag>LLM Inference</tag>
+      
+      <tag>GPU Systems</tag>
+      
       <tag>AI Systems</tag>
       
       <tag>CUDA</tag>
-      
-      <tag>AICAS</tag>
-      
-      <tag>PPU</tag>
-      
-      <tag>Qwen3-VL</tag>
-      
-      <tag>Vision-Language Model</tag>
-      
-      <tag>Inference Optimization</tag>
       
       <tag>Quantization</tag>
       
@@ -193,22 +141,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>Distributed Systems</tag>
-      
-      <tag>Multimedia</tag>
-      
-      <tag>Streaming</tag>
-      
-      <tag>Scheduling</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -232,13 +164,9 @@
     
     <tags>
       
+      <tag>GPU Systems</tag>
+      
       <tag>AI Systems</tag>
-      
-      <tag>GPU</tag>
-      
-      <tag>CUDA</tag>
-      
-      <tag>LLM</tag>
       
       <tag>RAG</tag>
       
@@ -267,22 +195,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>Algorithms</tag>
-      
-      <tag>Complexity</tag>
-      
-      <tag>Optimization</tag>
-      
-      <tag>Graph Algorithms</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -303,22 +215,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>Hardware Security</tag>
-      
-      <tag>Trusted Computing</tag>
-      
-      <tag>Side Channel</tag>
-      
-      <tag>SGX</tag>
-      
-    </tags>
     
   </entry>
   
@@ -341,22 +237,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>GPU</tag>
-      
-      <tag>CUDA</tag>
-      
-      <tag>Tensor Core</tag>
-      
-      <tag>Performance Engineering</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -377,22 +257,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>Computer Architecture</tag>
-      
-      <tag>RISC-V</tag>
-      
-      <tag>Memory Systems</tag>
-      
-      <tag>Out-of-Order</tag>
-      
-    </tags>
     
   </entry>
   
@@ -417,15 +281,9 @@
     
     <tags>
       
-      <tag>AI Systems</tag>
-      
-      <tag>GPU</tag>
+      <tag>GPU Systems</tag>
       
       <tag>CUDA</tag>
-      
-      <tag>Tensor Core</tag>
-      
-      <tag>Inference Optimization</tag>
       
       <tag>Efficient AI</tag>
       
@@ -452,22 +310,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Postgraduate Courses</tag>
-      
-      <tag>Big Data</tag>
-      
-      <tag>Data Mining</tag>
-      
-      <tag>MapReduce</tag>
-      
-      <tag>HBase</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -491,15 +333,11 @@
     
     <tags>
       
+      <tag>Hardware-Software Co-design</tag>
+      
       <tag>6DoF Pose Estimation</tag>
       
       <tag>Efficient AI</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Hardware-Software Co-design</tag>
-      
-      <tag>Neural Network Hardware</tag>
       
     </tags>
     
@@ -526,17 +364,11 @@
     
     <tags>
       
-      <tag>HiPose</tag>
-      
       <tag>6DoF Pose Estimation</tag>
       
-      <tag>RGB-D</tag>
+      <tag>Efficient AI</tag>
       
       <tag>Computer Vision</tag>
-      
-      <tag>Research</tag>
-      
-      <tag>Model Compression</tag>
       
     </tags>
     
@@ -563,17 +395,13 @@
     
     <tags>
       
-      <tag>AI Systems</tag>
-      
       <tag>AICAS</tag>
+      
+      <tag>LLM Inference</tag>
       
       <tag>Quantization</tag>
       
-      <tag>LLM</tag>
-      
-      <tag>Edge AI</tag>
-      
-      <tag>Hardware Software Co-design</tag>
+      <tag>Hardware-Software Co-design</tag>
       
     </tags>
     
@@ -598,22 +426,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Computer Architecture</tag>
-      
-      <tag>Scheduling</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Real-Time Systems</tag>
-      
-      <tag>RTOS</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -634,22 +446,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Information Security</tag>
-      
-      <tag>Cryptography</tag>
-      
-      <tag>Network Security</tag>
-      
-      <tag>Blockchain</tag>
-      
-    </tags>
     
   </entry>
   
@@ -672,22 +468,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>VLSI</tag>
-      
-      <tag>CMOS</tag>
-      
-      <tag>IC Design</tag>
-      
-      <tag>Layout</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -708,18 +488,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Information Security</tag>
-      
-      <tag>Cryptography</tag>
-      
-      <tag>Security Lab</tag>
-      
-      <tag>System Security</tag>
-      
-    </tags>
     
   </entry>
   
@@ -742,20 +510,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Scheduling</tag>
-      
-      <tag>Embedded Systems</tag>
-      
-      <tag>RTOS</tag>
-      
-      <tag>RTCSA</tag>
-      
-      <tag>Real-time Systems</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -776,20 +530,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>VLSI</tag>
-      
-      <tag>Lab</tag>
-      
-      <tag>Digital Design</tag>
-      
-      <tag>Hardware</tag>
-      
-      <tag>EDA</tag>
-      
-    </tags>
     
   </entry>
   
@@ -812,20 +552,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Efficient AI</tag>
-      
-      <tag>Model Compression</tag>
-      
-      <tag>Scientific Research</tag>
-      
-      <tag>Pruning</tag>
-      
-      <tag>CrAM</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -846,20 +572,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Scheduling</tag>
-      
-      <tag>Scientific Research</tag>
-      
-      <tag>DNN Accelerator</tag>
-      
-      <tag>DeFiNES</tag>
-      
-      <tag>Design Space Exploration</tag>
-      
-    </tags>
     
   </entry>
   
@@ -882,20 +594,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Neural Network Hardware</tag>
-      
-      <tag>Scientific Research</tag>
-      
-      <tag>Activation Function</tag>
-      
-      <tag>ReAFM</tag>
-      
-      <tag>Hardware Design</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -916,20 +614,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>HiPose</tag>
-      
-      <tag>6DoF Pose Estimation</tag>
-      
-      <tag>RGB-D</tag>
-      
-      <tag>Computer Vision</tag>
-      
-      <tag>Scientific Research</tag>
-      
-    </tags>
     
   </entry>
   
@@ -952,20 +636,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Project Notes</tag>
-      
-      <tag>HiPose</tag>
-      
-      <tag>6DoF Pose Estimation</tag>
-      
-      <tag>RGB-D</tag>
-      
-      <tag>Computer Vision</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -984,14 +654,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Algorithms</tag>
-      
-      <tag>Data Structures</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1014,20 +676,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Algorithms</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Data Structures</tag>
-      
-      <tag>Problem Solving</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1048,22 +696,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Computer Organization</tag>
-      
-      <tag>CPU</tag>
-      
-      <tag>Memory Hierarchy</tag>
-      
-      <tag>I/O</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1086,22 +718,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Operating Systems</tag>
-      
-      <tag>Concurrency</tag>
-      
-      <tag>Virtual Memory</tag>
-      
-      <tag>File Systems</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1122,22 +738,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Computer Networks</tag>
-      
-      <tag>TCP-IP</tag>
-      
-      <tag>Routing</tag>
-      
-      <tag>Network Protocols</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1160,22 +760,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Power Electronics</tag>
-      
-      <tag>DC-DC Converter</tag>
-      
-      <tag>Inverter</tag>
-      
-      <tag>PWM</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1196,22 +780,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>MATLAB</tag>
-      
-      <tag>Control Systems</tag>
-      
-      <tag>Dynamics</tag>
-      
-      <tag>Root Locus</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1234,22 +802,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>DSP</tag>
-      
-      <tag>FFT</tag>
-      
-      <tag>FIR</tag>
-      
-      <tag>IIR</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1270,22 +822,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Embedded Systems</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>STM32</tag>
-      
-      <tag>OpenMV</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1308,22 +844,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Electromagnetics</tag>
-      
-      <tag>Maxwell Equations</tag>
-      
-      <tag>Waves</tag>
-      
-      <tag>Metasurface</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1344,20 +864,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Embedded Systems</tag>
-      
-      <tag>Robotics</tag>
-      
-      <tag>STM32</tag>
-      
-      <tag>OpenMV</tag>
-      
-      <tag>UART</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1380,20 +886,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>MATLAB</tag>
-      
-      <tag>DSP</tag>
-      
-      <tag>FFT</tag>
-      
-      <tag>DTMF</tag>
-      
-      <tag>Goertzel</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1414,20 +906,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Optimization</tag>
-      
-      <tag>Dynamics</tag>
-      
-      <tag>MCM</tag>
-      
-      <tag>Mathematical Modeling</tag>
-      
-      <tag>Bayesian Inference</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1450,22 +928,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Semiconductor</tag>
-      
-      <tag>BJT</tag>
-      
-      <tag>MOSFET</tag>
-      
-      <tag>Optoelectronics</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1486,22 +948,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Operational Amplifier</tag>
-      
-      <tag>Electronic Systems</tag>
-      
-      <tag>Noise</tag>
-      
-      <tag>SPICE</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1524,22 +970,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Optimization</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Machine Learning</tag>
-      
-      <tag>Artificial Intelligence</tag>
-      
-      <tag>Genetic Algorithm</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1560,20 +990,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Power Electronics</tag>
-      
-      <tag>Signals and Systems</tag>
-      
-      <tag>Lab</tag>
-      
-      <tag>Electronic Devices</tag>
-      
-      <tag>Engineering Fundamentals</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1596,22 +1012,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>MATLAB</tag>
-      
-      <tag>Signals and Systems</tag>
-      
-      <tag>Fourier Transform</tag>
-      
-      <tag>LTI</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1632,18 +1032,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Electronic System Design</tag>
-      
-      <tag>Circuit</tag>
-      
-      <tag>Lab</tag>
-      
-      <tag>Engineering</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1666,20 +1054,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Optimization</tag>
-      
-      <tag>MATLAB</tag>
-      
-      <tag>Machine Learning</tag>
-      
-      <tag>Genetic Algorithm</tag>
-      
-      <tag>Classification</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1700,20 +1074,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Computer Vision</tag>
-      
-      <tag>MATLAB</tag>
-      
-      <tag>Digital Image Processing</tag>
-      
-      <tag>Target Tracking</tag>
-      
-      <tag>MOSSE</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1736,20 +1096,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>MATLAB</tag>
-      
-      <tag>Electromagnetics</tag>
-      
-      <tag>Metasurface</tag>
-      
-      <tag>KAUST</tag>
-      
-      <tag>HFSS</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1770,22 +1116,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>ARM</tag>
-      
-      <tag>Embedded Systems</tag>
-      
-      <tag>SPI</tag>
-      
-      <tag>I2C</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1808,22 +1138,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>MOSFET</tag>
-      
-      <tag>Analog Circuits</tag>
-      
-      <tag>Amplifiers</tag>
-      
-      <tag>Operational Amplifier</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1844,22 +1158,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Digital Logic</tag>
-      
-      <tag>Verilog</tag>
-      
-      <tag>FPGA</tag>
-      
-      <tag>Processor Design</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1882,22 +1180,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Computer Vision</tag>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Image Processing</tag>
-      
-      <tag>MATLAB</tag>
-      
-      <tag>OpenCV</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1918,20 +1200,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>CAD</tag>
-      
-      <tag>Engineering Design</tag>
-      
-      <tag>Technical Drawing</tag>
-      
-    </tags>
     
   </entry>
   
@@ -1954,22 +1222,6 @@
     </categories>
     
     
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Embedded Systems</tag>
-      
-      <tag>C++</tag>
-      
-      <tag>Microcontroller</tag>
-      
-      <tag>mbed</tag>
-      
-    </tags>
-    
   </entry>
   
   
@@ -1990,20 +1242,6 @@
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Courses</tag>
-      
-      <tag>Undergraduate Courses</tag>
-      
-      <tag>Programming</tag>
-      
-      <tag>C++</tag>
-      
-      <tag>Software Fundamentals</tag>
-      
-    </tags>
     
   </entry>
   
