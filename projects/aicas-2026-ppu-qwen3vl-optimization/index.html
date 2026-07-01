@@ -27,7 +27,7 @@
 <meta property="og:description" content="Project OverviewThis project focused on fixed-weight inference optimization for Qwen3-VL-2B-Instruct on the Alibaba PPU-ZW810E platform for the AICAS 2026 challenge. The target was not to train a new">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-06-16T12:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-29T09:49:57.445Z">
+<meta property="article:modified_time" content="2026-07-01T04:05:00.248Z">
 <meta property="article:author" content="Zeng Junhao">
 <meta property="article:tag" content="AICAS">
 <meta property="article:tag" content="LLM Inference">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          309 words
+          384 words
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          3 mins
+          4 mins
         
       </span>
     
@@ -317,8 +317,48 @@
 </tr>
 </tbody></table>
 <p>The work sits at the intersection of VLM serving, accelerator-aware kernel optimization, runtime profiling, quantized inference layouts, and system-level performance engineering.</p>
+<p>Public repository: <a target="_blank" rel="noopener" href="https://github.com/Juneh01/AICAS2026-PPU">Juneh01&#x2F;AICAS2026-PPU</a></p>
 <h2 id="Workshop-and-Result"><a href="#Workshop-and-Result" class="headerlink" title="Workshop and Result"></a>Workshop and Result</h2><p>Before the final round, I attended the <strong>Shanghai AICAS Workshop</strong>, which connected the competition work with the broader AICASGC community and practical PPU optimization discussions.</p>
 <p>The project ultimately received the <strong>Excellence Award</strong> in the AICAS 2026 PPU Track.</p>
+<h2 id="Public-Repository"><a href="#Public-Repository" class="headerlink" title="Public Repository"></a>Public Repository</h2><p>After the competition, I released a cleaned public repository for technical reference and reproducibility of the optimization strategy under the original AICAS runtime constraints. The repository contains the final inference wrapper and custom PPU&#x2F;CUDA-style kernel sources, while omitting model weights, datasets, credentials, official benchmark subsets, compiled extension binaries, and temporary remote-machine files.</p>
+<p>The repository is organized around the final submission path:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>evaluation_wrapper.py</code></td>
+<td>Final inference wrapper used to connect the optimized runtime with the benchmark interface.</td>
+</tr>
+<tr>
+<td><code>benchmark.py</code></td>
+<td>Benchmark driver for local validation under the competition-style evaluation flow.</td>
+</tr>
+<tr>
+<td><code>my_kernel/versions/v170c_v169a_ttft_v152cdecode/</code></td>
+<td>Main custom kernel workspace, including decode, prefill, text big-operator, and vision big-operator sources.</td>
+</tr>
+<tr>
+<td><code>my_kernel/versions/v170c_v169a_ttft_v152cdecode/csrc/qwen3vl_megaqwen_v152c.cu</code></td>
+<td>Main Mega Kernel decode source for the autoregressive generation path.</td>
+</tr>
+<tr>
+<td><code>PPU_VERSION.md</code> and <code>docs/version_notes.md</code></td>
+<td>Public version note for the final <code>v195_dead_arg_trim</code> cleanup.</td>
+</tr>
+<tr>
+<td><code>docs/technical_report_ieee.tex</code></td>
+<td>Technical report source aligned with the public repository scope.</td>
+</tr>
+</tbody></table>
+<p>The public <code>v195_dead_arg_trim</code> version keeps model weights, quantization policy, activation precision, and decode math unchanged. Its changes focus on implementation hygiene around the active fused decode path: removing unused arguments, reducing stale prefetch&#x2F;fallback plumbing, keeping the no-bootstrap grid-sync initialization, and simplifying the active W8 MLP path.</p>
+<p>For source traceability, the build script is kept in the kernel workspace:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> my_kernel/versions/v170c_v169a_ttft_v152cdecode<br>python build_decode_v152c.py<br></code></pre></td></tr></table></figure>
+
+<p>The expected environment is still the AICAS PPU container with PyTorch, the PPU SDK, CUDA-compatible extension tooling, and the competition-provided Qwen3-VL-2B-Instruct model path. The public repository should therefore be read as a transparent technical artifact, not as a standalone model package.</p>
 <h2 id="Task-and-Constraints"><a href="#Task-and-Constraints" class="headerlink" title="Task and Constraints"></a>Task and Constraints</h2><p>The competition evaluated a vision-language model with three practical objectives:</p>
 <ul>
 <li>preserve answer accuracy under hidden evaluation data;</li>
@@ -432,7 +472,7 @@
 <li>VLM optimization is harder than text-only LLM serving because visual token policy affects both TTFT and answer quality.</li>
 <li>The final 1-2% often comes from removing boring overhead: dead arguments, inactive branches, unnecessary barriers, and poor shared-memory staging.</li>
 </ul>
-<h2 id="Public-Site-Scope"><a href="#Public-Site-Scope" class="headerlink" title="Public-Site Scope"></a>Public-Site Scope</h2><p>Only the project summary, methods, and aggregate metrics are documented here. Source code, model weights, datasets, private remote-machine configuration, submission packages, and sensitive experiment artifacts are intentionally kept out of the public site.</p>
+<h2 id="Public-Scope"><a href="#Public-Scope" class="headerlink" title="Public Scope"></a>Public Scope</h2><p>This page summarizes the public project story and links to the released source repository. The repository includes wrapper and kernel sources for technical reference, but it intentionally excludes model weights, datasets, credentials, official benchmark subsets, compiled binaries, private remote-machine configuration, submission packages, and sensitive experiment artifacts.</p>
 
                 
               </div>
