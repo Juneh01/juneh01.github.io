@@ -27,7 +27,7 @@
 <meta property="og:description" content="Project OverviewGPU-Tutor is an intelligent question-answering system for GPU architecture and CUDA programming. The project targeted a course competition scenario where the system needed to answer do">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-15T12:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-03T12:02:25.497Z">
+<meta property="article:modified_time" content="2026-07-04T15:49:56.300Z">
 <meta property="article:author" content="Zeng Junhao">
 <meta property="article:tag" content="GPU Systems">
 <meta property="article:tag" content="AI Systems">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          50 words
+          49 words
         
       </span>
     
@@ -290,11 +290,6 @@
                 
                 <h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>GPU-Tutor is an intelligent question-answering system for GPU architecture and CUDA programming. The project targeted a course competition scenario where the system needed to answer domain-specific questions accurately while maintaining high serving throughput.</p>
 <p>The final system combined a small language model, supervised fine-tuning, preference alignment, retrieval, and inference-serving optimization. It achieved 4th place in the Paratera Tech Track with 0.3733 ROUGE-L and more than 33,000 chars&#x2F;s inference speed.</p>
-<div class="resource-links">
-  <span>Links:</span>
-  <a href="https://github.com/Juneh01/GPU-Tutor" target="_blank" rel="noopener noreferrer">GitHub repository</a>
-</div>
-
 <h2 id="System-Design"><a href="#System-Design" class="headerlink" title="System Design"></a>System Design</h2><p>The model side was built around Qwen3-0.6B. I used SFT to adapt the model to GPU-programming questions, then introduced DPO to improve answer preference and domain alignment.</p>
 <p>The retrieval side used a multi-index RAG pipeline. Different knowledge sources were routed through separate retrieval indices, then merged into prompts according to the question type. FAISS was used for vector retrieval, while embedding cache reduced repeated encoding overhead.</p>
 <h2 id="Serving-Optimization"><a href="#Serving-Optimization" class="headerlink" title="Serving Optimization"></a>Serving Optimization</h2><p>For serving, the system used vLLM to improve throughput and support efficient batched generation. Continuous batching helped absorb concurrent requests, while prefix caching reduced repeated prompt prefill cost for similar question templates.</p>

@@ -126,31 +126,6 @@ html[data-about-lang="en"] .language-panel[data-lang-panel="zh"] {
   margin: 0.45rem 0 0.75rem;
 }
 
-.resource-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.32rem 0.55rem;
-  margin: 0.42rem 0 0.75rem;
-  color: var(--apple-secondary);
-  font-size: 0.86rem;
-  line-height: 1.45;
-}
-
-.resource-links span {
-  color: var(--apple-secondary);
-}
-
-.resource-links a {
-  color: var(--apple-accent);
-  border-bottom: 1px solid rgba(0, 102, 204, 0.28);
-}
-
-.resource-links a:hover {
-  color: var(--link-hover-color);
-  border-bottom-color: rgba(0, 113, 227, 0.6);
-  text-decoration: none;
-}
-
 .academic-profile strong {
   font-weight: 600;
 }
