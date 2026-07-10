@@ -319,7 +319,7 @@
     <link href="/projects/prado-pose-refinement-accelerator/"/>
     <url>/projects/prado-pose-refinement-accelerator/</url>
     
-    <content type="html"><![CDATA[<h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>PRADO is a high-efficiency accelerator project for 6DoF pose refinement. The work targeted high-precision RGB-D pose estimation in VR&#x2F;AR and robotic edge scenarios, where latency, energy efficiency, and deployment cost are all important.</p><p>The project later appeared in the TCAS-I publication <strong>PRADO: A Low-Latency and Energy-Efficient 6DoF Pose Refinement Accelerator With Domain-Specific Explorations</strong>.</p><h2 id="My-Work"><a href="#My-Work" class="headerlink" title="My Work"></a>My Work</h2><p>My work focused on hardware-oriented implementation and verification for neural-network components used in pose-estimation acceleration. I implemented fast activation-function hardware modules including Sigmoid and SoftMax, and studied how these operators affect accelerator latency and area.</p><p>I also participated in post-layout simulation verification and compression-aware experiments. These tasks helped connect algorithm-level model design with actual hardware cost, especially around element-wise nonlinear computation and memory-efficient execution.</p><h2 id="Technical-Focus"><a href="#Technical-Focus" class="headerlink" title="Technical Focus"></a>Technical Focus</h2><p>The project sits at the intersection of 3D vision and hardware-software co-design. From the vision side, the goal is accurate pose refinement under RGB-D input. From the hardware side, the challenge is to reduce unnecessary computation and data movement while preserving model behavior.</p><p>This experience became a bridge between my 6DoF pose-estimation research and later efficient-AI system work. It also gave me a concrete view of how algorithm choices translate into hardware modules, timing closure pressure, and deployment constraints.</p><h2 id="Takeaways"><a href="#Takeaways" class="headerlink" title="Takeaways"></a>Takeaways</h2><p>PRADO helped me build intuition for accelerator-aware neural network design. Instead of treating neural networks as abstract software graphs, I learned to examine operators, activation functions, memory access, layout, verification, and post-layout behavior as part of one deployment-oriented system.</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>PRADO is a high-efficiency accelerator project for 6DoF pose refinement. The work targeted high-precision RGB-D pose estimation in VR&#x2F;AR and robotic edge scenarios, where latency, energy efficiency, and deployment cost are all important.</p><p>The project later appeared in the TCAS-I publication <strong><a href="https://ieeexplore.ieee.org/document/11008641">PRADO: A Low-Latency and Energy-Efficient 6DoF Pose Refinement Accelerator With Domain-Specific Explorations</a></strong>.</p><h2 id="My-Work"><a href="#My-Work" class="headerlink" title="My Work"></a>My Work</h2><p>My work focused on hardware-oriented implementation and verification for neural-network components used in pose-estimation acceleration. I implemented fast activation-function hardware modules including Sigmoid and SoftMax, and studied how these operators affect accelerator latency and area.</p><p>I also participated in post-layout simulation verification and compression-aware experiments. These tasks helped connect algorithm-level model design with actual hardware cost, especially around element-wise nonlinear computation and memory-efficient execution.</p><h2 id="Technical-Focus"><a href="#Technical-Focus" class="headerlink" title="Technical Focus"></a>Technical Focus</h2><p>The project sits at the intersection of 3D vision and hardware-software co-design. From the vision side, the goal is accurate pose refinement under RGB-D input. From the hardware side, the challenge is to reduce unnecessary computation and data movement while preserving model behavior.</p><p>This experience became a bridge between my 6DoF pose-estimation research and later efficient-AI system work. It also gave me a concrete view of how algorithm choices translate into hardware modules, timing closure pressure, and deployment constraints.</p><h2 id="Takeaways"><a href="#Takeaways" class="headerlink" title="Takeaways"></a>Takeaways</h2><p>PRADO helped me build intuition for accelerator-aware neural network design. Instead of treating neural networks as abstract software graphs, I learned to examine operators, activation functions, memory access, layout, verification, and post-layout behavior as part of one deployment-oriented system.</p>]]></content>
     
     
     <categories>
@@ -335,9 +335,9 @@
       
       <tag>Hardware-Software Co-design</tag>
       
-      <tag>Efficient AI</tag>
-      
       <tag>6DoF Pose Estimation</tag>
+      
+      <tag>Efficient AI</tag>
       
     </tags>
     
@@ -364,9 +364,9 @@
     
     <tags>
       
-      <tag>Efficient AI</tag>
-      
       <tag>6DoF Pose Estimation</tag>
+      
+      <tag>Efficient AI</tag>
       
       <tag>Computer Vision</tag>
       
