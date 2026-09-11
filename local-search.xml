@@ -135,13 +135,13 @@
     
     <tags>
       
-      <tag>AICAS</tag>
-      
-      <tag>LLM Inference</tag>
+      <tag>AI Systems</tag>
       
       <tag>GPU Systems</tag>
       
-      <tag>AI Systems</tag>
+      <tag>AICAS</tag>
+      
+      <tag>LLM Inference</tag>
       
       <tag>CUDA</tag>
       
@@ -193,9 +193,9 @@
     
     <tags>
       
-      <tag>GPU Systems</tag>
-      
       <tag>AI Systems</tag>
+      
+      <tag>GPU Systems</tag>
       
       <tag>RAG</tag>
       
@@ -362,11 +362,11 @@
     
     <tags>
       
+      <tag>Efficient AI</tag>
+      
       <tag>Hardware-Software Co-design</tag>
       
       <tag>6DoF Pose Estimation</tag>
-      
-      <tag>Efficient AI</tag>
       
     </tags>
     
@@ -393,9 +393,9 @@
     
     <tags>
       
-      <tag>6DoF Pose Estimation</tag>
-      
       <tag>Efficient AI</tag>
+      
+      <tag>6DoF Pose Estimation</tag>
       
       <tag>Computer Vision</tag>
       
