@@ -743,6 +743,25 @@ html[data-about-lang="en"] .language-panel[data-lang-panel="zh"] {
 }
 
 /* Structured archive */
+.archive-simple { max-width: 920px; margin: 0 auto; }
+.archive-simple-header h1 { margin: 0 0 1rem; font-size: 2rem; }
+.archive-simple-nav { display: flex; flex-wrap: wrap; gap: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--apple-border); }
+.archive-simple-section { padding: 1.75rem 0 0; scroll-margin-top: 6rem; }
+.archive-simple-section h2 { margin: 0 0 0.75rem; font-size: 1.35rem; }
+.archive-simple-row { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--apple-border); color: var(--apple-text); line-height: 1.5; text-decoration: none; }
+.archive-simple-row time { font-size: 0.8rem; color: var(--apple-secondary); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.archive-simple-row span { min-width: 0; overflow-wrap: anywhere; }
+.archive-simple-row:hover span { color: var(--apple-accent); }
+.archive-simple-courses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.archive-simple-courses > section { min-width: 0; }
+.archive-simple-courses h3 { margin: 0.5rem 0; font-size: 1rem; }
+.archive-simple-course { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 600px) {
+  .archive-simple-courses { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .archive-simple-row { gap: 0.65rem; grid-template-columns: 5.3rem minmax(0, 1fr); }
+  .archive-simple-course { grid-template-columns: minmax(0, 1fr); }
+}
+
 .archive-hub {
   max-width: 920px;
   margin: 0 auto;
